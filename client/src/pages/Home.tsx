@@ -29,11 +29,11 @@ export default function Home() {
           className="absolute inset-0 z-0"
         >
           <img 
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" 
+            src="/hero-bg.png" 
             alt="Volunteers in Kenya" 
             className="w-full h-full object-cover fixed"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/95" />
         </motion.div>
         
         <div className="container relative z-10 px-4 text-center">
