@@ -130,6 +130,30 @@ async function seedDatabase() {
         code: "KVDA/MLTV/2023/08",
         description: "Empowering women and girls through vocational training and leadership workshops to challenge patriarchal systems.",
         imageUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80"
+      },
+      {
+        title: "Esibila Primary School Support",
+        location: "Vihiga County",
+        sector: "Education",
+        code: "KVDA/MLTV/2021/31",
+        description: "Supporting primary education for vulnerable children in Vihiga through teaching assistance and facility improvement.",
+        imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80"
+      },
+      {
+        title: "Roddy's Eco Cover",
+        location: "Vihiga County",
+        sector: "Environment",
+        code: "KVDA/MLTV/2021/25",
+        description: "Environmental conservation and reforestation project aimed at restoring local ecosystems and promoting eco-friendly practices.",
+        imageUrl: "https://images.unsplash.com/photo-1542601906990-b4d3fb7d5c73?auto=format&fit=crop&q=80"
+      },
+      {
+        title: "Community Health Volunteers",
+        location: "Shinyalu, Kakamega",
+        sector: "Health",
+        code: "KVDA/MLTV/2021/30",
+        description: "Training and supporting community health volunteers to provide basic healthcare and education in remote Kakamega villages.",
+        imageUrl: "https://images.unsplash.com/photo-1584515169010-2590d737b673?auto=format&fit=crop&q=80"
       }
     ]);
   }
