@@ -40,7 +40,7 @@ export default function Projects() {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary uppercase tracking-wide">
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-primary uppercase tracking-wide">
                     {project.sector}
                   </div>
                 </div>
@@ -50,20 +50,20 @@ export default function Projects() {
                     <MapPin className="h-4 w-4 mr-1 text-accent" />
                     {project.location}
                   </div>
-                  <h3 className="text-xl font-bold font-display line-clamp-2 leading-tight">
+                  <h3 className="text-xl font-medium font-display line-clamp-2 leading-tight">
                     {project.title}
                   </h3>
                 </CardHeader>
                 
                 <CardContent className="flex-grow">
-                  <p className="text-muted-foreground text-sm line-clamp-4">
+                  <p className="text-muted-foreground text-sm line-clamp-4 font-light">
                     {project.description}
                   </p>
                 </CardContent>
                 
                 <CardFooter className="pt-0 border-t bg-muted/10 p-6 mt-auto">
                   <Link href={`/contact`} className="w-full">
-                    <Button className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-white font-semibold transition-colors">
+                    <Button className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-white font-medium transition-colors">
                       Inquire & Apply
                     </Button>
                   </Link>

@@ -29,11 +29,11 @@ export default function Home() {
           className="absolute inset-0 z-0"
         >
           <img 
-            src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?q=80&w=2083&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" 
             alt="Kenyan Landscape" 
             className="w-full h-full object-cover fixed"
           />
-          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute inset-0 bg-black/85" />
         </motion.div>
         
         <div className="container relative z-10 px-4 text-center">
@@ -49,13 +49,13 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-sm"
             >
-              <span className="text-primary font-bold tracking-widest text-xs uppercase">Global Impact Since 1962</span>
+              <span className="text-primary font-medium tracking-widest text-xs uppercase">Global Impact Since 1962</span>
             </motion.div>
-            <h1 className="text-5xl md:text-8xl lg:text-9xl font-display font-medium mb-8 leading-none tracking-tighter text-white">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-light mb-8 leading-none tracking-tighter text-white">
               BUILDING <br/>
-              <span className="text-primary italic">THE FUTURE</span>
+              <span className="text-primary italic font-normal">THE FUTURE</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
+            <p className="text-lg md:text-xl mb-12 text-gray-200 max-w-2xl mx-auto font-light leading-relaxed">
               Empowering marginalized communities through transformative international volunteering. Join our global mission.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -101,8 +101,8 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-6xl font-display font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-primary font-bold uppercase tracking-widest text-xs">{stat.label}</div>
+                <div className="text-4xl md:text-5xl font-display font-medium text-white mb-2">{stat.value}</div>
+                <div className="text-primary font-medium uppercase tracking-widest text-xs">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -116,9 +116,9 @@ export default function Home() {
         
         <div className="container px-4 relative z-10">
           <div className="max-w-3xl mb-20">
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">Our Core Pillars</h2>
-            <div className="h-2 w-24 bg-primary mb-8" />
-            <p className="text-xl text-zinc-400">Transforming lives through a holistic approach to community development and global solidarity.</p>
+            <h2 className="text-4xl md:text-5xl font-display font-medium text-white mb-6">Our Core Pillars</h2>
+            <div className="h-1 w-24 bg-primary mb-8" />
+            <p className="text-lg text-zinc-400 font-light">Transforming lives through a holistic approach to community development and global solidarity.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -135,8 +135,8 @@ export default function Home() {
                     <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-all duration-500 transform group-hover:rotate-6">
                       <area.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-4">{area.title}</h3>
-                    <p className="text-zinc-400 text-lg leading-relaxed">{area.desc}</p>
+                    <h3 className="text-2xl font-medium text-white mb-4">{area.title}</h3>
+                    <p className="text-zinc-400 text-base leading-relaxed font-light">{area.desc}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -154,15 +154,15 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8 leading-tight">Over 60 Years of Global Impact</h2>
-              <div className="h-1.5 w-20 bg-primary mb-8" />
-              <p className="text-xl text-zinc-400 mb-8 leading-relaxed font-light">
+              <h2 className="text-4xl md:text-5xl font-display font-medium text-white mb-8 leading-tight">Over 60 Years of Global Impact</h2>
+              <div className="h-1 w-20 bg-primary mb-8" />
+              <p className="text-lg text-zinc-400 mb-8 leading-relaxed font-light">
                 The Kenya Voluntary Development Association (KVDA) is an indigenous, non-political, and non-profit organization registered in Kenya. 
                 Since 1962, we have mobilized volunteers globally to foster peace and sustainable development.
               </p>
               <Link href="/about">
-                <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 text-xl font-bold">
-                  Discover Our Legacy <ArrowRight className="ml-2 h-6 w-6" />
+                <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 text-lg font-medium">
+                  Discover Our Legacy <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </motion.div>
@@ -188,11 +188,11 @@ export default function Home() {
         <div className="container px-4">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-7xl font-display font-bold text-white mb-6 uppercase tracking-tighter">Inside <span className="text-primary">KVDA</span></h2>
-              <p className="text-xl text-zinc-500">Stories of resilience and progress from our project sites.</p>
+              <h2 className="text-4xl md:text-6xl font-display font-medium text-white mb-6 uppercase tracking-tighter">Inside <span className="text-primary">KVDA</span></h2>
+              <p className="text-lg text-zinc-500 font-light">Stories of resilience and progress from our project sites.</p>
             </div>
             <Link href="/news">
-              <Button variant="outline" className="border-white/10 text-white hover:bg-white/5 px-10 h-14 rounded-full text-lg">All Stories</Button>
+              <Button variant="outline" className="border-white/10 text-white hover:bg-white/5 px-10 h-14 rounded-full text-base font-normal">All Stories</Button>
             </Link>
           </div>
 
@@ -214,14 +214,14 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
                   </div>
                   <CardContent className="p-10">
-                    <div className="text-primary font-bold text-xs uppercase tracking-widest mb-6">
+                    <div className="text-primary font-medium text-xs uppercase tracking-widest mb-6">
                       {item.publishedAt ? new Date(item.publishedAt).toLocaleDateString() : 'Recent'}
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-primary transition-colors line-clamp-2">{item.title}</h3>
-                    <p className="text-zinc-500 text-lg line-clamp-3 mb-8 font-light leading-relaxed">{item.content}</p>
+                    <h3 className="text-xl font-medium text-white mb-6 group-hover:text-primary transition-colors line-clamp-2">{item.title}</h3>
+                    <p className="text-zinc-500 text-base line-clamp-3 mb-8 font-light leading-relaxed">{item.content}</p>
                     <Link href={`/news`}>
-                      <Button variant="ghost" className="text-white p-0 h-auto font-bold group-hover:translate-x-2 transition-transform text-lg">
-                        Read Story <ArrowRight className="ml-2 h-5 w-5" />
+                      <Button variant="ghost" className="text-white p-0 h-auto font-medium group-hover:translate-x-2 transition-transform text-base">
+                        Read Story <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </Link>
                   </CardContent>
@@ -241,18 +241,18 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             className="max-w-5xl mx-auto"
           >
-            <h2 className="text-6xl md:text-9xl font-display font-bold text-white mb-10 tracking-tighter leading-none">JOIN THE <br/><span className="text-primary">MOVEMENT</span></h2>
-            <p className="text-2xl md:text-3xl text-zinc-400 mb-16 max-w-3xl mx-auto font-light leading-relaxed">
+            <h2 className="text-6xl md:text-8xl font-display font-medium text-white mb-10 tracking-tighter leading-none">JOIN THE <br/><span className="text-primary">MOVEMENT</span></h2>
+            <p className="text-xl md:text-2xl text-zinc-400 mb-16 max-w-3xl mx-auto font-light leading-relaxed">
               Be the catalyst for change. Your journey from volunteer to global citizen begins now.
             </p>
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
               <Link href="/contact">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-20 px-16 rounded-full text-2xl font-bold shadow-[0_0_50px_rgba(185,28,28,0.3)] transition-all hover:scale-105">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-16 px-12 rounded-full text-xl font-medium shadow-[0_0_50px_rgba(185,28,28,0.3)] transition-all hover:scale-105">
                   Apply Now
                 </Button>
               </Link>
               <Link href="/programs">
-                <Button size="lg" variant="outline" className="border-white/10 text-white hover:bg-white/5 h-20 px-16 rounded-full text-2xl backdrop-blur-xl transition-all hover:border-white/30">
+                <Button size="lg" variant="outline" className="border-white/10 text-white hover:bg-white/5 h-16 px-12 rounded-full text-xl font-light backdrop-blur-xl transition-all hover:border-white/30">
                   Our Programs
                 </Button>
               </Link>

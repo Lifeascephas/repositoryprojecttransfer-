@@ -57,13 +57,13 @@ export default function Programs() {
                 </div>
 
                 <div className="flex-1 space-y-6">
-                  <div className="flex items-center space-x-3 text-primary font-bold tracking-wide uppercase text-sm">
+                  <div className="flex items-center space-x-3 text-primary font-medium tracking-wide uppercase text-sm">
                     <Icon className="h-5 w-5" />
                     <span>{program.type.replace('_', ' ')} Program</span>
                   </div>
                   
-                  <h3 className="text-3xl font-display font-bold text-foreground">{program.title}</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <h3 className="text-2xl font-display font-medium text-foreground">{program.title}</h3>
+                  <p className="text-base text-muted-foreground leading-relaxed font-light">
                     {program.description}
                   </p>
                   
