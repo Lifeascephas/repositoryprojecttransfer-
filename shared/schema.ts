@@ -28,6 +28,7 @@ export const projects = pgTable("projects", {
   code: text("code"),
   description: text("description").notNull(),
   imageUrl: text("image_url"),
+  programType: text("program_type"),
 });
 
 export const news = pgTable("news", {
