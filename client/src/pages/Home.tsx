@@ -580,7 +580,6 @@ export default function Home() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="w-full h-full"
-                  loading="lazy"
                 />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mt-4" data-testid="text-video-main-title">KVDA Volunteer Experience</h3>
