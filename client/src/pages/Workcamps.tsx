@@ -69,11 +69,7 @@ function WorkcampCard({ camp, index }: { camp: Workcamp; index: number }) {
             </p>
 
             {expanded && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                className="space-y-4 mb-4"
-              >
+              <div className="space-y-4 mb-4">
                 <p className="text-sm text-gray-600">{camp.description}</p>
                 {camp.activities && (
                   <div>
@@ -175,11 +171,7 @@ export default function Workcamps() {
           <div className="absolute inset-0 bg-black/80" />
         </div>
         <div className="container px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
+          <div className="max-w-3xl">
             <span className="text-primary font-medium tracking-widest text-xs uppercase">January - December 2026</span>
             <h1 className="text-5xl md:text-6xl font-display font-light text-white mt-4 mb-6" data-testid="text-page-title">
               KVDA <span className="text-primary italic font-normal">Workcamps</span> Program

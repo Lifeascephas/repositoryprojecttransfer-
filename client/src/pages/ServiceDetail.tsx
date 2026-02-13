@@ -31,11 +31,7 @@ export default function ServiceDetail() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 to-black/60" />
         </div>
         <div className="container px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
+          <div className="max-w-3xl">
             <Link href="/what-we-do">
               <span className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-sm mb-6 cursor-pointer" data-testid="link-back-what-we-do">
                 <ArrowLeft className="w-4 h-4" />
@@ -63,12 +59,7 @@ export default function ServiceDetail() {
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.05 }}
-                  className="space-y-6"
-                >
+                <div className="space-y-6">
                   {paragraphs.map((paragraph, index) => (
                     <p key={index} className="text-gray-700 text-lg leading-relaxed font-light" data-testid={`text-service-paragraph-${index}`}>
                       {paragraph}
@@ -76,12 +67,7 @@ export default function ServiceDetail() {
                   ))}
                 </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.05 }}
-                  className="mt-10"
-                >
+                <div className="mt-10">
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link href="/apply">
                       <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-md" data-testid="link-apply-now">
@@ -98,11 +84,7 @@ export default function ServiceDetail() {
               </div>
 
               {service.requirements && service.requirements.length > 0 && (
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 }}
-                >
+                <div>
                   <Card className="border border-gray-100 shadow-sm sticky top-24">
                     <CardContent className="p-6">
                       <h3 className="font-semibold text-gray-900 mb-4 text-base" data-testid="text-requirements-heading">Requirements</h3>

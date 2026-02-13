@@ -92,13 +92,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
       </button>
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            transition={{ duration: 0.15 }}
-            className="absolute top-full left-0 pt-2 z-50"
-          >
+          <div className="absolute top-full left-0 pt-2 z-50">
             <div className="bg-white border border-gray-100 rounded-md shadow-lg py-2 min-w-[200px]">
               {item.children.map((child) => (
                 <Link
@@ -188,12 +182,7 @@ export function Navigation() {
 
         <AnimatePresence>
           {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="border-t border-gray-100 bg-white lg:hidden overflow-hidden"
-            >
+            <div className="border-t border-gray-100 bg-white lg:hidden overflow-hidden">
               <div className="flex flex-col py-4 px-6 space-y-1">
                 {navItems.map((item) => (
                   <div key={item.href + item.label}>
@@ -211,12 +200,7 @@ export function Navigation() {
                         </button>
                         <AnimatePresence>
                           {expanded === item.label && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
-                              className="overflow-hidden"
-                            >
+                            <div className="overflow-hidden">
                               <div className="pl-4 pb-2 space-y-1 border-l-2 border-primary/20 ml-2">
                                 {item.children.map((child) => (
                                   <Link

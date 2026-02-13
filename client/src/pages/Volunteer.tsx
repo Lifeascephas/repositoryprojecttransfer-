@@ -73,11 +73,7 @@ export default function Volunteer() {
           <div className="absolute inset-0 bg-black/80" />
         </div>
         <div className="container px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
+          <div className="max-w-3xl">
             <span className="text-primary font-medium tracking-widest text-xs uppercase">Join Us</span>
             <h1 className="text-5xl md:text-6xl font-display font-light text-white mt-4 mb-6" data-testid="text-page-title">
               Be a <span className="text-primary italic font-normal">Volunteer</span>

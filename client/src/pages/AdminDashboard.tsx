@@ -291,7 +291,7 @@ export default function AdminDashboard() {
           <div className="absolute inset-0 bg-black/80" />
         </div>
         <div className="container px-4 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
+          <div>
             <span className="text-primary font-medium tracking-widest text-xs uppercase">Dashboard</span>
             <h1 className="text-4xl md:text-5xl font-display font-light text-white mt-4" data-testid="text-page-title">
               Admin <span className="text-primary italic font-normal">Panel</span>

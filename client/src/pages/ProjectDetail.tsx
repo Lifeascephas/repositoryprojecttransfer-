@@ -355,11 +355,7 @@ export default function ProjectDetail() {
           <div className="absolute inset-0 bg-black/80" />
         </div>
         <div className="container px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
+          <div className="max-w-3xl">
             <Link href="/projects" className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors mb-6" data-testid="link-back-projects">
               <ArrowLeft className="h-4 w-4" />
               <span className="text-sm">Back to Projects</span>

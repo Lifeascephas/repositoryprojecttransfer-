@@ -103,7 +103,7 @@ export default function VolunteerApplication() {
           <div className="absolute inset-0 bg-black/80" />
         </div>
         <div className="container px-4 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+          <div className="max-w-3xl">
             <span className="text-primary font-medium tracking-widest text-xs uppercase">Volunteer Exchange Form</span>
             <h1 className="text-5xl md:text-6xl font-display font-light text-white mt-4 mb-6" data-testid="text-page-title">
               Apply to <span className="text-primary italic font-normal">Volunteer</span>
@@ -119,7 +119,7 @@ export default function VolunteerApplication() {
       <section className="py-16 bg-gray-50">
         <div className="container px-4 max-w-4xl">
           <form onSubmit={handleSubmit}>
-            <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
+            <div>
               <Card className="border border-gray-100 shadow-sm mb-8">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -163,7 +163,7 @@ export default function VolunteerApplication() {
               </Card>
             </div>
 
-            <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
+            <div>
               <Card className="border border-gray-100 shadow-sm mb-8">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -196,7 +196,7 @@ export default function VolunteerApplication() {
               </Card>
             </div>
 
-            <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
+            <div>
               <Card className="border border-gray-100 shadow-sm mb-8">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -221,7 +221,7 @@ export default function VolunteerApplication() {
               </Card>
             </div>
 
-            <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
+            <div>
               <Card className="border border-gray-100 shadow-sm mb-8">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -258,7 +258,7 @@ export default function VolunteerApplication() {
               </Card>
             </div>
 
-            <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
+            <div>
               <Card className="border border-gray-100 shadow-sm mb-8">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -309,7 +309,7 @@ export default function VolunteerApplication() {
               </Card>
             </div>
 
-            <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
+            <div>
               <Card className="border border-gray-100 shadow-sm mb-8">
                 <CardContent className="p-8">
                   <p className="text-sm text-gray-500 leading-relaxed mb-4">
