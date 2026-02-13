@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { SectionHeader } from "@/components/SectionHeader";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Mail, Phone } from "lucide-react";
+import { CheckCircle2, Mail, Phone, Target, Eye, Handshake, BookOpen } from "lucide-react";
 import { useTeamMembers, useBoardMembers } from "@/hooks/use-content";
 import type { TeamMember, BoardMember } from "@shared/schema";
 
@@ -31,8 +30,7 @@ export default function About() {
               About <span className="text-primary italic font-normal">KVDA</span>
             </h1>
             <p className="text-lg text-zinc-300 font-light leading-relaxed">
-              A legacy of volunteerism and community development since 1962. 
-              Development Against Dependence.
+              Volunteer in Kenya with KVDA. Development Against Dependence since 1962.
             </p>
           </motion.div>
         </div>
@@ -40,32 +38,31 @@ export default function About() {
 
       <section className="py-24 bg-white">
         <div className="container px-4">
-          <div className="grid md:grid-cols-2 gap-8 mb-20">
-            <Card className="border border-gray-100 shadow-sm border-primary/20">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-display font-medium text-primary mb-4">Our Mission</h3>
-                <p className="text-gray-600 leading-relaxed font-light">
-                  To mobilize resources and foster international cooperation for sustainable development in 
-                  marginalized communities. We believe in the power of people coming together across borders 
-                  to solve common challenges through voluntary service.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="border border-gray-100 shadow-sm">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-display font-medium text-gray-900 mb-4">Our Vision</h3>
-                <p className="text-gray-600 leading-relaxed font-light">
-                  A peaceful society where people live in harmony with dignity and mutual respect. 
-                  We envision a world where development is participatory, sustainable, and driven by 
-                  the collective effort of global citizens.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+          <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl font-display font-medium text-gray-900 mb-6">Our Story</h2>
+              <div className="h-1 w-20 bg-primary mb-8" />
+              <div className="space-y-5 text-gray-600 font-light leading-relaxed">
+                <p>
+                  Kenya Voluntary Development Association has a 59-year history of working to "develop against dependence" while cultivating trust and friendships with volunteers and partner organizations all over the world. The three mandates of the organization are as follows:
+                </p>
+                <p>
+                  The Association is a non-profit, non-governmental, non-religious and non-political Association, whose inspiration is the furtherance of peace, friendship, understanding, development, democracy and equality among peoples of different cultures and backgrounds.
+                </p>
+                <p>
+                  The Association is dedicated to seeking opportunities for young men and women from diverse national, cultural and educational backgrounds to live, work and share life and experiences in order to improve their world, to provide voluntary services to marginalized communities, to acquire alternative education, to gather information and build international cooperation.
+                </p>
+                <p>
+                  The Association is further dedicated to mobilizing resources within and across national borders to support community development initiatives whose aims are to eradicate poverty and human suffering as well as to promote democracy and justice among peoples.
+                </p>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
@@ -78,55 +75,150 @@ export default function About() {
                 />
               </div>
             </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-24"
+          >
+            <Card className="border border-primary/20 shadow-sm bg-red-50/30">
+              <CardContent className="p-8 md:p-10">
+                <div className="flex items-start gap-4 mb-6">
+                  <Handshake className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                  <h3 className="text-2xl font-display font-medium text-gray-900">Bright Spots</h3>
+                </div>
+                <div className="space-y-5 text-gray-600 font-light leading-relaxed">
+                  <p>
+                    <span className="font-medium text-gray-800">Volunteering abroad International Partnerships</span> – KVDA has a long history of successfully partnering with organizations around the world to deliver programs.
+                  </p>
+                  <p>
+                    Successful recent partnerships include CCIVS, successfully implemented 15 Erasmus+ projects funded by the European commission, implemented Germany Government funded program "Weltwaerts", worked with Lunaria Italy on series of EU bilateral projects, and in partnership with the Dobrudzha Agricultural and Business School in Bulgaria implemented Climate change project under Youth in Action program of the EU.
+                  </p>
+                  <p>
+                    KVDA served on the Executive Committee of the Coordinating Committee for International Voluntary Service (CCIVS) based in Paris France from 2004 and 2014.
+                  </p>
+                  <p>
+                    This history of successfully partnering and assuming a leadership position with international organizations demonstrates KVDA's aptitude for working cross culturally.
+                  </p>
+                  <p>
+                    <span className="font-medium text-gray-800">Network of Past Volunteers</span> – KVDA has worked with thousands of international and Kenyan volunteers over the years since inception in 1962.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-24">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <Card className="border border-gray-100 shadow-sm border-primary/20 h-full">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Target className="w-6 h-6 text-primary" />
+                    <h3 className="text-2xl font-display font-medium text-primary">Mission</h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed font-light">
+                    The mission of KVDA is to promote peace, and understanding through international volunteerism combined with locally-driven, sustainable development. We believe that powerful personal and global change happens when people work together, build cross-cultural friendships, and mobilize their resources to support development against dependence.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Card className="border border-gray-100 shadow-sm h-full">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Eye className="w-6 h-6 text-primary" />
+                    <h3 className="text-2xl font-display font-medium text-gray-900">Vision</h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed font-light">
+                    KVDA envisions a more peaceful and connected world through International Voluntary Service.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-24"
+          >
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-display font-medium text-gray-900 mb-4">YouTube Video</h3>
+              <div className="h-1 w-20 bg-primary mx-auto mt-4" />
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-200" style={{ paddingBottom: "56.25%" }}>
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-400">
+                  <p className="text-lg font-light" data-testid="text-video-placeholder">YouTube video will be added here</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-12 mb-24">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <BookOpen className="w-6 h-6 text-primary" />
+                <h3 className="text-2xl font-display font-medium text-gray-900">Strategic Objectives</h3>
+              </div>
+              <div className="h-1 w-20 bg-primary mb-8" />
+              <div className="space-y-3">
+                {[
+                  "Afford voluntary service opportunities to young people.",
+                  "Mobilize communities to action.",
+                  "Supplement formal education with experiential learning.",
+                  "Create awareness amongst Kenyan communities about development issues.",
+                  "Foster global peace, friendship and understanding.",
+                  "Mobilizing all-purpose resources to promote grassroots development."
+                ].map((objective) => (
+                  <div key={objective} className="flex items-start gap-3 p-3 bg-gray-50 rounded-md border border-gray-100">
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700 text-sm font-light">{objective}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl font-display font-medium text-gray-900 mb-6">Our History</h3>
+              <h3 className="text-2xl font-display font-medium text-gray-900 mb-6">Core Values</h3>
               <div className="h-1 w-20 bg-primary mb-8" />
-              <div className="space-y-4 text-gray-600 font-light leading-relaxed">
-                <p>
-                  The Kenya Voluntary Development Association (KVDA) is an indigenous, non-political, 
-                  and non-sectarian membership organization. It was registered under the Societies' Act 
-                  in Kenya and later as a Non-Governmental Organization (NGO) in 1993.
-                </p>
-                <p>
-                  Founded in 1962, KVDA was the first work camp organization in Kenya. For over six 
-                  decades, we have been at the forefront of voluntary service, hosting thousands of 
-                  international volunteers and sending Kenyans abroad to foster cross-cultural understanding.
-                </p>
-                <p>
-                  Our motto, "Development Against Dependence," guides every project we undertake. We 
-                  strive to empower communities to take charge of their own development rather than 
-                  relying on external aid. Through international volunteer exchanges, we build bridges 
-                  between cultures while addressing real community needs.
-                </p>
+              <div className="space-y-3">
+                {[
+                  "Promotion of voluntarism.",
+                  "Transparency and accountability.",
+                  "Participatory evaluation of projects.",
+                  "Local community ownership of projects.",
+                  "Continuous research and development.",
+                  "Regular follow up of projects.",
+                  "A learning organization.",
+                  "Documentary evidence of processes and events."
+                ].map((value) => (
+                  <div key={value} className="flex items-start gap-3 p-3 bg-gray-50 rounded-md border border-gray-100">
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700 text-sm font-light">{value}</span>
+                  </div>
+                ))}
               </div>
             </motion.div>
-          </div>
-
-          <div className="mb-24">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-display font-medium text-gray-900 mb-4">Our Core Values</h3>
-              <p className="text-gray-600 font-light">The principles that guide our work every day.</p>
-              <div className="h-1 w-20 bg-primary mx-auto mt-4" />
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                "Volunteerism & Service",
-                "Cross-cultural Understanding",
-                "Community Participation",
-                "Sustainability",
-                "Integrity & Transparency",
-                "Gender Equality"
-              ].map((value) => (
-                <div key={value} className="flex items-center gap-3 p-4 bg-gray-50 rounded-md border border-gray-100">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="text-gray-700 text-sm font-medium">{value}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
