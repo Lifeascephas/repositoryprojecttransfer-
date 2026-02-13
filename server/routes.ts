@@ -232,12 +232,12 @@ export async function registerRoutes(
     res.json(items);
   });
 
-  app.get("/api/workcamps", async (req, res) => {
+  app.get(api.workcamps.list.path, async (req, res) => {
     const items = await storage.getWorkcamps();
     res.json(items);
   });
 
-  app.get("/api/workcamps/:id", async (req, res) => {
+  app.get(api.workcamps.get.path, async (req, res) => {
     const item = await storage.getWorkcamp(Number(req.params.id));
     if (!item) return res.status(404).json({ message: "Workcamp not found" });
     res.json(item);

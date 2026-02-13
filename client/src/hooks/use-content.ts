@@ -105,9 +105,9 @@ export function useTestimonials() {
 
 export function useWorkcamps() {
   return useQuery({
-    queryKey: ["/api/workcamps"],
+    queryKey: [api.workcamps.list.path],
     queryFn: async () => {
-      const res = await fetch("/api/workcamps");
+      const res = await fetch(api.workcamps.list.path);
       if (!res.ok) throw new Error("Failed to fetch workcamps");
       return res.json();
     },
@@ -116,9 +116,9 @@ export function useWorkcamps() {
 
 export function useWorkcamp(id: number) {
   return useQuery({
-    queryKey: ["/api/workcamps", id],
+    queryKey: [api.workcamps.get.path, id],
     queryFn: async () => {
-      const res = await fetch(`/api/workcamps/${id}`);
+      const res = await fetch(api.workcamps.get.path.replace(":id", String(id)));
       if (res.status === 404) throw new Error("Workcamp not found");
       if (!res.ok) throw new Error("Failed to fetch workcamp");
       return res.json();

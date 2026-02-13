@@ -1,6 +1,6 @@
 
 import { z } from 'zod';
-import { insertInquirySchema, insertVolunteerApplicationSchema, insertTeamMemberSchema, insertBoardMemberSchema, insertGalleryPhotoSchema, insertDonationSchema, programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials, volunteerApplications, newsletterSubscribers, galleryPhotos, donations } from './schema';
+import { insertInquirySchema, insertVolunteerApplicationSchema, insertTeamMemberSchema, insertBoardMemberSchema, insertGalleryPhotoSchema, insertDonationSchema, programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials, volunteerApplications, newsletterSubscribers, galleryPhotos, donations, workcamps } from './schema';
 
 export { insertInquirySchema, insertVolunteerApplicationSchema, insertTeamMemberSchema, insertBoardMemberSchema, insertGalleryPhotoSchema, insertDonationSchema };
 
@@ -242,6 +242,23 @@ export const api = {
       path: '/api/gallery/:id' as const,
       responses: {
         200: z.object({ success: z.boolean() }),
+        404: z.object({ message: z.string() }),
+      },
+    },
+  },
+  workcamps: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/workcamps' as const,
+      responses: {
+        200: z.array(z.custom<typeof workcamps.$inferSelect>()),
+      },
+    },
+    get: {
+      method: 'GET' as const,
+      path: '/api/workcamps/:id' as const,
+      responses: {
+        200: z.custom<typeof workcamps.$inferSelect>(),
         404: z.object({ message: z.string() }),
       },
     },

@@ -48,6 +48,7 @@ Preferred communication style: Simple, everyday language.
 - **testimonials** — Volunteer testimonials (name, country, program, quote, imageUrl)
 - **newsletter_subscribers** — Newsletter subscriptions (email, confirmed, confirmationToken, subscribedAt, confirmedAt)
 - **gallery_photos** — Photo gallery (title, description, imageUrl, category, uploadedAt)
+- **workcamps** — 2026 Workcamp programs (code, name, location, county, dates, startDate, endDate, month, type, theme, description, activities, accommodation, maxVolunteers, ageRange, fees, imageUrl)
 - **donations** — Donation records (amount, currency, method, donorEmail, donorName, status, transactionId)
 - **sessions** — PostgreSQL session store for Replit Auth (sid, sess, expire)
 - **users (auth)** — Replit Auth users (id, email, firstName, lastName, profileImageUrl, timestamps)
@@ -70,6 +71,8 @@ Preferred communication style: Simple, everyday language.
 - `GET /api/gallery` — List all gallery photos
 - `POST /api/gallery` — Add gallery photo (auth required)
 - `DELETE /api/gallery/:id` — Delete gallery photo (auth required)
+- `GET /api/workcamps` — List all 2026 workcamps (16 projects, Jan-Nov)
+- `GET /api/workcamps/:id` — Get single workcamp details
 - `POST /api/donations` — Record a donation intent
 - `GET /api/donations` — List all donations (auth required)
 - `GET /api/auth/user` — Get authenticated user (Replit Auth)
