@@ -392,11 +392,11 @@ async function seedDatabase() {
       },
       {
         title: "Neema Good Shepherds Orphanage",
-        location: "Bungoma County",
+        location: "Webuye, Bungoma County",
         sector: "Community Development",
         code: "KVDA/STV/2026/NGS",
-        description: "Supporting orphaned and vulnerable children at Neema Good Shepherds through education, nutrition, and holistic care programs. Volunteers assist with childcare, tutoring, and facility improvement.",
-        imageUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80",
+        description: "Neema Good Shepherds School is located in Webuye West Sub-County, Bungoma County, 13 km from Webuye Town. Started in 2011 with 80 pupils under banana shade on a donated half acre of land, the school now has a population of over 300 pupils with 8 teachers and 2 non-teaching staff. Dedicated to academic excellence and character education, the school supports orphaned and vulnerable children. Volunteers participate in manual work at the school, social work with children, HIV/AIDS awareness, home visits, and inter-cultural education.",
+        imageUrl: "/assets/neema-good-shepherds.webp",
         programType: "short_term"
       },
       {
