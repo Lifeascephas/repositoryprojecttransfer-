@@ -383,11 +383,11 @@ async function seedDatabase() {
       },
       {
         title: "Happy Me Happy You Volunteer",
-        location: "Kisumu",
+        location: "Hamisi, Vihiga County, Western Kenya",
         sector: "Community Development",
         code: "KVDA/STV/2026/HMHY",
-        description: "A community wellness and empowerment initiative focused on mental health awareness, youth mentorship, and community bonding through social activities and support programs.",
-        imageUrl: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80",
+        description: "Happy Me Happy You is a community-based organization set up to break the cycle of poverty in communities in Western Kenya. Located in Kipkiran village, Vihiga County, the CBO prioritizes children, with the majority being orphans who have grown up in extreme poverty with food scarcity. By supplementing nutritional needs, providing clean water and other basic necessities, the CBO provides a conducive environment for learning. Volunteers teach children, cook and serve meals, assist in classroom construction, farm to provide food, and engage in team building activities.",
+        imageUrl: "/assets/happy-me-happy-you.jpeg",
         programType: "short_term"
       },
       {
