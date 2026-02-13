@@ -1,21 +1,24 @@
-import { usePartners } from "@/hooks/use-content";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Globe, ExternalLink } from "lucide-react";
-import type { Partner } from "@shared/schema";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
+
+import ccivsLogo from "@assets/CCIVS-logo-horizontal-1_1770994490707.png";
+import eavsLogo from "@assets/eavs-logo_1770994490709.png";
+import vascoLogo from "@assets/kvda-vaSCO_-Print-02-1_1770994490710.png";
+import allianceLogo from "@assets/logo-1_1770994490710.jpg";
+import navoLogo from "@assets/WhatsApp-Image-2020-09-27-at-16.26.07_1770994490711.jpg";
+
+const affiliations = [
+  { name: "Coordinating Committee for International Voluntary Service (CCIVS)", logo: ccivsLogo, level: "International" },
+  { name: "Alliance of European Voluntary Service Organisations", logo: allianceLogo, level: "Continental" },
+  { name: "Network of African Voluntary Organisations (NAVO)", logo: navoLogo, level: "Continental" },
+  { name: "Eastern Africa Voluntary Service Network (EAVS)", logo: eavsLogo, level: "Regional" },
+  { name: "Voluntary Associations Consortium of Kenya (VASCO)", logo: vascoLogo, level: "National" },
+];
 
 export default function Partners() {
-  const { data: partners, isLoading } = usePartners();
-
-  if (isLoading) {
-    return (
-      <div className="py-20 text-center min-h-screen">
-        <div className="animate-spin h-10 w-10 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4" />
-        <p className="text-muted-foreground">Loading partners...</p>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen">
       <section className="relative py-32 overflow-hidden">
@@ -38,7 +41,7 @@ export default function Partners() {
               Our <span className="text-primary italic font-normal">Partners</span>
             </h1>
             <p className="text-lg text-zinc-300 font-light leading-relaxed">
-              KVDA works with over 100 partner organizations across 40+ countries. Together, we mobilize 
+              KVDA works with over 100 partner organizations across 40+ countries. Together, we mobilize
               volunteers for community development and cross-cultural exchange worldwide.
             </p>
           </motion.div>
@@ -47,54 +50,45 @@ export default function Partners() {
 
       <section className="py-24 bg-white">
         <div className="container px-4">
-          <div className="max-w-3xl mb-16">
-            <h2 className="text-3xl font-display font-medium text-gray-900 mb-6">International Partner Organizations</h2>
-            <div className="h-1 w-24 bg-primary mb-8" />
-            <p className="text-gray-600 font-light">
-              Our partnership network spans across Africa, Asia, Europe, and the Americas, enabling volunteer exchange and collaborative development projects globally.
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center mb-16"
+          >
+            <h2 className="text-3xl font-display font-medium text-gray-900 mb-6" data-testid="text-affiliations-heading">
+              Our Affiliations
+            </h2>
+            <div className="h-1 w-24 bg-primary mx-auto mb-8" />
+            <p className="text-gray-700 text-lg font-light leading-relaxed" data-testid="text-affiliations-intro">
+              KVDA is affiliated to the following National, Regional, Continental and International Voluntary Service Networks:
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {(partners as Partner[])?.map((partner, index) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {affiliations.map((partner, index) => (
               <motion.div
-                key={partner.id}
+                key={partner.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
+                transition={{ delay: index * 0.08 }}
               >
-                <Card className="border border-gray-100 shadow-sm h-full group" data-testid={`card-partner-${partner.id}`}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
-                        <Globe className="w-6 h-6 text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-base font-medium text-gray-900 mb-1 leading-tight" data-testid={`text-partner-name-${partner.id}`}>
-                          {partner.name}
-                        </h3>
-                        {partner.country && (
-                          <p className="text-primary text-xs font-medium uppercase tracking-wider mb-2" data-testid={`text-partner-country-${partner.id}`}>
-                            {partner.country}
-                          </p>
-                        )}
-                        {partner.description && (
-                          <p className="text-gray-500 text-sm font-light leading-relaxed">{partner.description}</p>
-                        )}
-                        {partner.website && (
-                          <a
-                            href={partner.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-xs text-gray-400 hover:text-primary transition-colors mt-3"
-                            data-testid={`link-partner-website-${partner.id}`}
-                          >
-                            <ExternalLink className="w-3 h-3" />
-                            Visit website
-                          </a>
-                        )}
-                      </div>
+                <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-affiliation-${index}`}>
+                  <CardContent className="p-6 flex flex-col items-center text-center gap-4">
+                    <div className="w-full h-32 flex items-center justify-center p-4">
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="max-h-full max-w-full object-contain"
+                        data-testid={`img-partner-logo-${index}`}
+                      />
+                    </div>
+                    <div>
+                      <span className="text-xs font-semibold text-primary uppercase tracking-wider">{partner.level}</span>
+                      <h3 className="text-sm font-semibold text-gray-900 mt-1 leading-snug" data-testid={`text-partner-name-${index}`}>
+                        {partner.name}
+                      </h3>
                     </div>
                   </CardContent>
                 </Card>
@@ -102,16 +96,23 @@ export default function Partners() {
             ))}
           </div>
 
-          <div className="mt-20 p-12 rounded-2xl bg-gray-50 border border-gray-100 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20 p-12 rounded-md bg-gray-50 border border-gray-100 text-center max-w-3xl mx-auto"
+          >
             <h3 className="text-2xl font-display font-medium text-gray-900 mb-4">Become a Partner</h3>
             <p className="text-gray-600 font-light max-w-2xl mx-auto mb-6">
-              If your organization is interested in partnering with KVDA for volunteer exchange 
+              If your organization is interested in partnering with KVDA for volunteer exchange
               or collaborative development projects, we'd love to hear from you.
             </p>
-            <p className="text-gray-600 text-sm">
-              Contact us at <a href="mailto:info@kvdakenya.org" className="text-primary hover:underline" data-testid="link-partner-email">info@kvdakenya.org</a>
-            </p>
-          </div>
+            <Link href="/contact">
+              <Button className="bg-primary text-white rounded-md" data-testid="button-partner-contact">
+                Contact Us <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </section>
     </div>
