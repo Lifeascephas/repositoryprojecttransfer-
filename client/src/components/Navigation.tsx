@@ -19,6 +19,7 @@ const navItems: NavItem[] = [
     label: "About Us",
     children: [
       { href: "/about", label: "Our Story" },
+      { href: "/kvda-history", label: "KVDA History" },
       { href: "/what-we-do", label: "What We Do" },
       { href: "/events", label: "Events" },
     ],
