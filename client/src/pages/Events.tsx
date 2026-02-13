@@ -9,7 +9,7 @@ export default function Events() {
 
   if (isLoading) {
     return (
-      <div className="py-20 text-center bg-black min-h-screen">
+      <div className="py-20 text-center min-h-screen">
         <div className="animate-spin h-10 w-10 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4" />
         <p className="text-muted-foreground">Loading events...</p>
       </div>
@@ -17,7 +17,7 @@ export default function Events() {
   }
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen">
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -44,7 +44,7 @@ export default function Events() {
         </div>
       </section>
 
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-white">
         <div className="container px-4">
           <div className="grid md:grid-cols-2 gap-8">
             {(events as Event[])?.map((event, index) => (
@@ -55,7 +55,7 @@ export default function Events() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="bg-zinc-900/50 border-white/5 overflow-hidden h-full" data-testid={`card-event-${event.id}`}>
+                <Card className="border border-gray-100 shadow-sm overflow-hidden h-full" data-testid={`card-event-${event.id}`}>
                   <div className="h-56 overflow-hidden relative">
                     <img
                       src={event.imageUrl || "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80"}
@@ -70,18 +70,18 @@ export default function Events() {
                     )}
                   </div>
                   <CardContent className="p-8">
-                    <h3 className="text-xl font-medium text-white mb-4" data-testid={`text-event-title-${event.id}`}>{event.title}</h3>
+                    <h3 className="text-xl font-medium text-gray-900 mb-4" data-testid={`text-event-title-${event.id}`}>{event.title}</h3>
                     <div className="flex items-center gap-2 text-primary text-sm mb-2">
                       <CalendarDays className="h-4 w-4" />
                       <span data-testid={`text-event-date-${event.id}`}>{event.date}</span>
                     </div>
                     {event.location && (
-                      <div className="flex items-center gap-2 text-zinc-400 text-sm mb-4">
+                      <div className="flex items-center gap-2 text-gray-500 text-sm mb-4">
                         <MapPin className="h-4 w-4" />
                         <span data-testid={`text-event-location-${event.id}`}>{event.location}</span>
                       </div>
                     )}
-                    <p className="text-zinc-400 font-light leading-relaxed" data-testid={`text-event-desc-${event.id}`}>{event.description}</p>
+                    <p className="text-gray-600 font-light leading-relaxed" data-testid={`text-event-desc-${event.id}`}>{event.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>

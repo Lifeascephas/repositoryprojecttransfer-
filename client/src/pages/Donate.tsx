@@ -42,7 +42,7 @@ const impactAreas = [
 
 export default function Donate() {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen">
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -70,12 +70,12 @@ export default function Donate() {
         </div>
       </section>
 
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-white">
         <div className="container px-4">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-4xl font-display font-medium text-white mb-6">Where Your Donation Goes</h2>
+            <h2 className="text-4xl font-display font-medium text-gray-900 mb-6">Where Your Donation Goes</h2>
             <div className="h-1 w-24 bg-primary mb-8" />
-            <p className="text-lg text-zinc-400 font-light">
+            <p className="text-lg text-gray-600 font-light">
               Every donation is carefully directed to maximize impact in the communities we serve.
             </p>
           </div>
@@ -89,13 +89,13 @@ export default function Donate() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
               >
-                <Card className="bg-zinc-900/50 border-white/5 h-full" data-testid={`card-impact-${index}`}>
+                <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-impact-${index}`}>
                   <CardContent className="p-8">
                     <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
                       <area.icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="text-lg font-medium text-white mb-3">{area.title}</h3>
-                    <p className="text-zinc-400 font-light text-sm leading-relaxed">{area.description}</p>
+                    <h3 className="text-lg font-medium text-gray-900 mb-3">{area.title}</h3>
+                    <p className="text-gray-600 font-light text-sm leading-relaxed">{area.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -104,43 +104,43 @@ export default function Donate() {
         </div>
       </section>
 
-      <section className="py-24 bg-black">
+      <section className="py-24 bg-gray-50">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-zinc-900/50 border-white/5 overflow-hidden">
+            <Card className="border border-gray-100 shadow-sm overflow-hidden">
               <CardContent className="p-10 md:p-16">
                 <div className="text-center">
                   <Heart className="w-16 h-16 text-primary mx-auto mb-8" />
-                  <h2 className="text-3xl md:text-4xl font-display font-medium text-white mb-6">How to Donate</h2>
-                  <p className="text-zinc-400 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+                  <h2 className="text-3xl md:text-4xl font-display font-medium text-gray-900 mb-6">How to Donate</h2>
+                  <p className="text-gray-600 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
                     You can support KVDA's community development work through the following channels. 
                     All donations are tax-deductible and go directly towards our programs.
                   </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8 mb-10">
-                  <div className="p-6 rounded-xl bg-zinc-800/50 border border-white/5">
-                    <h3 className="text-lg font-medium text-white mb-4">Bank Transfer</h3>
-                    <div className="space-y-2 text-sm text-zinc-400">
-                      <p><span className="text-zinc-300">Bank:</span> Kenya Commercial Bank (KCB)</p>
-                      <p><span className="text-zinc-300">Account Name:</span> KVDA</p>
-                      <p><span className="text-zinc-300">Account No:</span> 1100274857</p>
-                      <p><span className="text-zinc-300">Branch:</span> Karen</p>
-                      <p><span className="text-zinc-300">Swift Code:</span> KCBLKENX</p>
+                  <div className="p-6 rounded-xl bg-gray-50 border border-gray-200">
+                    <h3 className="text-lg font-medium text-gray-900 mb-4">Bank Transfer</h3>
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <p><span className="text-gray-700">Bank:</span> Kenya Commercial Bank (KCB)</p>
+                      <p><span className="text-gray-700">Account Name:</span> KVDA</p>
+                      <p><span className="text-gray-700">Account No:</span> 1100274857</p>
+                      <p><span className="text-gray-700">Branch:</span> Karen</p>
+                      <p><span className="text-gray-700">Swift Code:</span> KCBLKENX</p>
                     </div>
                   </div>
-                  <div className="p-6 rounded-xl bg-zinc-800/50 border border-white/5">
-                    <h3 className="text-lg font-medium text-white mb-4">Mobile Money (M-Pesa)</h3>
-                    <div className="space-y-2 text-sm text-zinc-400">
-                      <p><span className="text-zinc-300">Paybill No:</span> Available on request</p>
-                      <p><span className="text-zinc-300">Account Name:</span> KVDA</p>
-                      <p className="mt-4 text-zinc-300">For M-Pesa donations, please contact us for the current Paybill number.</p>
+                  <div className="p-6 rounded-xl bg-gray-50 border border-gray-200">
+                    <h3 className="text-lg font-medium text-gray-900 mb-4">Mobile Money (M-Pesa)</h3>
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <p><span className="text-gray-700">Paybill No:</span> Available on request</p>
+                      <p><span className="text-gray-700">Account Name:</span> KVDA</p>
+                      <p className="mt-4 text-gray-700">For M-Pesa donations, please contact us for the current Paybill number.</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="text-center">
-                  <p className="text-zinc-400 text-sm mb-6">
+                  <p className="text-gray-600 text-sm mb-6">
                     For more information about donating or to discuss specific project support, contact us:
                   </p>
                   <Link href="/contact">

@@ -11,7 +11,7 @@ export default function Programs() {
 
   if (isLoading) {
     return (
-      <div className="py-20 text-center bg-black min-h-screen">
+      <div className="py-20 text-center min-h-screen">
         <div className="animate-spin h-10 w-10 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4" />
         <p className="text-muted-foreground">Loading programs...</p>
       </div>
@@ -28,7 +28,7 @@ export default function Programs() {
   };
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen">
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -56,7 +56,7 @@ export default function Programs() {
         </div>
       </section>
 
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-white">
         <div className="container px-4">
           <div className="grid gap-16">
             {(programs as Program[])?.map((program: Program, index: number) => {
@@ -76,7 +76,7 @@ export default function Programs() {
                     data-testid={`card-program-${program.id}`}
                   >
                     <div className="flex-1 w-full">
-                      <div className="rounded-2xl overflow-hidden aspect-video relative group">
+                      <div className="rounded-2xl overflow-hidden aspect-video relative group shadow-sm">
                         <img
                           src={program.imageUrl || "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80"}
                           alt={program.title}
@@ -92,20 +92,20 @@ export default function Programs() {
                         <span>{program.type.replace('_', ' ')} Program</span>
                       </div>
 
-                      <h3 className="text-2xl font-display font-medium text-white" data-testid={`text-program-title-${program.id}`}>{program.title}</h3>
-                      <p className="text-zinc-400 leading-relaxed font-light">
+                      <h3 className="text-2xl font-display font-medium text-gray-900" data-testid={`text-program-title-${program.id}`}>{program.title}</h3>
+                      <p className="text-gray-600 leading-relaxed font-light">
                         {program.description}
                       </p>
 
                       {program.duration && (
-                        <div className="flex items-center text-sm text-zinc-300">
+                        <div className="flex items-center text-sm text-gray-700">
                           <Clock className="h-4 w-4 mr-2 text-primary" />
                           Duration: {program.duration}
                         </div>
                       )}
 
                       <Link href="/contact">
-                        <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full mt-4" data-testid={`link-apply-program-${program.id}`}>
+                        <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-md mt-4" data-testid={`link-apply-program-${program.id}`}>
                           Apply for this Program
                         </Button>
                       </Link>

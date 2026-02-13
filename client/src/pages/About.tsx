@@ -10,7 +10,7 @@ export default function About() {
   const { data: boardMembers } = useBoardMembers();
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen">
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -38,23 +38,23 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-white">
         <div className="container px-4">
           <div className="grid md:grid-cols-2 gap-8 mb-20">
-            <Card className="bg-zinc-900/50 border-primary/20">
+            <Card className="border border-gray-100 shadow-sm border-primary/20">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-display font-medium text-primary mb-4">Our Mission</h3>
-                <p className="text-zinc-400 leading-relaxed font-light">
+                <p className="text-gray-600 leading-relaxed font-light">
                   To mobilize resources and foster international cooperation for sustainable development in 
                   marginalized communities. We believe in the power of people coming together across borders 
                   to solve common challenges through voluntary service.
                 </p>
               </CardContent>
             </Card>
-            <Card className="bg-zinc-900/50 border-white/10">
+            <Card className="border border-gray-100 shadow-sm">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-display font-medium text-white mb-4">Our Vision</h3>
-                <p className="text-zinc-400 leading-relaxed font-light">
+                <h3 className="text-2xl font-display font-medium text-gray-900 mb-4">Our Vision</h3>
+                <p className="text-gray-600 leading-relaxed font-light">
                   A peaceful society where people live in harmony with dignity and mutual respect. 
                   We envision a world where development is participatory, sustainable, and driven by 
                   the collective effort of global citizens.
@@ -74,7 +74,7 @@ export default function About() {
                 <img
                   src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80"
                   alt="KVDA volunteers at work"
-                  className="relative rounded-2xl shadow-2xl w-full aspect-video object-cover ring-1 ring-white/10"
+                  className="relative rounded-2xl shadow-2xl w-full aspect-video object-cover ring-1 ring-gray-200"
                 />
               </div>
             </motion.div>
@@ -83,9 +83,9 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl font-display font-medium text-white mb-6">Our History</h3>
+              <h3 className="text-3xl font-display font-medium text-gray-900 mb-6">Our History</h3>
               <div className="h-1 w-20 bg-primary mb-8" />
-              <div className="space-y-4 text-zinc-400 font-light leading-relaxed">
+              <div className="space-y-4 text-gray-600 font-light leading-relaxed">
                 <p>
                   The Kenya Voluntary Development Association (KVDA) is an indigenous, non-political, 
                   and non-sectarian membership organization. It was registered under the Societies' Act 
@@ -108,8 +108,8 @@ export default function About() {
 
           <div className="mb-24">
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-display font-medium text-white mb-4">Our Core Values</h3>
-              <p className="text-zinc-400 font-light">The principles that guide our work every day.</p>
+              <h3 className="text-3xl font-display font-medium text-gray-900 mb-4">Our Core Values</h3>
+              <p className="text-gray-600 font-light">The principles that guide our work every day.</p>
               <div className="h-1 w-20 bg-primary mx-auto mt-4" />
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -121,9 +121,9 @@ export default function About() {
                 "Integrity & Transparency",
                 "Gender Equality"
               ].map((value) => (
-                <div key={value} className="flex items-center gap-3 p-4 bg-zinc-900/50 rounded-xl border border-white/5">
+                <div key={value} className="flex items-center gap-3 p-4 bg-gray-50 rounded-md border border-gray-100">
                   <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="text-zinc-200 text-sm font-medium">{value}</span>
+                  <span className="text-gray-700 text-sm font-medium">{value}</span>
                 </div>
               ))}
             </div>
@@ -132,12 +132,12 @@ export default function About() {
       </section>
 
       {boardMembers && (boardMembers as BoardMember[]).length > 0 && (
-        <section className="py-24 bg-black">
+        <section className="py-24 bg-gray-50">
           <div className="container px-4">
             <div className="max-w-3xl mb-16">
-              <h2 className="text-4xl font-display font-medium text-white mb-6">Board of Directors</h2>
+              <h2 className="text-4xl font-display font-medium text-gray-900 mb-6">Board of Directors</h2>
               <div className="h-1 w-24 bg-primary mb-8" />
-              <p className="text-zinc-400 font-light">Our governing board provides strategic direction and oversight.</p>
+              <p className="text-gray-600 font-light">Our governing board provides strategic direction and oversight.</p>
             </div>
 
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -149,7 +149,7 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08 }}
                 >
-                  <Card className="bg-zinc-900/50 border-white/5 overflow-hidden" data-testid={`card-board-member-${member.id}`}>
+                  <Card className="border border-gray-100 shadow-sm overflow-hidden" data-testid={`card-board-member-${member.id}`}>
                     <div className="h-56 overflow-hidden">
                       <img
                         src={member.imageUrl || "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400"}
@@ -158,7 +158,7 @@ export default function About() {
                       />
                     </div>
                     <CardContent className="p-5 text-center">
-                      <h4 className="font-medium text-white text-sm" data-testid={`text-board-name-${member.id}`}>{member.name}</h4>
+                      <h4 className="font-medium text-gray-900 text-sm" data-testid={`text-board-name-${member.id}`}>{member.name}</h4>
                       <p className="text-primary text-xs mt-1" data-testid={`text-board-position-${member.id}`}>{member.position}</p>
                     </CardContent>
                   </Card>
@@ -170,12 +170,12 @@ export default function About() {
       )}
 
       {teamMembers && (teamMembers as TeamMember[]).length > 0 && (
-        <section className="py-24 bg-zinc-950">
+        <section className="py-24 bg-white">
           <div className="container px-4">
             <div className="max-w-3xl mb-16">
-              <h2 className="text-4xl font-display font-medium text-white mb-6">Our Team</h2>
+              <h2 className="text-4xl font-display font-medium text-gray-900 mb-6">Our Team</h2>
               <div className="h-1 w-24 bg-primary mb-8" />
-              <p className="text-zinc-400 font-light">The dedicated staff who coordinate our programs and volunteer activities.</p>
+              <p className="text-gray-600 font-light">The dedicated staff who coordinate our programs and volunteer activities.</p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -187,24 +187,24 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08 }}
                 >
-                  <Card className="bg-zinc-900/50 border-white/5 overflow-hidden" data-testid={`card-team-member-${member.id}`}>
+                  <Card className="border border-gray-100 shadow-sm overflow-hidden" data-testid={`card-team-member-${member.id}`}>
                     <div className="flex items-center p-6 gap-5">
                       <img
                         src={member.imageUrl || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"}
                         alt={member.name}
-                        className="w-20 h-20 rounded-full object-cover ring-2 ring-white/10"
+                        className="w-20 h-20 rounded-full object-cover ring-2 ring-gray-200"
                       />
                       <div className="min-w-0">
-                        <h4 className="font-medium text-white" data-testid={`text-team-name-${member.id}`}>{member.name}</h4>
+                        <h4 className="font-medium text-gray-900" data-testid={`text-team-name-${member.id}`}>{member.name}</h4>
                         <p className="text-primary text-sm" data-testid={`text-team-role-${member.id}`}>{member.role}</p>
                         {member.email && (
-                          <div className="flex items-center gap-1 text-zinc-500 text-xs mt-2">
+                          <div className="flex items-center gap-1 text-gray-500 text-xs mt-2">
                             <Mail className="w-3 h-3" />
                             <span>{member.email}</span>
                           </div>
                         )}
                         {member.phone && (
-                          <div className="flex items-center gap-1 text-zinc-500 text-xs mt-1">
+                          <div className="flex items-center gap-1 text-gray-500 text-xs mt-1">
                             <Phone className="w-3 h-3" />
                             <span>{member.phone}</span>
                           </div>

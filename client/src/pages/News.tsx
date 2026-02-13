@@ -9,7 +9,7 @@ export default function NewsPage() {
 
   if (isLoading) {
     return (
-      <div className="py-20 text-center bg-black min-h-screen">
+      <div className="py-20 text-center min-h-screen">
         <div className="animate-spin h-10 w-10 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4" />
         <p className="text-muted-foreground">Loading news...</p>
       </div>
@@ -17,7 +17,7 @@ export default function NewsPage() {
   }
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen">
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -44,7 +44,7 @@ export default function NewsPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-gray-50">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto space-y-10">
             {(newsItems as News[])?.map((item: News, index: number) => (
@@ -55,7 +55,7 @@ export default function NewsPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="overflow-hidden bg-zinc-900/50 border-white/5" data-testid={`card-news-${item.id}`}>
+                <Card className="overflow-hidden border border-gray-100 shadow-sm" data-testid={`card-news-${item.id}`}>
                   <div className="md:flex">
                     <div className="md:w-2/5 h-64 md:h-auto relative">
                       <img
@@ -68,8 +68,8 @@ export default function NewsPage() {
                       <div className="text-sm font-medium text-primary mb-2 uppercase tracking-wider" data-testid={`text-news-date-${item.id}`}>
                         {item.publishedAt ? format(new Date(item.publishedAt), 'MMMM dd, yyyy') : 'Recently Published'}
                       </div>
-                      <h3 className="text-2xl font-display font-medium text-white mb-4" data-testid={`text-news-title-${item.id}`}>{item.title}</h3>
-                      <p className="text-zinc-400 font-light leading-relaxed whitespace-pre-line" data-testid={`text-news-content-${item.id}`}>{item.content}</p>
+                      <h3 className="text-2xl font-display font-medium text-gray-900 mb-4" data-testid={`text-news-title-${item.id}`}>{item.title}</h3>
+                      <p className="text-gray-600 font-light leading-relaxed whitespace-pre-line" data-testid={`text-news-content-${item.id}`}>{item.content}</p>
                     </CardContent>
                   </div>
                 </Card>

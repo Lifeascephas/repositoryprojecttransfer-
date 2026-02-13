@@ -31,7 +31,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen">
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -58,84 +58,84 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-white">
         <div className="container px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-8">
               <div className="grid gap-6">
-                <Card className="bg-zinc-900/50 border-white/5">
+                <Card className="border border-gray-100 shadow-sm">
                   <CardContent className="flex items-start p-6 gap-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
                       <MapPin className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-white text-lg mb-1" data-testid="text-contact-address-title">Visit Our Office</h3>
-                      <p className="text-zinc-400 font-light text-sm">Kwarara Road, Karen<br />Nairobi, Kenya</p>
-                      <p className="text-zinc-500 text-xs mt-2">P.O. Box 48902-00100</p>
+                      <h3 className="font-medium text-gray-900 text-lg mb-1" data-testid="text-contact-address-title">Visit Our Office</h3>
+                      <p className="text-gray-600 font-light text-sm">Kwarara Road, Karen<br />Nairobi, Kenya</p>
+                      <p className="text-gray-500 text-xs mt-2">P.O. Box 48902-00100</p>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-zinc-900/50 border-white/5">
+                <Card className="border border-gray-100 shadow-sm">
                   <CardContent className="flex items-start p-6 gap-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
                       <Mail className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-white text-lg mb-1">Email Us</h3>
-                      <p className="text-zinc-400 font-light text-sm" data-testid="text-contact-email">info@kvdakenya.org</p>
-                      <p className="text-zinc-500 text-xs mt-1">We respond within 24 hours</p>
+                      <h3 className="font-medium text-gray-900 text-lg mb-1">Email Us</h3>
+                      <p className="text-gray-600 font-light text-sm" data-testid="text-contact-email">info@kvdakenya.org</p>
+                      <p className="text-gray-500 text-xs mt-1">We respond within 24 hours</p>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-zinc-900/50 border-white/5">
+                <Card className="border border-gray-100 shadow-sm">
                   <CardContent className="flex items-start p-6 gap-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-white text-lg mb-1">Call Us</h3>
-                      <p className="text-zinc-400 font-light text-sm" data-testid="text-contact-phone">+254-721650357</p>
-                      <p className="text-zinc-500 text-xs mt-1">Mon-Fri, 8am - 5pm EAT</p>
+                      <h3 className="font-medium text-gray-900 text-lg mb-1">Call Us</h3>
+                      <p className="text-gray-600 font-light text-sm" data-testid="text-contact-phone">+254-721650357</p>
+                      <p className="text-gray-500 text-xs mt-1">Mon-Fri, 8am - 5pm EAT</p>
                     </div>
                   </CardContent>
                 </Card>
               </div>
 
-              <Card className="bg-zinc-900/50 border-white/5">
+              <Card className="border border-gray-100 shadow-sm">
                 <CardContent className="p-8">
-                  <h3 className="font-display font-medium text-white text-xl mb-6">How to Volunteer</h3>
-                  <ol className="relative border-l border-white/10 ml-3 space-y-8">
+                  <h3 className="font-display font-medium text-gray-900 text-xl mb-6">How to Volunteer</h3>
+                  <ol className="relative border-l border-gray-200 ml-3 space-y-8">
                     <li className="mb-10 ml-6">
-                      <span className="absolute flex items-center justify-center w-8 h-8 bg-primary/10 rounded-full -left-4 ring-4 ring-zinc-900">
+                      <span className="absolute flex items-center justify-center w-8 h-8 bg-primary/10 rounded-full -left-4 ring-4 ring-white">
                         <span className="text-primary font-medium text-sm">1</span>
                       </span>
-                      <h4 className="font-medium text-white mb-1">Choose a Program</h4>
-                      <p className="text-sm text-zinc-400 font-light">Browse our Short-term, Long-term, or Educational tour programs.</p>
+                      <h4 className="font-medium text-gray-900 mb-1">Choose a Program</h4>
+                      <p className="text-sm text-gray-600 font-light">Browse our Short-term, Long-term, or Educational tour programs.</p>
                     </li>
                     <li className="mb-10 ml-6">
-                      <span className="absolute flex items-center justify-center w-8 h-8 bg-primary/10 rounded-full -left-4 ring-4 ring-zinc-900">
+                      <span className="absolute flex items-center justify-center w-8 h-8 bg-primary/10 rounded-full -left-4 ring-4 ring-white">
                         <span className="text-primary font-medium text-sm">2</span>
                       </span>
-                      <h4 className="font-medium text-white mb-1">Send an Inquiry</h4>
-                      <p className="text-sm text-zinc-400 font-light">Use the form to express your interest. We'll send you the Volunteer Exchange Form (VEF).</p>
+                      <h4 className="font-medium text-gray-900 mb-1">Send an Inquiry</h4>
+                      <p className="text-sm text-gray-600 font-light">Use the form to express your interest. We'll send you the Volunteer Exchange Form (VEF).</p>
                     </li>
                     <li className="ml-6">
-                      <span className="absolute flex items-center justify-center w-8 h-8 bg-primary/10 rounded-full -left-4 ring-4 ring-zinc-900">
+                      <span className="absolute flex items-center justify-center w-8 h-8 bg-primary/10 rounded-full -left-4 ring-4 ring-white">
                         <span className="text-primary font-medium text-sm">3</span>
                       </span>
-                      <h4 className="font-medium text-white mb-1">Prepare & Travel</h4>
-                      <p className="text-sm text-zinc-400 font-light">Once accepted, we help with logistics, visa advice, and airport pickup.</p>
+                      <h4 className="font-medium text-gray-900 mb-1">Prepare & Travel</h4>
+                      <p className="text-sm text-gray-600 font-light">Once accepted, we help with logistics, visa advice, and airport pickup.</p>
                     </li>
                   </ol>
                 </CardContent>
               </Card>
             </div>
 
-            <Card className="bg-zinc-900/50 border-white/5">
+            <Card className="border border-gray-100 shadow-sm">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-display font-medium text-white mb-6">Send a Message</h3>
+                <h3 className="text-2xl font-display font-medium text-gray-900 mb-6">Send a Message</h3>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
                     <FormField
@@ -143,9 +143,9 @@ export default function Contact() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-zinc-300">Full Name</FormLabel>
+                          <FormLabel className="text-gray-700">Full Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Doe" className="h-12 bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-600" data-testid="input-name" {...field} />
+                            <Input placeholder="John Doe" className="h-12 border-gray-200" data-testid="input-name" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -157,9 +157,9 @@ export default function Contact() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-zinc-300">Email Address</FormLabel>
+                          <FormLabel className="text-gray-700">Email Address</FormLabel>
                           <FormControl>
-                            <Input placeholder="john@example.com" className="h-12 bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-600" data-testid="input-email" {...field} />
+                            <Input placeholder="john@example.com" className="h-12 border-gray-200" data-testid="input-email" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -171,9 +171,9 @@ export default function Contact() {
                       name="subject"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-zinc-300">Subject</FormLabel>
+                          <FormLabel className="text-gray-700">Subject</FormLabel>
                           <FormControl>
-                            <Input placeholder="Volunteering Inquiry" className="h-12 bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-600" data-testid="input-subject" {...field} value={field.value || ''} />
+                            <Input placeholder="Volunteering Inquiry" className="h-12 border-gray-200" data-testid="input-subject" {...field} value={field.value || ''} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -185,11 +185,11 @@ export default function Contact() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-zinc-300">Message</FormLabel>
+                          <FormLabel className="text-gray-700">Message</FormLabel>
                           <FormControl>
                             <Textarea
                               placeholder="Tell us about your interest in volunteering..."
-                              className="min-h-[150px] bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-600 resize-none"
+                              className="min-h-[150px] border-gray-200 resize-none"
                               data-testid="input-message"
                               {...field}
                             />
@@ -201,7 +201,7 @@ export default function Contact() {
 
                     <Button
                       type="submit"
-                      className="w-full h-12 text-lg font-medium bg-primary hover:bg-primary/90 rounded-full"
+                      className="w-full h-12 text-lg font-medium bg-primary hover:bg-primary/90"
                       disabled={createInquiry.isPending}
                       data-testid="button-submit"
                     >

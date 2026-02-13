@@ -9,7 +9,7 @@ export default function Partners() {
 
   if (isLoading) {
     return (
-      <div className="py-20 text-center bg-black min-h-screen">
+      <div className="py-20 text-center min-h-screen">
         <div className="animate-spin h-10 w-10 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4" />
         <p className="text-muted-foreground">Loading partners...</p>
       </div>
@@ -17,7 +17,7 @@ export default function Partners() {
   }
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen">
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -45,12 +45,12 @@ export default function Partners() {
         </div>
       </section>
 
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-white">
         <div className="container px-4">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-3xl font-display font-medium text-white mb-6">International Partner Organizations</h2>
+            <h2 className="text-3xl font-display font-medium text-gray-900 mb-6">International Partner Organizations</h2>
             <div className="h-1 w-24 bg-primary mb-8" />
-            <p className="text-zinc-400 font-light">
+            <p className="text-gray-600 font-light">
               Our partnership network spans across Africa, Asia, Europe, and the Americas, enabling volunteer exchange and collaborative development projects globally.
             </p>
           </div>
@@ -64,14 +64,14 @@ export default function Partners() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
               >
-                <Card className="bg-zinc-900/50 border-white/5 h-full group" data-testid={`card-partner-${partner.id}`}>
+                <Card className="border border-gray-100 shadow-sm h-full group" data-testid={`card-partner-${partner.id}`}>
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
                         <Globe className="w-6 h-6 text-primary" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-base font-medium text-white mb-1 leading-tight" data-testid={`text-partner-name-${partner.id}`}>
+                        <h3 className="text-base font-medium text-gray-900 mb-1 leading-tight" data-testid={`text-partner-name-${partner.id}`}>
                           {partner.name}
                         </h3>
                         {partner.country && (
@@ -80,14 +80,14 @@ export default function Partners() {
                           </p>
                         )}
                         {partner.description && (
-                          <p className="text-zinc-500 text-sm font-light leading-relaxed">{partner.description}</p>
+                          <p className="text-gray-500 text-sm font-light leading-relaxed">{partner.description}</p>
                         )}
                         {partner.website && (
                           <a
                             href={partner.website}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-xs text-zinc-400 hover:text-primary transition-colors mt-3"
+                            className="inline-flex items-center gap-1 text-xs text-gray-400 hover:text-primary transition-colors mt-3"
                             data-testid={`link-partner-website-${partner.id}`}
                           >
                             <ExternalLink className="w-3 h-3" />
@@ -102,13 +102,13 @@ export default function Partners() {
             ))}
           </div>
 
-          <div className="mt-20 p-12 rounded-2xl bg-zinc-900/50 border border-white/5 text-center">
-            <h3 className="text-2xl font-display font-medium text-white mb-4">Become a Partner</h3>
-            <p className="text-zinc-400 font-light max-w-2xl mx-auto mb-6">
+          <div className="mt-20 p-12 rounded-2xl bg-gray-50 border border-gray-100 text-center">
+            <h3 className="text-2xl font-display font-medium text-gray-900 mb-4">Become a Partner</h3>
+            <p className="text-gray-600 font-light max-w-2xl mx-auto mb-6">
               If your organization is interested in partnering with KVDA for volunteer exchange 
               or collaborative development projects, we'd love to hear from you.
             </p>
-            <p className="text-zinc-400 text-sm">
+            <p className="text-gray-600 text-sm">
               Contact us at <a href="mailto:info@kvdakenya.org" className="text-primary hover:underline" data-testid="link-partner-email">info@kvdakenya.org</a>
             </p>
           </div>

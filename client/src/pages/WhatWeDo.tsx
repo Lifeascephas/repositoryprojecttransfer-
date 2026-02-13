@@ -69,7 +69,7 @@ const sdgAreas = [
 
 export default function WhatWeDo() {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen">
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -97,7 +97,7 @@ export default function WhatWeDo() {
         </div>
       </section>
 
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-white">
         <div className="container px-4">
           <div className="grid gap-8">
             {sdgAreas.map((area, index) => (
@@ -108,7 +108,7 @@ export default function WhatWeDo() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
               >
-                <Card className="bg-zinc-900/50 border-white/5 overflow-hidden" data-testid={`card-sdg-${index}`}>
+                <Card className="border border-gray-100 shadow-sm overflow-hidden" data-testid={`card-sdg-${index}`}>
                   <CardContent className="p-8 md:p-10">
                     <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
                       <div className={`w-16 h-16 ${area.bgColor} rounded-2xl flex items-center justify-center shrink-0`}>
@@ -116,10 +116,10 @@ export default function WhatWeDo() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-3 flex-wrap">
-                          <h3 className="text-2xl font-medium text-white">{area.title}</h3>
+                          <h3 className="text-2xl font-medium text-gray-900">{area.title}</h3>
                           <span className={`text-xs font-medium ${area.color} ${area.bgColor} px-3 py-1 rounded-full`}>{area.sdg}</span>
                         </div>
-                        <p className="text-zinc-400 leading-relaxed font-light">{area.description}</p>
+                        <p className="text-gray-600 leading-relaxed font-light">{area.description}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -130,15 +130,15 @@ export default function WhatWeDo() {
         </div>
       </section>
 
-      <section className="py-24 bg-black">
+      <section className="py-24 bg-gray-50">
         <div className="container px-4 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl font-display font-medium text-white mb-6">Support Our Projects</h2>
-            <p className="text-lg text-zinc-400 mb-10 font-light">
+            <h2 className="text-4xl font-display font-medium text-gray-900 mb-6">Support Our Projects</h2>
+            <p className="text-lg text-gray-600 mb-10 font-light">
               Your contribution helps us continue making a difference in communities across Kenya.
               Whether through volunteering or donations, every effort counts.
             </p>
@@ -149,7 +149,7 @@ export default function WhatWeDo() {
                 </Button>
               </Link>
               <Link href="/donate">
-                <Button size="lg" variant="outline" className="border-white/10 text-white hover:bg-white/5 rounded-full px-10 h-14 backdrop-blur-md" data-testid="link-donate">
+                <Button size="lg" variant="outline" className="border-gray-300 text-gray-900 rounded-full px-10 h-14" data-testid="link-donate">
                   Make a Donation
                 </Button>
               </Link>

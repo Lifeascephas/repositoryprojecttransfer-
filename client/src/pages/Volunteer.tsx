@@ -61,7 +61,7 @@ export default function Volunteer() {
   const { data: testimonials } = useTestimonials();
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen">
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -89,12 +89,12 @@ export default function Volunteer() {
         </div>
       </section>
 
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-white">
         <div className="container px-4">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-4xl font-display font-medium text-white mb-6">How to Volunteer</h2>
+            <h2 className="text-4xl font-display font-medium text-gray-900 mb-6">How to Volunteer</h2>
             <div className="h-1 w-24 bg-primary mb-8" />
-            <p className="text-lg text-zinc-400 font-light">Follow these simple steps to start your volunteering journey with KVDA.</p>
+            <p className="text-lg text-gray-600 font-light">Follow these simple steps to start your volunteering journey with KVDA.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -106,7 +106,7 @@ export default function Volunteer() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
               >
-                <Card className="bg-zinc-900/50 border-white/5 h-full" data-testid={`card-step-${index}`}>
+                <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-step-${index}`}>
                   <CardContent className="p-8">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
@@ -114,8 +114,8 @@ export default function Volunteer() {
                       </div>
                       <step.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-medium text-white mb-3">{step.title}</h3>
-                    <p className="text-zinc-400 font-light text-sm leading-relaxed">{step.description}</p>
+                    <h3 className="text-lg font-medium text-gray-900 mb-3">{step.title}</h3>
+                    <p className="text-gray-600 font-light text-sm leading-relaxed">{step.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -132,12 +132,12 @@ export default function Volunteer() {
         </div>
       </section>
 
-      <section className="py-24 bg-black">
+      <section className="py-24 bg-gray-50">
         <div className="container px-4">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-4xl font-display font-medium text-white mb-6">KVDA in Action</h2>
+            <h2 className="text-4xl font-display font-medium text-gray-900 mb-6">KVDA in Action</h2>
             <div className="h-1 w-24 bg-primary mb-8" />
-            <p className="text-lg text-zinc-400 font-light">Our flagship volunteer programs that drive community transformation.</p>
+            <p className="text-lg text-gray-600 font-light">Our flagship volunteer programs that drive community transformation.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -149,11 +149,11 @@ export default function Volunteer() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="bg-zinc-900/50 border-white/5 h-full" data-testid={`card-program-${index}`}>
+                <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-program-${index}`}>
                   <CardContent className="p-8">
                     <CheckCircle2 className="w-8 h-8 text-primary mb-6" />
-                    <h3 className="text-lg font-medium text-white mb-4">{prog.title}</h3>
-                    <p className="text-zinc-400 font-light text-sm leading-relaxed">{prog.description}</p>
+                    <h3 className="text-lg font-medium text-gray-900 mb-4">{prog.title}</h3>
+                    <p className="text-gray-600 font-light text-sm leading-relaxed">{prog.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -163,10 +163,10 @@ export default function Volunteer() {
       </section>
 
       {testimonials && (testimonials as Testimonial[]).length > 0 && (
-        <section className="py-24 bg-zinc-950">
+        <section className="py-24 bg-white">
           <div className="container px-4">
             <div className="max-w-3xl mb-16">
-              <h2 className="text-4xl font-display font-medium text-white mb-6">Volunteer Stories</h2>
+              <h2 className="text-4xl font-display font-medium text-gray-900 mb-6">Volunteer Stories</h2>
               <div className="h-1 w-24 bg-primary mb-8" />
             </div>
 
@@ -179,17 +179,17 @@ export default function Volunteer() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Card className="bg-zinc-900/50 border-white/5 h-full" data-testid={`card-testimonial-${t.id}`}>
+                  <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-testimonial-${t.id}`}>
                     <CardContent className="p-8">
-                      <Quote className="w-8 h-8 text-primary/30 mb-4" />
-                      <p className="text-zinc-300 font-light text-sm leading-relaxed mb-6 italic">"{t.quote}"</p>
+                      <Quote className="w-8 h-8 text-primary/20 mb-4" />
+                      <p className="text-gray-600 font-light text-sm leading-relaxed mb-6 italic">"{t.quote}"</p>
                       <div className="flex items-center gap-4">
                         {t.imageUrl && (
                           <img src={t.imageUrl} alt={t.name} className="w-12 h-12 rounded-full object-cover" />
                         )}
                         <div>
-                          <p className="text-white font-medium text-sm" data-testid={`text-testimonial-name-${t.id}`}>{t.name}</p>
-                          <p className="text-zinc-500 text-xs">{t.country} - {t.program}</p>
+                          <p className="text-gray-900 font-medium text-sm" data-testid={`text-testimonial-name-${t.id}`}>{t.name}</p>
+                          <p className="text-gray-500 text-xs">{t.country} - {t.program}</p>
                         </div>
                       </div>
                     </CardContent>
