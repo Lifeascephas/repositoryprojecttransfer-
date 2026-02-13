@@ -46,6 +46,9 @@ Preferred communication style: Simple, everyday language.
 - **board_members** — Board of directors (name, position, imageUrl, order)
 - **partners** — International partner organizations (name, country, website, logoUrl, description)
 - **testimonials** — Volunteer testimonials (name, country, program, quote, imageUrl)
+- **newsletter_subscribers** — Newsletter subscriptions (email, confirmed, confirmationToken, subscribedAt, confirmedAt)
+- **gallery_photos** — Photo gallery (title, description, imageUrl, category, uploadedAt)
+- **donations** — Donation records (amount, currency, method, donorEmail, donorName, status, transactionId)
 - **sessions** — PostgreSQL session store for Replit Auth (sid, sess, expire)
 - **users (auth)** — Replit Auth users (id, email, firstName, lastName, profileImageUrl, timestamps)
 
@@ -62,6 +65,13 @@ Preferred communication style: Simple, everyday language.
 - `GET /api/board-members` — List board members
 - `GET /api/partners` — List partner organizations
 - `GET /api/testimonials` — List volunteer testimonials
+- `POST /api/newsletter/subscribe` — Subscribe email to newsletter
+- `GET /api/newsletter/confirm/:token` — Confirm newsletter subscription
+- `GET /api/gallery` — List all gallery photos
+- `POST /api/gallery` — Add gallery photo (auth required)
+- `DELETE /api/gallery/:id` — Delete gallery photo (auth required)
+- `POST /api/donations` — Record a donation intent
+- `GET /api/donations` — List all donations (auth required)
 - `GET /api/auth/user` — Get authenticated user (Replit Auth)
 - `GET /api/login` — Replit Auth login redirect
 - `GET /api/logout` — Logout
