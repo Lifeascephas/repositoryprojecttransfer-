@@ -356,11 +356,11 @@ async function seedDatabase() {
       },
       {
         title: "St. Joseph's Nyamosense Special Unit School",
-        location: "Kisii County",
+        location: "Kuria, Migori County",
         sector: "Education",
         code: "KVDA/STV/2026/SJN",
-        description: "Supporting children with special needs through adapted teaching methods, therapy assistance, and inclusive education at St. Joseph's Nyamosense. Volunteers contribute to individualized learning and school improvements.",
-        imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80",
+        description: "St. Joseph's Nyamosense Special Unit School was started in 2012 under Nyamosense Primary School and Nyamosense Catholic Church, located in Kuria, Migori County in South West Kenya. The project sensitizes the local community on the plight of children with disabilities who suffer neglect and denial. Volunteers teach at the Special Unit School, care for orphans, interact with children with disabilities, learn sign language, make bricks, lead open forums on children's rights, and study retrogressive cultural practices like FGM.",
+        imageUrl: "/assets/st-josephs-nyamosense.jpg",
         programType: "short_term"
       },
       {
