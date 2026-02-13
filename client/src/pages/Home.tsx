@@ -636,7 +636,7 @@ export default function Home() {
             className="w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/50 to-primary/30" />
         </div>
         <div className="container px-4 md:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
