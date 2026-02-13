@@ -161,7 +161,7 @@ export default function Home() {
                 Since 1962, we have mobilized volunteers globally to foster peace and sustainable development.
               </p>
               <Link href="/about">
-                <Button variant="link" className="text-primary hover:text-primary/80 p-0 text-xl font-bold">
+                <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 text-xl font-bold">
                   Discover Our Legacy <ArrowRight className="ml-2 h-6 w-6" />
                 </Button>
               </Link>
@@ -220,7 +220,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-primary transition-colors line-clamp-2">{item.title}</h3>
                     <p className="text-zinc-500 text-lg line-clamp-3 mb-8 font-light leading-relaxed">{item.content}</p>
                     <Link href={`/news`}>
-                      <Button variant="link" className="text-white p-0 h-auto font-bold group-hover:translate-x-2 transition-transform text-lg">
+                      <Button variant="ghost" className="text-white p-0 h-auto font-bold group-hover:translate-x-2 transition-transform text-lg">
                         Read Story <ArrowRight className="ml-2 h-5 w-5" />
                       </Button>
                     </Link>
