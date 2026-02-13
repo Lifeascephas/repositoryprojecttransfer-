@@ -29,11 +29,11 @@ export default function Home() {
           className="absolute inset-0 z-0"
         >
           <img 
-            src="/hero-bg.png" 
-            alt="Volunteers in Kenya" 
+            src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?q=80&w=2083&auto=format&fit=crop" 
+            alt="Kenyan Landscape" 
             className="w-full h-full object-cover fixed"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/80 to-black/100" />
+          <div className="absolute inset-0 bg-black/70" />
         </motion.div>
         
         <div className="container relative z-10 px-4 text-center">
@@ -51,11 +51,11 @@ export default function Home() {
             >
               <span className="text-primary font-bold tracking-widest text-xs uppercase">Global Impact Since 1962</span>
             </motion.div>
-            <h1 className="text-5xl md:text-8xl lg:text-9xl font-display font-bold mb-8 leading-none tracking-tighter text-white">
+            <h1 className="text-5xl md:text-8xl lg:text-9xl font-display font-medium mb-8 leading-none tracking-tighter text-white">
               BUILDING <br/>
               <span className="text-primary italic">THE FUTURE</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
               Empowering marginalized communities through transformative international volunteering. Join our global mission.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
