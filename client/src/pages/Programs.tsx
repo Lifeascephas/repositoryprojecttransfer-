@@ -104,9 +104,9 @@ export default function Programs() {
                         </div>
                       )}
 
-                      <Link href="/contact">
-                        <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-md mt-4" data-testid={`link-apply-program-${program.id}`}>
-                          Apply for this Program
+                      <Link href={`/programs/${program.type}`}>
+                        <Button size="lg" className="bg-primary text-white rounded-md mt-4" data-testid={`link-learn-more-${program.id}`}>
+                          Learn More <ArrowRight className="h-4 w-4 ml-2" />
                         </Button>
                       </Link>
                     </div>

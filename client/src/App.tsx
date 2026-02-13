@@ -23,6 +23,7 @@ import Gallery from "@/pages/Gallery";
 import Workcamps from "@/pages/Workcamps";
 import WorkcampDetail from "@/pages/WorkcampDetail";
 import KvdaHistory from "@/pages/KvdaHistory";
+import ProgramDetail from "@/pages/ProgramDetail";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
@@ -48,6 +49,7 @@ function Router() {
           <Route path="/what-we-do/:slug" component={ServiceDetail} />
           <Route path="/events" component={Events} />
           <Route path="/programs" component={Programs} />
+          <Route path="/programs/:type" component={ProgramDetail} />
           <Route path="/projects" component={Projects} />
           <Route path="/workcamps" component={Workcamps} />
           <Route path="/workcamps/:id" component={WorkcampDetail} />
