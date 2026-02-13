@@ -3,7 +3,8 @@ import {
   programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials, volunteerApplications,
   type Program, type Project, type News, type Inquiry, type InsertInquiry,
   type Event, type TeamMember, type BoardMember, type Partner, type Testimonial,
-  type VolunteerApplication, type InsertVolunteerApplication
+  type VolunteerApplication, type InsertVolunteerApplication,
+  type InsertTeamMember, type InsertBoardMember
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, asc } from "drizzle-orm";
@@ -26,6 +27,12 @@ export interface IStorage {
   getVolunteerApplications(): Promise<VolunteerApplication[]>;
   getVolunteerApplication(id: number): Promise<VolunteerApplication | undefined>;
   updateVolunteerApplicationStatus(id: number, status: string): Promise<VolunteerApplication | undefined>;
+  createTeamMember(member: InsertTeamMember): Promise<TeamMember>;
+  updateTeamMember(id: number, member: Partial<InsertTeamMember>): Promise<TeamMember | undefined>;
+  deleteTeamMember(id: number): Promise<boolean>;
+  createBoardMember(member: InsertBoardMember): Promise<BoardMember>;
+  updateBoardMember(id: number, member: Partial<InsertBoardMember>): Promise<BoardMember | undefined>;
+  deleteBoardMember(id: number): Promise<boolean>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -103,6 +110,36 @@ export class DatabaseStorage implements IStorage {
   async updateVolunteerApplicationStatus(id: number, status: string): Promise<VolunteerApplication | undefined> {
     const [result] = await db.update(volunteerApplications).set({ status }).where(eq(volunteerApplications.id, id)).returning();
     return result;
+  }
+
+  async createTeamMember(member: InsertTeamMember): Promise<TeamMember> {
+    const [result] = await db.insert(teamMembers).values(member).returning();
+    return result;
+  }
+
+  async updateTeamMember(id: number, member: Partial<InsertTeamMember>): Promise<TeamMember | undefined> {
+    const [result] = await db.update(teamMembers).set(member).where(eq(teamMembers.id, id)).returning();
+    return result;
+  }
+
+  async deleteTeamMember(id: number): Promise<boolean> {
+    const result = await db.delete(teamMembers).where(eq(teamMembers.id, id)).returning();
+    return result.length > 0;
+  }
+
+  async createBoardMember(member: InsertBoardMember): Promise<BoardMember> {
+    const [result] = await db.insert(boardMembers).values(member).returning();
+    return result;
+  }
+
+  async updateBoardMember(id: number, member: Partial<InsertBoardMember>): Promise<BoardMember | undefined> {
+    const [result] = await db.update(boardMembers).set(member).where(eq(boardMembers.id, id)).returning();
+    return result;
+  }
+
+  async deleteBoardMember(id: number): Promise<boolean> {
+    const result = await db.delete(boardMembers).where(eq(boardMembers.id, id)).returning();
+    return result.length > 0;
   }
 }
 

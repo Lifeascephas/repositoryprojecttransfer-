@@ -150,3 +150,5 @@ export type Partner = typeof partners.$inferSelect;
 export type Testimonial = typeof testimonials.$inferSelect;
 export type VolunteerApplication = typeof volunteerApplications.$inferSelect;
 export type InsertVolunteerApplication = z.infer<typeof insertVolunteerApplicationSchema>;
+export type InsertTeamMember = z.infer<typeof insertTeamMemberSchema>;
+export type InsertBoardMember = z.infer<typeof insertBoardMemberSchema>;

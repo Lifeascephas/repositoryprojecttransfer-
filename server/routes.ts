@@ -71,9 +71,63 @@ export async function registerRoutes(
     res.json(items);
   });
 
+  app.post(api.teamMembers.create.path, isAuthenticated, async (req, res) => {
+    try {
+      const input = api.teamMembers.create.input.parse(req.body);
+      const member = await storage.createTeamMember(input);
+      res.status(201).json(member);
+    } catch (err: any) {
+      res.status(400).json({ message: err.message });
+    }
+  });
+
+  app.patch(api.teamMembers.update.path, isAuthenticated, async (req, res) => {
+    try {
+      const input = api.teamMembers.update.input.parse(req.body);
+      const member = await storage.updateTeamMember(Number(req.params.id), input);
+      if (!member) return res.status(404).json({ message: "Team member not found" });
+      res.json(member);
+    } catch (err: any) {
+      res.status(400).json({ message: err.message });
+    }
+  });
+
+  app.delete(api.teamMembers.delete.path, isAuthenticated, async (req, res) => {
+    const success = await storage.deleteTeamMember(Number(req.params.id));
+    if (!success) return res.status(404).json({ message: "Team member not found" });
+    res.json({ success: true });
+  });
+
   app.get(api.boardMembers.list.path, async (req, res) => {
     const items = await storage.getBoardMembers();
     res.json(items);
+  });
+
+  app.post(api.boardMembers.create.path, isAuthenticated, async (req, res) => {
+    try {
+      const input = api.boardMembers.create.input.parse(req.body);
+      const member = await storage.createBoardMember(input);
+      res.status(201).json(member);
+    } catch (err: any) {
+      res.status(400).json({ message: err.message });
+    }
+  });
+
+  app.patch(api.boardMembers.update.path, isAuthenticated, async (req, res) => {
+    try {
+      const input = api.boardMembers.update.input.parse(req.body);
+      const member = await storage.updateBoardMember(Number(req.params.id), input);
+      if (!member) return res.status(404).json({ message: "Board member not found" });
+      res.json(member);
+    } catch (err: any) {
+      res.status(400).json({ message: err.message });
+    }
+  });
+
+  app.delete(api.boardMembers.delete.path, isAuthenticated, async (req, res) => {
+    const success = await storage.deleteBoardMember(Number(req.params.id));
+    if (!success) return res.status(404).json({ message: "Board member not found" });
+    res.json({ success: true });
   });
 
   app.get(api.partners.list.path, async (req, res) => {
