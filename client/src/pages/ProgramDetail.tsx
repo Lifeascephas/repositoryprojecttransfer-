@@ -1,10 +1,11 @@
 import { usePrograms } from "@/hooks/use-content";
+import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Clock, Globe, BookOpen, Briefcase, ArrowLeft, ArrowRight, Users, MapPin, CheckCircle, Calendar } from "lucide-react";
 import { Link, useRoute } from "wouter";
 import { motion } from "framer-motion";
-import type { Program } from "@shared/schema";
+import type { Program, Project } from "@shared/schema";
 
 const programContent: Record<string, {
   heroImage: string;
@@ -48,6 +49,16 @@ const defaultContent = {
 export default function ProgramDetail() {
   const [, params] = useRoute("/programs/:type");
   const { data: programs, isLoading } = usePrograms();
+  const type = params?.type || "";
+  const { data: linkedProjects } = useQuery<Project[]>({
+    queryKey: ['/api/projects', 'programType', type],
+    queryFn: async () => {
+      const res = await fetch(`/api/projects?programType=${type}`, { credentials: "include" });
+      if (!res.ok) throw new Error(`${res.status}: ${await res.text()}`);
+      return res.json();
+    },
+    enabled: !!type,
+  });
 
   if (isLoading) {
     return (
@@ -58,7 +69,6 @@ export default function ProgramDetail() {
     );
   }
 
-  const type = params?.type || "";
   const program = (programs as Program[])?.find((p) => p.type === type);
 
   if (!program) {
@@ -268,6 +278,65 @@ export default function ProgramDetail() {
                   </Link>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {linkedProjects && linkedProjects.length > 0 && (
+        <section className="py-20 bg-white">
+          <div className="container px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <span className="text-primary font-medium tracking-widest text-xs uppercase">Our Projects</span>
+              <h2 className="text-3xl font-display font-semibold text-gray-900 mt-3" data-testid="text-projects-heading">
+                {type === "short_term" ? "Short-Term Volunteering Projects" : "Program Projects"}
+              </h2>
+              <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
+                {type === "short_term"
+                  ? "Explore 14 international volunteer projects across Kenya. Click on any project to learn more about the community, activities, and how you can get involved."
+                  : "Browse the projects under this program."}
+              </p>
+            </motion.div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {linkedProjects.map((project, i) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.03 }}
+                >
+                  <Link href={`/projects/${project.id}`}>
+                    <Card className="overflow-visible h-full hover-elevate cursor-pointer group" data-testid={`card-project-${project.id}`}>
+                      <div className="aspect-[4/3] overflow-hidden rounded-t-md">
+                        <img
+                          src={project.imageUrl || "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80"}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      <CardContent className="p-4">
+                        <p className="text-xs text-primary font-medium tracking-wide uppercase mb-1">{project.code}</p>
+                        <h3 className="text-sm font-semibold text-gray-900 mb-1 line-clamp-2" data-testid={`text-project-title-${project.id}`}>
+                          {project.title}
+                        </h3>
+                        <div className="flex items-center gap-1 text-xs text-gray-500">
+                          <MapPin className="h-3 w-3" />
+                          <span>{project.location}</span>
+                        </div>
+                        <div className="mt-2">
+                          <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-md">{project.sector}</span>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
