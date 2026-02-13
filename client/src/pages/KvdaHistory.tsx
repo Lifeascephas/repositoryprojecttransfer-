@@ -44,7 +44,7 @@ export default function KvdaHistory() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
@@ -63,7 +63,7 @@ export default function KvdaHistory() {
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
@@ -91,7 +91,7 @@ export default function KvdaHistory() {
         <div className="container px-4">
           <div className="max-w-5xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="grid md:grid-cols-2 gap-12 items-center"
@@ -138,7 +138,7 @@ export default function KvdaHistory() {
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-16"
@@ -160,7 +160,7 @@ export default function KvdaHistory() {
                       initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
+                      transition={{ delay: index * 0.025 }}
                       className={`relative md:flex md:items-center gap-8 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}
                     >
                       <div className={`md:w-1/2 ${isLeft ? "md:text-right md:pr-12" : "md:text-left md:pl-12"}`}>
@@ -190,7 +190,7 @@ export default function KvdaHistory() {
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >

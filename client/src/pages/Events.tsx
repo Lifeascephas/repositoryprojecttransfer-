@@ -29,7 +29,7 @@ export default function Events() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
@@ -50,10 +50,10 @@ export default function Events() {
             {(events as Event[])?.map((event, index) => (
               <motion.div
                 key={event.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.025 }}
               >
                 <Card className="border border-gray-100 shadow-sm overflow-hidden h-full" data-testid={`card-event-${event.id}`}>
                   <div className="h-56 overflow-hidden relative">

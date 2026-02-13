@@ -43,7 +43,7 @@ export default function Contact() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >

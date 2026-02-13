@@ -351,7 +351,7 @@ export default function WhatWeDo() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
@@ -381,10 +381,10 @@ export default function WhatWeDo() {
             {services.map((service, index) => (
               <motion.div
                 key={service.slug}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.04 }}
+                transition={{ delay: index * 0.02 }}
               >
                 <Card className={`border ${service.borderColor} shadow-sm h-full flex flex-col`} data-testid={`card-service-${service.slug}`}>
                   <CardContent className="p-6 flex flex-col flex-1">
@@ -422,7 +422,7 @@ export default function WhatWeDo() {
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-12"
@@ -441,7 +441,7 @@ export default function WhatWeDo() {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.04 }}
+                  transition={{ delay: index * 0.02 }}
                   className="flex gap-3 items-start"
                   data-testid={`text-achievement-${index}`}
                 >

@@ -31,7 +31,7 @@ export default function Projects() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
@@ -59,10 +59,10 @@ export default function Projects() {
               {(projects as Project[]).map((project: Project, index: number) => (
                 <motion.div
                   key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
+                  transition={{ delay: index * 0.025 }}
                 >
                   <Card className="flex flex-col h-full border border-gray-100 shadow-sm overflow-hidden group" data-testid={`card-project-${project.id}`}>
                     <div className="aspect-[4/3] relative overflow-hidden">

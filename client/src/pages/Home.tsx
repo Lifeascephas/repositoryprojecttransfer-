@@ -154,9 +154,9 @@ export default function Home() {
 
         <div className="container relative z-10 px-4 md:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.15 }}
             className="max-w-2xl"
           >
             <div className="inline-block px-4 py-1.5 mb-6 rounded-md bg-primary text-white text-xs font-semibold uppercase tracking-wider" data-testid="text-hero-badge">

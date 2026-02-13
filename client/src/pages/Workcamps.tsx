@@ -15,10 +15,10 @@ function WorkcampCard({ camp, index }: { camp: Workcamp; index: number }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 8 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.04 }}
+      transition={{ delay: index * 0.02 }}
     >
       <Card
         className="border border-gray-100 shadow-sm overflow-hidden"
@@ -181,7 +181,7 @@ export default function Workcamps() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >

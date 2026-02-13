@@ -113,7 +113,7 @@ export default function ProgramDetail() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
@@ -145,7 +145,7 @@ export default function ProgramDetail() {
               <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-2">
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 8 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                   >
@@ -164,10 +164,10 @@ export default function ProgramDetail() {
 
                 <div>
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 8 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
+                    transition={{ delay: 0.05 }}
                   >
                     <Card className="border border-gray-100 shadow-sm sticky top-24">
                       <CardContent className="p-6">
@@ -211,7 +211,7 @@ export default function ProgramDetail() {
               <div className="container px-4">
                 <div className="max-w-4xl mx-auto">
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 8 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="text-center mb-12"
@@ -228,7 +228,7 @@ export default function ProgramDetail() {
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: i * 0.05 }}
+                        transition={{ delay: i * 0.025 }}
                       >
                         <Card className="border border-gray-100 shadow-sm h-full">
                           <CardContent className="p-5 flex items-start gap-3">
@@ -249,7 +249,7 @@ export default function ProgramDetail() {
           <div className="container px-4">
             <div className="max-w-3xl mx-auto">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
@@ -287,7 +287,7 @@ export default function ProgramDetail() {
         <section className="py-20 bg-white">
           <div className="container px-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-12"
@@ -309,7 +309,7 @@ export default function ProgramDetail() {
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.03 }}
+                  transition={{ delay: i * 0.015 }}
                 >
                   <Link href={`/projects/${project.id}`}>
                     <Card className="overflow-visible h-full hover-elevate cursor-pointer group" data-testid={`card-project-${project.id}`}>
@@ -345,7 +345,7 @@ export default function ProgramDetail() {
       <section className="py-16 bg-primary/5">
         <div className="container px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"

@@ -32,7 +32,7 @@ export default function ServiceDetail() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
@@ -64,9 +64,9 @@ export default function ServiceDetail() {
             <div className="grid lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
+                  transition={{ delay: 0.05 }}
                   className="space-y-6"
                 >
                   {paragraphs.map((paragraph, index) => (
@@ -77,9 +77,9 @@ export default function ServiceDetail() {
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
+                  transition={{ delay: 0.05 }}
                   className="mt-10"
                 >
                   <div className="flex flex-col sm:flex-row gap-4">
@@ -101,7 +101,7 @@ export default function ServiceDetail() {
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 }}
+                  transition={{ delay: 0.05 }}
                 >
                   <Card className="border border-gray-100 shadow-sm sticky top-24">
                     <CardContent className="p-6">
@@ -137,7 +137,7 @@ export default function ServiceDetail() {
           <div className="container px-4">
             <div className="max-w-4xl mx-auto">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="mb-10"
@@ -157,7 +157,7 @@ export default function ServiceDetail() {
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.05 }}
+                    transition={{ delay: i * 0.025 }}
                   >
                     <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-project-${i}`}>
                       <CardContent className="p-5">
@@ -179,7 +179,7 @@ export default function ServiceDetail() {
               </div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="mt-10 text-center"

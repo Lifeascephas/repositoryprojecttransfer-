@@ -22,7 +22,7 @@ export default function About() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
@@ -79,7 +79,7 @@ export default function About() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-24"
@@ -113,7 +113,7 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-24">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
@@ -130,10 +130,10 @@ export default function About() {
               </Card>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              transition={{ delay: 0.05 }}
             >
               <Card className="border border-gray-100 shadow-sm h-full">
                 <CardContent className="p-8">
@@ -150,7 +150,7 @@ export default function About() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-24"
@@ -242,10 +242,10 @@ export default function About() {
               {(boardMembers as BoardMember[]).map((member, index) => (
                 <motion.div
                   key={member.id}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.08 }}
+                  transition={{ delay: index * 0.02 }}
                 >
                   <Card className="border border-gray-100 shadow-sm overflow-hidden" data-testid={`card-board-member-${member.id}`}>
                     <div className="h-56 overflow-hidden">
@@ -280,10 +280,10 @@ export default function About() {
               {(teamMembers as TeamMember[]).map((member, index) => (
                 <motion.div
                   key={member.id}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.08 }}
+                  transition={{ delay: index * 0.02 }}
                 >
                   <Card className="border border-gray-100 shadow-sm overflow-hidden" data-testid={`card-team-member-${member.id}`}>
                     <div className="flex items-center p-6 gap-5">

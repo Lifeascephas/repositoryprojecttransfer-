@@ -212,7 +212,7 @@ export default function AdminApplications() {
           <div className="absolute inset-0 bg-black/80" />
         </div>
         <div className="container px-4 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
             <span className="text-primary font-medium tracking-widest text-xs uppercase">Admin Panel</span>
             <h1 className="text-4xl md:text-5xl font-display font-light text-white mt-4 mb-4" data-testid="text-page-title">
               Volunteer <span className="text-primary italic font-normal">Applications</span>
@@ -264,7 +264,7 @@ export default function AdminApplications() {
                   key={app.id}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.03 }}
+                  transition={{ delay: index * 0.015 }}
                 >
                   <Card className="border border-gray-100 shadow-sm hover-elevate cursor-pointer" onClick={() => setSelectedId(app.id)} data-testid={`card-application-${app.id}`}>
                     <CardContent className="p-6">

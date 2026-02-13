@@ -128,7 +128,7 @@ export default function Partners() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
@@ -147,7 +147,7 @@ export default function Partners() {
       <section className="py-24 bg-white">
         <div className="container px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-4xl mx-auto text-center mb-16"
@@ -165,10 +165,10 @@ export default function Partners() {
             {affiliations.map((partner, index) => (
               <motion.div
                 key={partner.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
+                transition={{ delay: index * 0.02 }}
               >
                 <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-affiliation-${index}`}>
                   <CardContent className="p-6 flex flex-col items-center text-center gap-4">
@@ -197,7 +197,7 @@ export default function Partners() {
       <section className="py-24 bg-gray-50">
         <div className="container px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16"
@@ -215,7 +215,7 @@ export default function Partners() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.03 }}
+                transition={{ delay: index * 0.015 }}
               >
                 <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-partner-${index}`}>
                   <CardContent className="p-4 flex flex-col items-center justify-center gap-3 h-full">
@@ -241,7 +241,7 @@ export default function Partners() {
       <section className="py-20 bg-white">
         <div className="container px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="p-12 rounded-md bg-gray-50 border border-gray-100 text-center max-w-3xl mx-auto"

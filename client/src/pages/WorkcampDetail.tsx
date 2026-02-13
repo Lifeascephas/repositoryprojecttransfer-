@@ -49,7 +49,7 @@ export default function WorkcampDetail() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
@@ -86,9 +86,9 @@ export default function WorkcampDetail() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="md:col-span-2 space-y-8">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
+                  transition={{ delay: 0.05 }}
                 >
                   <h2 className="text-2xl font-display font-semibold text-gray-900 mb-4">About This Workcamp</h2>
                   <p className="text-gray-600 leading-relaxed">{camp.description}</p>
@@ -96,9 +96,9 @@ export default function WorkcampDetail() {
 
                 {activities.length > 0 && (
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
+                    transition={{ delay: 0.05 }}
                   >
                     <h2 className="text-2xl font-display font-semibold text-gray-900 mb-4">Activities</h2>
                     <ul className="space-y-3">
@@ -114,9 +114,9 @@ export default function WorkcampDetail() {
 
                 {camp.accommodation && (
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
+                    transition={{ delay: 0.15 }}
                   >
                     <h2 className="text-2xl font-display font-semibold text-gray-900 mb-4">Accommodation & Living</h2>
                     <p className="text-gray-600 leading-relaxed">{camp.accommodation}</p>

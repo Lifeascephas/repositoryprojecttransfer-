@@ -74,7 +74,7 @@ export default function Volunteer() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
@@ -102,10 +102,10 @@ export default function Volunteer() {
             {steps.map((step, index) => (
               <motion.div
                 key={step.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
+                transition={{ delay: index * 0.02 }}
               >
                 <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-step-${index}`}>
                   <CardContent className="p-8">
@@ -145,10 +145,10 @@ export default function Volunteer() {
             {kvdaPrograms.map((prog, index) => (
               <motion.div
                 key={prog.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.025 }}
               >
                 <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-program-${index}`}>
                   <CardContent className="p-8">
@@ -175,10 +175,10 @@ export default function Volunteer() {
               {(testimonials as Testimonial[]).map((t, index) => (
                 <motion.div
                   key={t.id}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.025 }}
                 >
                   <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-testimonial-${t.id}`}>
                     <CardContent className="p-8">

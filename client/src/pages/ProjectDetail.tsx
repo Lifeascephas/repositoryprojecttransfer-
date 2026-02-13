@@ -356,7 +356,7 @@ export default function ProjectDetail() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
@@ -400,7 +400,7 @@ export default function ProjectDetail() {
           <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12">
             <div className="md:col-span-2">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
@@ -554,10 +554,10 @@ export default function ProjectDetail() {
 
             <div>
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
+                transition={{ delay: 0.05 }}
               >
                 <Card className="border border-gray-100 shadow-sm sticky top-24">
                   <CardContent className="p-6">
@@ -715,7 +715,7 @@ export default function ProjectDetail() {
       <section className="py-16 bg-primary/5">
         <div className="container px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"

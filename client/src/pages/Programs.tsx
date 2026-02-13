@@ -40,7 +40,7 @@ export default function Programs() {
         </div>
         <div className="container px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
@@ -66,10 +66,10 @@ export default function Programs() {
               return (
                 <motion.div
                   key={program.id}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
+                  transition={{ delay: 0.05 }}
                 >
                   <div
                     className={`flex flex-col md:flex-row gap-10 items-center ${isEven ? '' : 'md:flex-row-reverse'}`}
@@ -121,7 +121,7 @@ export default function Programs() {
       <section className="py-16 bg-primary/5">
         <div className="container px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
