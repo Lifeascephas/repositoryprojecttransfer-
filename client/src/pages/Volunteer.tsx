@@ -70,7 +70,7 @@ export default function Volunteer() {
             alt="Volunteers working together"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/80" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container px-4 relative z-10">
           <div className="max-w-3xl">
