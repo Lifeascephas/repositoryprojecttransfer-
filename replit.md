@@ -14,7 +14,7 @@ Preferred communication style: Simple, everyday language.
 
 ### Frontend (client/)
 - **Framework**: React 18 with TypeScript, bundled by Vite
-- **Routing**: Wouter (lightweight client-side router) — pages: Home, About, Programs, Projects, News, Contact, 404
+- **Routing**: Wouter (lightweight client-side router) — pages: Home, About, What We Do, Events, Programs, Projects, Volunteer, Partners, Donate, News, Contact, 404
 - **State/Data Fetching**: TanStack React Query for server state management
 - **UI Components**: shadcn/ui (new-york style) built on Radix UI primitives with Tailwind CSS
 - **Animations**: Framer Motion for scroll animations and page transitions
@@ -41,10 +41,13 @@ Preferred communication style: Simple, everyday language.
 - **projects** — Volunteer projects (title, location, sector, code, description, imageUrl). Sectors: Health, Education, Environment, etc.
 - **news** — News articles (title, content, imageUrl, publishedAt)
 - **inquiries** — Contact form submissions (name, email, subject, message, createdAt)
+- **events** — Events and activities (title, description, date, location, imageUrl, type)
+- **team_members** — Staff team (name, role, email, phone, imageUrl, order)
+- **board_members** — Board of directors (name, position, imageUrl, order)
+- **partners** — International partner organizations (name, country, website, logoUrl, description)
+- **testimonials** — Volunteer testimonials (name, country, program, quote, imageUrl)
 - **sessions** — PostgreSQL session store for Replit Auth (sid, sess, expire)
 - **users (auth)** — Replit Auth users (id, email, firstName, lastName, profileImageUrl, timestamps)
-
-Note: There are two `users` tables defined — one in `shared/schema.ts` and one in `shared/models/auth.ts`. The auth version is the one actively used with Replit Auth. This potential conflict should be handled carefully.
 
 ### API Endpoints
 - `GET /api/programs` — List all programs
@@ -54,6 +57,11 @@ Note: There are two `users` tables defined — one in `shared/schema.ts` and one
 - `GET /api/news` — List all news (ordered by publishedAt desc)
 - `GET /api/news/:id` — Get single news item
 - `POST /api/inquiries` — Submit contact form inquiry
+- `GET /api/events` — List all events
+- `GET /api/team-members` — List team members
+- `GET /api/board-members` — List board members
+- `GET /api/partners` — List partner organizations
+- `GET /api/testimonials` — List volunteer testimonials
 - `GET /api/auth/user` — Get authenticated user (Replit Auth)
 - `GET /api/login` — Replit Auth login redirect
 - `GET /api/logout` — Logout

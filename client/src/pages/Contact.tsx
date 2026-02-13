@@ -1,19 +1,19 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertInquirySchema } from "@shared/routes";
+import { insertInquirySchema } from "@shared/schema";
 import { useCreateInquiry } from "@/hooks/use-content";
-import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Mail, Phone, Clock } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const createInquiry = useCreateInquiry();
-  
+
   const form = useForm<z.infer<typeof insertInquirySchema>>({
     resolver: zodResolver(insertInquirySchema),
     defaultValues: {
@@ -31,159 +31,189 @@ export default function Contact() {
   }
 
   return (
-    <div className="py-12 bg-background min-h-screen">
-      <div className="container px-4">
-        <SectionHeader 
-          title="Contact Us" 
-          subtitle="Have questions about volunteering or want to partner with us? Reach out today."
-        />
-
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="grid gap-6">
-              <Card className="border-none shadow-md hover:shadow-lg transition-shadow bg-primary/5">
-                <CardContent className="flex items-start p-6 space-x-4">
-                  <MapPin className="h-6 w-6 text-primary mt-1" />
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Visit Our Office</h3>
-                    <p className="text-muted-foreground">Kwarara Road, Karen<br/>Nairobi, Kenya</p>
-                    <p className="text-sm text-muted-foreground mt-2">P.O. Box 48902-00100</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-none shadow-md hover:shadow-lg transition-shadow bg-accent/5">
-                <CardContent className="flex items-start p-6 space-x-4">
-                  <Mail className="h-6 w-6 text-accent mt-1" />
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Email Us</h3>
-                    <p className="text-muted-foreground">info@kvdakenya.org</p>
-                    <p className="text-sm text-muted-foreground mt-1">We respond within 24 hours</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-none shadow-md hover:shadow-lg transition-shadow bg-muted/50">
-                <CardContent className="flex items-start p-6 space-x-4">
-                  <Phone className="h-6 w-6 text-foreground mt-1" />
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Call Us</h3>
-                    <p className="text-muted-foreground">+254-721650357</p>
-                    <p className="text-sm text-muted-foreground mt-1">Mon-Fri, 8am - 5pm EAT</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* How to Volunteer Steps */}
-            <div className="bg-white p-8 rounded-2xl shadow-sm border mt-8">
-              <h3 className="font-display font-bold text-xl mb-6">How to Volunteer</h3>
-              <ol className="relative border-l border-muted ml-3 space-y-8">
-                <li className="mb-10 ml-6">
-                  <span className="absolute flex items-center justify-center w-8 h-8 bg-primary/10 rounded-full -left-4 ring-4 ring-white">
-                    <span className="text-primary font-bold text-sm">1</span>
-                  </span>
-                  <h4 className="font-semibold text-lg mb-1">Choose a Program</h4>
-                  <p className="text-sm text-muted-foreground">Browse our Short-term, Long-term, or Educational tour programs.</p>
-                </li>
-                <li className="mb-10 ml-6">
-                  <span className="absolute flex items-center justify-center w-8 h-8 bg-primary/10 rounded-full -left-4 ring-4 ring-white">
-                    <span className="text-primary font-bold text-sm">2</span>
-                  </span>
-                  <h4 className="font-semibold text-lg mb-1">Send an Inquiry</h4>
-                  <p className="text-sm text-muted-foreground">Use the form on this page to express your interest. We'll send you the Volunteer Exchange Form (VEF).</p>
-                </li>
-                <li className="ml-6">
-                  <span className="absolute flex items-center justify-center w-8 h-8 bg-primary/10 rounded-full -left-4 ring-4 ring-white">
-                    <span className="text-primary font-bold text-sm">3</span>
-                  </span>
-                  <h4 className="font-semibold text-lg mb-1">Prepare & Travel</h4>
-                  <p className="text-sm text-muted-foreground">Once accepted, we'll help with logistics, visa advice, and airport pickup arrangements.</p>
-                </li>
-              </ol>
-            </div>
-          </div>
-
-          {/* Inquiry Form */}
-          <Card className="border-none shadow-xl">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-display font-bold mb-6">Send a Message</h3>
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Full Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="John Doe" className="h-12 bg-muted/20" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email Address</FormLabel>
-                        <FormControl>
-                          <Input placeholder="john@example.com" className="h-12 bg-muted/20" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Subject</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Volunteering Inquiry" className="h-12 bg-muted/20" {...field} value={field.value || ''} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Tell us about your interest in volunteering..." 
-                            className="min-h-[150px] bg-muted/20 resize-none" 
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <Button 
-                    type="submit" 
-                    className="w-full h-12 text-lg font-semibold bg-primary hover:bg-primary/90"
-                    disabled={createInquiry.isPending}
-                  >
-                    {createInquiry.isPending ? "Sending..." : "Send Message"}
-                  </Button>
-                </form>
-              </Form>
-            </CardContent>
-          </Card>
+    <div className="bg-black min-h-screen">
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1596005554384-d293674c91d7?auto=format&fit=crop&q=80"
+            alt="Contact KVDA"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/80" />
         </div>
-      </div>
+        <div className="container px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-3xl"
+          >
+            <span className="text-primary font-medium tracking-widest text-xs uppercase">Get in Touch</span>
+            <h1 className="text-5xl md:text-6xl font-display font-light text-white mt-4 mb-6" data-testid="text-page-title">
+              Contact <span className="text-primary italic font-normal">Us</span>
+            </h1>
+            <p className="text-lg text-zinc-300 font-light leading-relaxed">
+              Have questions about volunteering or want to partner with us? We'd love to hear from you.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-zinc-950">
+        <div className="container px-4">
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="grid gap-6">
+                <Card className="bg-zinc-900/50 border-white/5">
+                  <CardContent className="flex items-start p-6 gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                      <MapPin className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-white text-lg mb-1" data-testid="text-contact-address-title">Visit Our Office</h3>
+                      <p className="text-zinc-400 font-light text-sm">Kwarara Road, Karen<br />Nairobi, Kenya</p>
+                      <p className="text-zinc-500 text-xs mt-2">P.O. Box 48902-00100</p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-zinc-900/50 border-white/5">
+                  <CardContent className="flex items-start p-6 gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                      <Mail className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-white text-lg mb-1">Email Us</h3>
+                      <p className="text-zinc-400 font-light text-sm" data-testid="text-contact-email">info@kvdakenya.org</p>
+                      <p className="text-zinc-500 text-xs mt-1">We respond within 24 hours</p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-zinc-900/50 border-white/5">
+                  <CardContent className="flex items-start p-6 gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                      <Phone className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-white text-lg mb-1">Call Us</h3>
+                      <p className="text-zinc-400 font-light text-sm" data-testid="text-contact-phone">+254-721650357</p>
+                      <p className="text-zinc-500 text-xs mt-1">Mon-Fri, 8am - 5pm EAT</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <Card className="bg-zinc-900/50 border-white/5">
+                <CardContent className="p-8">
+                  <h3 className="font-display font-medium text-white text-xl mb-6">How to Volunteer</h3>
+                  <ol className="relative border-l border-white/10 ml-3 space-y-8">
+                    <li className="mb-10 ml-6">
+                      <span className="absolute flex items-center justify-center w-8 h-8 bg-primary/10 rounded-full -left-4 ring-4 ring-zinc-900">
+                        <span className="text-primary font-medium text-sm">1</span>
+                      </span>
+                      <h4 className="font-medium text-white mb-1">Choose a Program</h4>
+                      <p className="text-sm text-zinc-400 font-light">Browse our Short-term, Long-term, or Educational tour programs.</p>
+                    </li>
+                    <li className="mb-10 ml-6">
+                      <span className="absolute flex items-center justify-center w-8 h-8 bg-primary/10 rounded-full -left-4 ring-4 ring-zinc-900">
+                        <span className="text-primary font-medium text-sm">2</span>
+                      </span>
+                      <h4 className="font-medium text-white mb-1">Send an Inquiry</h4>
+                      <p className="text-sm text-zinc-400 font-light">Use the form to express your interest. We'll send you the Volunteer Exchange Form (VEF).</p>
+                    </li>
+                    <li className="ml-6">
+                      <span className="absolute flex items-center justify-center w-8 h-8 bg-primary/10 rounded-full -left-4 ring-4 ring-zinc-900">
+                        <span className="text-primary font-medium text-sm">3</span>
+                      </span>
+                      <h4 className="font-medium text-white mb-1">Prepare & Travel</h4>
+                      <p className="text-sm text-zinc-400 font-light">Once accepted, we help with logistics, visa advice, and airport pickup.</p>
+                    </li>
+                  </ol>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="bg-zinc-900/50 border-white/5">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-display font-medium text-white mb-6">Send a Message</h3>
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-zinc-300">Full Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="John Doe" className="h-12 bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-600" data-testid="input-name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-zinc-300">Email Address</FormLabel>
+                          <FormControl>
+                            <Input placeholder="john@example.com" className="h-12 bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-600" data-testid="input-email" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="subject"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-zinc-300">Subject</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Volunteering Inquiry" className="h-12 bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-600" data-testid="input-subject" {...field} value={field.value || ''} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-zinc-300">Message</FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Tell us about your interest in volunteering..."
+                              className="min-h-[150px] bg-zinc-800/50 border-white/10 text-white placeholder:text-zinc-600 resize-none"
+                              data-testid="input-message"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <Button
+                      type="submit"
+                      className="w-full h-12 text-lg font-medium bg-primary hover:bg-primary/90 rounded-full"
+                      disabled={createInquiry.isPending}
+                      data-testid="button-submit"
+                    >
+                      {createInquiry.isPending ? "Sending..." : "Send Message"}
+                    </Button>
+                  </form>
+                </Form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

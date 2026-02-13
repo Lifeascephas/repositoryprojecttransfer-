@@ -10,6 +10,11 @@ import Programs from "@/pages/Programs";
 import Projects from "@/pages/Projects";
 import NewsPage from "@/pages/News";
 import Contact from "@/pages/Contact";
+import WhatWeDo from "@/pages/WhatWeDo";
+import Events from "@/pages/Events";
+import Volunteer from "@/pages/Volunteer";
+import Partners from "@/pages/Partners";
+import Donate from "@/pages/Donate";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
@@ -21,8 +26,13 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
+          <Route path="/what-we-do" component={WhatWeDo} />
+          <Route path="/events" component={Events} />
           <Route path="/programs" component={Programs} />
           <Route path="/projects" component={Projects} />
+          <Route path="/volunteer" component={Volunteer} />
+          <Route path="/partners" component={Partners} />
+          <Route path="/donate" component={Donate} />
           <Route path="/news" component={NewsPage} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />

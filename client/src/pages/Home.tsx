@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/SectionHeader";
 import { useNews } from "@/hooks/use-content";
+import type { News } from "@shared/schema";
 
 export default function Home() {
   const { data: newsItems } = useNews();
@@ -197,7 +198,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
-            {newsItems?.slice(0, 3).map((item, i) => (
+            {(newsItems as News[])?.slice(0, 3).map((item: News, i: number) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 30 }}

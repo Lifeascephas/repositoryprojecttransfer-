@@ -1,8 +1,10 @@
 
 import { z } from 'zod';
-import { insertProgramSchema, insertProjectSchema, insertNewsSchema, insertInquirySchema, programs, projects, news, inquiries } from './schema';
+import { insertInquirySchema, programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials } from './schema';
 
-export { insertProgramSchema, insertProjectSchema, insertNewsSchema, insertInquirySchema };
+export { insertInquirySchema };
+
+export type InsertInquiry = z.infer<typeof insertInquirySchema>;
 
 export const api = {
   programs: {
@@ -66,7 +68,52 @@ export const api = {
         400: z.object({ message: z.string() }),
       },
     }
-  }
+  },
+  events: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/events' as const,
+      responses: {
+        200: z.array(z.custom<typeof events.$inferSelect>()),
+      },
+    },
+  },
+  teamMembers: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/team-members' as const,
+      responses: {
+        200: z.array(z.custom<typeof teamMembers.$inferSelect>()),
+      },
+    },
+  },
+  boardMembers: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/board-members' as const,
+      responses: {
+        200: z.array(z.custom<typeof boardMembers.$inferSelect>()),
+      },
+    },
+  },
+  partners: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/partners' as const,
+      responses: {
+        200: z.array(z.custom<typeof partners.$inferSelect>()),
+      },
+    },
+  },
+  testimonials: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/testimonials' as const,
+      responses: {
+        200: z.array(z.custom<typeof testimonials.$inferSelect>()),
+      },
+    },
+  },
 };
 
 export function buildUrl(path: string, params?: Record<string, string | number>): string {

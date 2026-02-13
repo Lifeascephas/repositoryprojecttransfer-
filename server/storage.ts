@@ -1,26 +1,26 @@
 
 import { 
-  programs, projects, news, inquiries,
-  type Program, type Project, type News, type Inquiry, type InsertInquiry
+  programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials,
+  type Program, type Project, type News, type Inquiry, type InsertInquiry,
+  type Event, type TeamMember, type BoardMember, type Partner, type Testimonial
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, asc } from "drizzle-orm";
 
 export interface IStorage {
-  // Programs
   getPrograms(): Promise<Program[]>;
   getProgram(id: number): Promise<Program | undefined>;
-  
-  // Projects
   getProjects(): Promise<Project[]>;
   getProject(id: number): Promise<Project | undefined>;
-  
-  // News
   getNews(): Promise<News[]>;
   getNewsItem(id: number): Promise<News | undefined>;
-  
-  // Inquiries
   createInquiry(inquiry: InsertInquiry): Promise<Inquiry>;
+  getEvents(): Promise<Event[]>;
+  getEvent(id: number): Promise<Event | undefined>;
+  getTeamMembers(): Promise<TeamMember[]>;
+  getBoardMembers(): Promise<BoardMember[]>;
+  getPartners(): Promise<Partner[]>;
+  getTestimonials(): Promise<Testimonial[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -54,6 +54,31 @@ export class DatabaseStorage implements IStorage {
   async createInquiry(insertInquiry: InsertInquiry): Promise<Inquiry> {
     const [inquiry] = await db.insert(inquiries).values(insertInquiry).returning();
     return inquiry;
+  }
+
+  async getEvents(): Promise<Event[]> {
+    return await db.select().from(events);
+  }
+
+  async getEvent(id: number): Promise<Event | undefined> {
+    const [event] = await db.select().from(events).where(eq(events.id, id));
+    return event;
+  }
+
+  async getTeamMembers(): Promise<TeamMember[]> {
+    return await db.select().from(teamMembers).orderBy(asc(teamMembers.order));
+  }
+
+  async getBoardMembers(): Promise<BoardMember[]> {
+    return await db.select().from(boardMembers).orderBy(asc(boardMembers.order));
+  }
+
+  async getPartners(): Promise<Partner[]> {
+    return await db.select().from(partners);
+  }
+
+  async getTestimonials(): Promise<Testimonial[]> {
+    return await db.select().from(testimonials);
   }
 }
 
