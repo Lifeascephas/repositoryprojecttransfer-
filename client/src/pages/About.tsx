@@ -160,9 +160,14 @@ export default function About() {
             </div>
             <div className="max-w-4xl mx-auto">
               <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-200" style={{ paddingBottom: "56.25%" }}>
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-400">
-                  <p className="text-lg font-light" data-testid="text-video-placeholder">YouTube video will be added here</p>
-                </div>
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/aIeOoDRLsV0"
+                  title="KVDA Kenya"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  data-testid="video-youtube"
+                />
               </div>
             </div>
           </motion.div>
