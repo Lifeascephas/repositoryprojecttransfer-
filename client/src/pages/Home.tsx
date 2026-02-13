@@ -296,7 +296,7 @@ export default function Home() {
                   <span className="text-xs font-semibold text-primary uppercase tracking-wider">{program.type?.replace('_', ' ')}</span>
                   <h3 className="text-lg font-semibold text-gray-900 mt-1 mb-2 line-clamp-2">{program.title}</h3>
                   <p className="text-gray-500 text-sm line-clamp-3 mb-4">{program.description}</p>
-                  <Link href={`/what-we-do/${programTypeToSlug[program.type || ''] || 'international-workcamps'}`}>
+                  <Link href={`/programs/${program.type}`}>
                     <span className="text-primary text-sm font-semibold inline-flex items-center hover:underline cursor-pointer" data-testid={`link-program-details-${program.id}`}>
                       Learn More <ChevronRight className="h-4 w-4 ml-1" />
                     </span>
