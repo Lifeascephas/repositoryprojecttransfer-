@@ -426,6 +426,15 @@ async function seedDatabase() {
         imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80"
       },
       {
+        title: "Ushuhuda Network for Orphans and Vulnerable Children",
+        location: "Webuye, Bungoma County",
+        sector: "Education",
+        code: "KVDA/MLTV/2026/28",
+        description: "Ushuhuda Network for Orphans and Vulnerable Children was established in 2011 and registered as a community based organization in 2012. Its major focus is to address the challenges facing the local community including high poverty levels, disease and social exclusion. HIV/AIDS is among the leading scourges within the local community. The school has a population of 150 children with 13 teachers. Volunteers participate in teaching, capacity building, social work, guiding and counseling, field visits, and home visits to enhance inter-cultural education and solidarity.",
+        imageUrl: "/assets/ushuhuda-orphans.webp",
+        programType: "short_term"
+      },
+      {
         title: "Sustainable Agriculture Initiative - KIOF",
         location: "Kiambu County",
         sector: "Agriculture",
