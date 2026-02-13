@@ -645,15 +645,16 @@ const projectEnrichments: Record<string, ProjectEnrichment> = {
   "KVDA/STV/2026/STM": {
     theme: "Women Empowerment: Girl Child Education",
     dates: {
-      orientation: "4th January 2026 at Nairobi South YMCA Hostel",
-      travel: "5th January 2026",
-      closure: "24th January 2026",
-      returnTravel: "25th January 2026",
+      orientation: "12th July 2026 at Nairobi South YMCA Hostel",
+      travel: "13th July 2026",
+      closure: "1st August 2026",
+      returnTravel: "2nd August 2026",
     },
     overview: [
       "St. Theresa Mabera Primary School was registered on 3rd September 2018. The school is situated in Mabera Township along the Migori to Isebania Road, Taraga location, Mabera Sub County of Migori County in South West Kenya. It is a mixed day school for boys and girls located predominantly among the Kuria community, one of Kenya's marginalized ethnic communities.",
       "The school has a population of 187 pupils; 96 boys and 91 girls. The School has 8 teachers and 4 non-teaching staff. The infrastructure remains a challenge as the school continues to grow and serve the local community.",
       "Girls' education goes beyond getting girls into school. It is also about ensuring that girls learn and feel safe while in school; complete all levels of education with the skills to effectively compete in the labor market; learn the socio-emotional and life skills necessary to navigate and adapt to a changing world; make decisions about their own lives; and contribute to their communities and the world.",
+      "According to UNESCO estimates, 130 million girls between the age of 6 and 17 are out of school and 15 million girls of primary-school age — half of them in sub-Saharan Africa — will never enter a classroom. Poverty remains the most important factor for determining whether a girl can access an education.",
     ],
     objectives: [
       "Promote girl child education and women empowerment",
@@ -679,7 +680,7 @@ const projectEnrichments: Record<string, ProjectEnrichment> = {
       "Home visits to the orphans and the vulnerable in society",
       "Inter-cultural education to foster global cooperation",
     ],
-    workType: "SOCI/CONS/CHIL — Volunteers will work for six hours daily from Monday to Friday",
+    workType: "CHIL/MANU/SOCI — Volunteers will work for six hours daily from Monday to Friday",
     accommodation: [
       "The host community will provide a house to accommodate the volunteers with basic living conditions.",
       "Volunteers have an obligation to climb down the level of the people with the aim of exposure to development challenges.",
