@@ -31,6 +31,27 @@ import viveMexicoLogo from "@assets/VIVE-MEXICO-logo_1770996713577.webp";
 import vjfLogo from "@assets/VJF_Logo_30Jahre-1-1_1770996713579.jpg";
 import voltraLogo from "@assets/Voltra_logo_without-tagline-1_1770996713580.png";
 
+import iLogo from "@assets/i_1770997143705.webp";
+import leLogo from "@assets/le_1770997143706.png";
+import lkLogo from "@assets/lk_1770997143707.jpg";
+import log1Logo from "@assets/log1_1770997143708.png";
+import logo01aLogo from "@assets/logo-01_(1)_1770997143710.png";
+import logo01bLogo from "@assets/logo-01_1770997143711.png";
+import logo02aLogo from "@assets/logo-02_1770997143711.png";
+import logo02bLogo from "@assets/logo-02_1770997143712.webp";
+import logo03Logo from "@assets/logo-03_1770997143715.png";
+import logo05Logo from "@assets/logo-05_1770997143718.png";
+import logo2aLogo from "@assets/logo-2_1770997143713.jpg";
+import logo2bLogo from "@assets/logo-2_1770997143715.webp";
+import logo3Logo from "@assets/logo-3_1770997143716.png";
+import logo4Logo from "@assets/logo-4_1770997143717.webp";
+import logo7Logo from "@assets/logo-7_1770997143718.png";
+import logo8Logo from "@assets/logo-8_1770997143719.png";
+import niceLogo from "@assets/logo_nice2_1770997143709.jpg";
+import ubeleLogo from "@assets/the-ubele-initiative-logo_1770997143719.webp";
+import vLogo from "@assets/v_1770997143720.webp";
+import vwLogo from "@assets/vw-1_1770997143721.jpg";
+
 const affiliations = [
   { name: "Coordinating Committee for International Voluntary Service (CCIVS)", logo: ccivsLogo, level: "International" },
   { name: "Alliance of European Voluntary Service Organisations", logo: allianceLogo, level: "Continental" },
@@ -60,6 +81,26 @@ const partnerLogos = [
   { name: "Vive Mexico", logo: viveMexicoLogo },
   { name: "VJF", logo: vjfLogo },
   { name: "VOLTRA", logo: voltraLogo },
+  { name: "NICE - Never-ending International workCamps Exchange", logo: niceLogo },
+  { name: "The Ubele Initiative", logo: ubeleLogo },
+  { name: "Vereinigung Junger Freiwilliger", logo: logo01aLogo },
+  { name: "Youth Action for Peace", logo: logo01bLogo },
+  { name: "Solidarites Jeunesses", logo: logo02aLogo },
+  { name: "ICYE - International Cultural Youth Exchange", logo: logo02bLogo },
+  { name: "Service Civil International (SCI)", logo: logo03Logo },
+  { name: "MS ActionAid Denmark", logo: logo05Logo },
+  { name: "Lunaria", logo: logo2aLogo },
+  { name: "IBG - Internationale Begegnung in Gemeinschaftsdiensten", logo: logo2bLogo },
+  { name: "InformaGiovani", logo: logo3Logo },
+  { name: "Jeunesse et Reconstruction", logo: logo4Logo },
+  { name: "World4U", logo: logo7Logo },
+  { name: "SEEDS Iceland", logo: logo8Logo },
+  { name: "Volunteers for Peace Vietnam", logo: vLogo },
+  { name: "Voluntary Workcamps Association", logo: vwLogo },
+  { name: "Lanka Jathika Sarvodaya", logo: lkLogo },
+  { name: "Legambiente", logo: leLogo },
+  { name: "LYVS - Lesotho Youth Voluntary Service", logo: log1Logo },
+  { name: "IBO Italia", logo: iLogo },
 ];
 
 export default function Partners() {
