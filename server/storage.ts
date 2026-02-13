@@ -19,6 +19,7 @@ export interface IStorage {
   getProgram(id: number): Promise<Program | undefined>;
   getProjects(): Promise<Project[]>;
   getProject(id: number): Promise<Project | undefined>;
+  getProjectsByProgramType(programType: string): Promise<Project[]>;
   getNews(): Promise<News[]>;
   getNewsItem(id: number): Promise<News | undefined>;
   createInquiry(inquiry: InsertInquiry): Promise<Inquiry>;
@@ -69,6 +70,10 @@ export class DatabaseStorage implements IStorage {
   async getProject(id: number): Promise<Project | undefined> {
     const [project] = await db.select().from(projects).where(eq(projects.id, id));
     return project;
+  }
+
+  async getProjectsByProgramType(programType: string): Promise<Project[]> {
+    return await db.select().from(projects).where(eq(projects.programType, programType));
   }
 
   async getNews(): Promise<News[]> {

@@ -30,6 +30,11 @@ export async function registerRoutes(
   });
 
   app.get(api.projects.list.path, async (req, res) => {
+    const programType = req.query.programType as string | undefined;
+    if (programType) {
+      const items = await storage.getProjectsByProgramType(programType);
+      return res.json(items);
+    }
     const items = await storage.getProjects();
     res.json(items);
   });
@@ -287,12 +292,130 @@ async function seedDatabase() {
   if (existingProjects.length === 0) {
     await db.insert(projectsTable).values([
       {
-        title: "Oloisukut Group Conservancy",
+        title: "Oloisukut Group Conservancy (OGC)",
         location: "Maasai Mara, Narok",
         sector: "Wildlife Conservation",
-        code: "KVDA/MLTV/2026/18",
+        code: "KVDA/STV/2026/OGC",
         description: "Conserving the Maasai Mara ecosystem while empowering the local Maasai community through sustainable tourism and wildlife protection. Volunteers assist with wildlife monitoring, anti-poaching patrols, and community education programs.",
-        imageUrl: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80"
+        imageUrl: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "Esibila Primary School (EPS)",
+        location: "Vihiga County",
+        sector: "Education",
+        code: "KVDA/STV/2026/EPS",
+        description: "Supporting primary education for vulnerable children in Vihiga through teaching assistance, infrastructure improvement, and provision of learning materials.",
+        imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "Roddy's Eco Cover Environmental Project",
+        location: "Vihiga County",
+        sector: "Environment",
+        code: "KVDA/STV/2026/REC",
+        description: "Environmental conservation and reforestation project aimed at restoring local ecosystems, promoting eco-friendly practices, and combating climate change effects.",
+        imageUrl: "https://images.unsplash.com/photo-1542601906990-b4d3fb7d5c73?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "Nyamanche Primary School (NPS)",
+        location: "Nyamira County",
+        sector: "Education",
+        code: "KVDA/STV/2026/NPS",
+        description: "Supporting education and infrastructure development at Nyamanche Primary School. Volunteers assist with teaching, school improvements, and community engagement to enhance learning outcomes for children in the region.",
+        imageUrl: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "St. Theresa Mabera Primary School",
+        location: "Kisii County",
+        sector: "Education",
+        code: "KVDA/STV/2026/STM",
+        description: "Working alongside teachers and the local community to improve educational facilities and teaching resources at St. Theresa Mabera Primary School. Volunteers participate in classroom support, mentorship, and infrastructure improvement.",
+        imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "Nyamira Missionaries Cultural Development",
+        location: "Nyamira County",
+        sector: "Cultural Development",
+        code: "KVDA/STV/2026/NMCD",
+        description: "Promoting cultural preservation and community development through arts, heritage documentation, and cultural exchange programs in Nyamira County. Volunteers engage in cultural activities and support local artisans.",
+        imageUrl: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "St. James Community Orphans School",
+        location: "Vihiga County",
+        sector: "Education",
+        code: "KVDA/STV/2026/SJC",
+        description: "Providing education support and care for orphaned and vulnerable children at St. James Community School. Volunteers help with teaching, mentorship, psychosocial support, and infrastructure development.",
+        imageUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "St. Joseph's Nyamosense Special Unit School",
+        location: "Kisii County",
+        sector: "Education",
+        code: "KVDA/STV/2026/SJN",
+        description: "Supporting children with special needs through adapted teaching methods, therapy assistance, and inclusive education at St. Joseph's Nyamosense. Volunteers contribute to individualized learning and school improvements.",
+        imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "Newstar Drama Group Volunteers (NDGV)",
+        location: "Nairobi",
+        sector: "Youth Development",
+        code: "KVDA/STV/2026/NDGV",
+        description: "Empowering youth through performing arts, drama, and creative expression. Volunteers work with young people to develop theatrical skills, build confidence, and use drama as a tool for social awareness and community transformation.",
+        imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "Esiarambatsi Health Center (EHC)",
+        location: "Vihiga County",
+        sector: "Health",
+        code: "KVDA/STV/2026/EHC",
+        description: "Improving healthcare access and health education at Esiarambatsi Health Center. Volunteers support community health outreach, maternal health programs, and help improve health facility infrastructure.",
+        imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "Happy Me Happy You Volunteer",
+        location: "Kisumu",
+        sector: "Community Development",
+        code: "KVDA/STV/2026/HMHY",
+        description: "A community wellness and empowerment initiative focused on mental health awareness, youth mentorship, and community bonding through social activities and support programs.",
+        imageUrl: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "Neema Good Shepherds Orphanage",
+        location: "Bungoma County",
+        sector: "Community Development",
+        code: "KVDA/STV/2026/NGS",
+        description: "Supporting orphaned and vulnerable children at Neema Good Shepherds through education, nutrition, and holistic care programs. Volunteers assist with childcare, tutoring, and facility improvement.",
+        imageUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "Kito International Volunteers",
+        location: "Kisumu",
+        sector: "Community Development",
+        code: "KVDA/STV/2026/KIV",
+        description: "A community development initiative connecting international and local volunteers to work on sustainable projects addressing education, health, and livelihood improvement in the Lake Victoria region.",
+        imageUrl: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?auto=format&fit=crop&q=80",
+        programType: "short_term"
+      },
+      {
+        title: "Esikoma Community Health Volunteers",
+        location: "Busia County",
+        sector: "Health",
+        code: "KVDA/STV/2026/ECHV",
+        description: "Training and supporting community health volunteers to provide basic healthcare services, conduct health education campaigns, and improve sanitation in remote communities of Busia County.",
+        imageUrl: "https://images.unsplash.com/photo-1584515169010-2590d737b673?auto=format&fit=crop&q=80",
+        programType: "short_term"
       },
       {
         title: "Mount Olives Community Health Centre",
@@ -319,22 +442,6 @@ async function seedDatabase() {
         imageUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80"
       },
       {
-        title: "Esibila Primary School Support",
-        location: "Vihiga County",
-        sector: "Education",
-        code: "KVDA/MLTV/2026/31",
-        description: "Supporting primary education for vulnerable children in Vihiga through teaching assistance, infrastructure improvement, and provision of learning materials.",
-        imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80"
-      },
-      {
-        title: "Roddy's Eco Cover",
-        location: "Vihiga County",
-        sector: "Environment",
-        code: "KVDA/MLTV/2026/25",
-        description: "Environmental conservation and reforestation project aimed at restoring local ecosystems, promoting eco-friendly practices, and combating climate change effects.",
-        imageUrl: "https://images.unsplash.com/photo-1542601906990-b4d3fb7d5c73?auto=format&fit=crop&q=80"
-      },
-      {
         title: "Community Health Volunteers",
         location: "Shinyalu, Kakamega",
         sector: "Health",
@@ -349,14 +456,6 @@ async function seedDatabase() {
         code: "KVDA/MLTV/2026/15",
         description: "Working with Maasai communities on water access, education, and livelihood improvement projects. Volunteers help build water collection systems and support school programs.",
         imageUrl: "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&q=80"
-      },
-      {
-        title: "Lake Victoria Beach Cleanup",
-        location: "Kisumu",
-        sector: "Environment",
-        code: "KVDA/STV/2026/05",
-        description: "Environmental conservation project focused on cleaning Lake Victoria shoreline, educating local communities about waste management, and protecting aquatic ecosystems.",
-        imageUrl: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?auto=format&fit=crop&q=80"
       },
       {
         title: "Special Needs Education Support",
