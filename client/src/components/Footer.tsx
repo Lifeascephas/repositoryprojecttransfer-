@@ -3,20 +3,28 @@ import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, ArrowRight 
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
 import kvdaLogo from "@assets/cropped-KVDA-01-copy_1770989337592.png";
 
 export function Footer() {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
-    toast({
-      title: "Subscribed!",
-      description: "Thank you for subscribing to our newsletter.",
-    });
-    setEmail("");
+    if (!email || isSubmitting) return;
+    setIsSubmitting(true);
+    try {
+      const res = await apiRequest("POST", "/api/newsletter/subscribe", { email });
+      const data = await res.json();
+      toast({ title: "Subscribed!", description: data.message });
+      setEmail("");
+    } catch (err: any) {
+      toast({ title: "Already subscribed", description: "This email is already on our list.", variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -39,8 +47,8 @@ export function Footer() {
                 required
                 data-testid="input-newsletter-email"
               />
-              <Button type="submit" className="bg-gray-900 text-white font-semibold px-6 rounded-md" data-testid="button-newsletter-submit">
-                Subscribe <ArrowRight className="ml-2 h-4 w-4" />
+              <Button type="submit" disabled={isSubmitting} className="bg-gray-900 text-white font-semibold px-6 rounded-md" data-testid="button-newsletter-submit">
+                {isSubmitting ? "..." : "Subscribe"} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </form>
           </div>
@@ -88,6 +96,7 @@ export function Footer() {
               <li><Link href="/programs" className="text-gray-400 hover:text-primary transition-colors" data-testid="link-footer-programs">Our Programs</Link></li>
               <li><Link href="/projects" className="text-gray-400 hover:text-primary transition-colors" data-testid="link-footer-projects">Volunteer Projects</Link></li>
               <li><Link href="/volunteer" className="text-gray-400 hover:text-primary transition-colors" data-testid="link-footer-volunteer">Become a Volunteer</Link></li>
+              <li><Link href="/gallery" className="text-gray-400 hover:text-primary transition-colors" data-testid="link-footer-gallery">Photo Gallery</Link></li>
               <li><Link href="/news" className="text-gray-400 hover:text-primary transition-colors" data-testid="link-footer-news">News & Blog</Link></li>
             </ul>
           </div>

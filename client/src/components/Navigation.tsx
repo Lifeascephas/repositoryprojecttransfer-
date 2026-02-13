@@ -39,6 +39,7 @@ const navItems: NavItem[] = [
       { href: "/partners", label: "Our Partners" },
     ],
   },
+  { href: "/gallery", label: "Gallery" },
   { href: "/news", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];

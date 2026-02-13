@@ -172,6 +172,66 @@ export async function registerRoutes(
     }
   });
 
+  app.post(api.newsletter.subscribe.path, async (req, res) => {
+    try {
+      const { email } = api.newsletter.subscribe.input.parse(req.body);
+      const existing = await storage.getNewsletterSubscriberByEmail(email);
+      if (existing) {
+        if (existing.confirmed) {
+          return res.status(400).json({ message: "You are already subscribed." });
+        }
+        return res.status(200).json({ message: "A confirmation was already sent. Please check your email." });
+      }
+      const token = crypto.randomUUID();
+      await storage.createNewsletterSubscriber(email, token);
+      res.status(201).json({ message: "Thank you for subscribing! Your subscription has been confirmed." });
+    } catch (err: any) {
+      res.status(400).json({ message: err.message });
+    }
+  });
+
+  app.get(api.newsletter.confirm.path, async (req, res) => {
+    const subscriber = await storage.confirmNewsletterSubscriber(req.params.token);
+    if (!subscriber) return res.status(404).json({ message: "Invalid confirmation link." });
+    res.json({ message: "Your subscription has been confirmed!" });
+  });
+
+  app.get(api.gallery.list.path, async (req, res) => {
+    const photos = await storage.getGalleryPhotos();
+    res.json(photos);
+  });
+
+  app.post(api.gallery.create.path, isAuthenticated, async (req, res) => {
+    try {
+      const input = api.gallery.create.input.parse(req.body);
+      const photo = await storage.createGalleryPhoto(input);
+      res.status(201).json(photo);
+    } catch (err: any) {
+      res.status(400).json({ message: err.message });
+    }
+  });
+
+  app.delete(api.gallery.delete.path, isAuthenticated, async (req, res) => {
+    const success = await storage.deleteGalleryPhoto(Number(req.params.id));
+    if (!success) return res.status(404).json({ message: "Photo not found" });
+    res.json({ success: true });
+  });
+
+  app.post(api.donations.create.path, async (req, res) => {
+    try {
+      const input = api.donations.create.input.parse(req.body);
+      const donation = await storage.createDonation(input);
+      res.status(201).json(donation);
+    } catch (err: any) {
+      res.status(400).json({ message: err.message });
+    }
+  });
+
+  app.get(api.donations.list.path, isAuthenticated, async (req, res) => {
+    const items = await storage.getDonations();
+    res.json(items);
+  });
+
   await seedDatabase();
 
   return httpServer;

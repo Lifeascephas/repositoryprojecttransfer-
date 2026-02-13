@@ -1,8 +1,8 @@
 
 import { z } from 'zod';
-import { insertInquirySchema, insertVolunteerApplicationSchema, insertTeamMemberSchema, insertBoardMemberSchema, programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials, volunteerApplications } from './schema';
+import { insertInquirySchema, insertVolunteerApplicationSchema, insertTeamMemberSchema, insertBoardMemberSchema, insertGalleryPhotoSchema, insertDonationSchema, programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials, volunteerApplications, newsletterSubscribers, galleryPhotos, donations } from './schema';
 
-export { insertInquirySchema, insertVolunteerApplicationSchema, insertTeamMemberSchema, insertBoardMemberSchema };
+export { insertInquirySchema, insertVolunteerApplicationSchema, insertTeamMemberSchema, insertBoardMemberSchema, insertGalleryPhotoSchema, insertDonationSchema };
 
 export type InsertInquiry = z.infer<typeof insertInquirySchema>;
 
@@ -198,6 +198,69 @@ export const api = {
       responses: {
         200: z.custom<typeof volunteerApplications.$inferSelect>(),
         404: z.object({ message: z.string() }),
+      },
+    },
+  },
+  newsletter: {
+    subscribe: {
+      method: 'POST' as const,
+      path: '/api/newsletter/subscribe' as const,
+      input: z.object({ email: z.string().email() }),
+      responses: {
+        201: z.object({ message: z.string() }),
+        400: z.object({ message: z.string() }),
+      },
+    },
+    confirm: {
+      method: 'GET' as const,
+      path: '/api/newsletter/confirm/:token' as const,
+      responses: {
+        200: z.object({ message: z.string() }),
+        404: z.object({ message: z.string() }),
+      },
+    },
+  },
+  gallery: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/gallery' as const,
+      responses: {
+        200: z.array(z.custom<typeof galleryPhotos.$inferSelect>()),
+      },
+    },
+    create: {
+      method: 'POST' as const,
+      path: '/api/gallery' as const,
+      input: insertGalleryPhotoSchema,
+      responses: {
+        201: z.custom<typeof galleryPhotos.$inferSelect>(),
+        400: z.object({ message: z.string() }),
+      },
+    },
+    delete: {
+      method: 'DELETE' as const,
+      path: '/api/gallery/:id' as const,
+      responses: {
+        200: z.object({ success: z.boolean() }),
+        404: z.object({ message: z.string() }),
+      },
+    },
+  },
+  donations: {
+    create: {
+      method: 'POST' as const,
+      path: '/api/donations' as const,
+      input: insertDonationSchema,
+      responses: {
+        201: z.custom<typeof donations.$inferSelect>(),
+        400: z.object({ message: z.string() }),
+      },
+    },
+    list: {
+      method: 'GET' as const,
+      path: '/api/donations' as const,
+      responses: {
+        200: z.array(z.custom<typeof donations.$inferSelect>()),
       },
     },
   },

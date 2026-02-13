@@ -19,6 +19,7 @@ import Donate from "@/pages/Donate";
 import VolunteerApplication from "@/pages/VolunteerApplication";
 import AdminDashboard from "@/pages/AdminDashboard";
 import ServiceDetail from "@/pages/ServiceDetail";
+import Gallery from "@/pages/Gallery";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
@@ -49,6 +50,7 @@ function Router() {
           <Route path="/admin" component={AdminDashboard} />
           <Route path="/partners" component={Partners} />
           <Route path="/donate" component={Donate} />
+          <Route path="/gallery" component={Gallery} />
           <Route path="/news" component={NewsPage} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
