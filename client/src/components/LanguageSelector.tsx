@@ -92,7 +92,7 @@ export function LanguageSelector() {
   };
 
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className="relative notranslate" translate="no">
       <div id="google_translate_element" className="hidden" />
       <button
         onClick={() => setOpen(!open)}

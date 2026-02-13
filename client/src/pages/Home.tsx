@@ -549,7 +549,7 @@ export default function Home() {
               { icon: SiFacebook, label: "Facebook", href: "https://facebook.com/kvdakenya", color: "bg-[#1877F2]", handle: "@kvdakenya" },
               { icon: SiX, label: "X (Twitter)", href: "https://twitter.com/kvdakenya", color: "bg-gray-900", handle: "@kvdakenya" },
               { icon: SiInstagram, label: "Instagram", href: "https://instagram.com/kvdakenya", color: "bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF]", handle: "@kvdakenya" },
-              { icon: SiYoutube, label: "YouTube", href: "https://youtube.com/@kvdakenya", color: "bg-[#FF0000]", handle: "KVDA Kenya" },
+              { icon: SiYoutube, label: "YouTube", href: "https://www.youtube.com/@kvda-kenyavoluntarydevelop8044", color: "bg-[#FF0000]", handle: "KVDA Kenya" },
               { icon: SiLinkedin, label: "LinkedIn", href: "https://linkedin.com/company/kvdakenya", color: "bg-[#0A66C2]", handle: "KVDA Kenya" },
               { icon: SiTiktok, label: "TikTok", href: "https://tiktok.com/@kvdakenya", color: "bg-gray-900", handle: "@kvdakenya" },
             ].map((social, i) => (
@@ -645,7 +645,7 @@ export default function Home() {
               ))}
 
               <div className="pt-2">
-                <a href="https://youtube.com/@kvdakenya" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.youtube.com/@kvda-kenyavoluntarydevelop8044" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="w-full border-primary text-primary font-semibold" data-testid="button-youtube-channel">
                     <SiYoutube className="mr-2 h-4 w-4" />
                     Visit Our YouTube Channel
