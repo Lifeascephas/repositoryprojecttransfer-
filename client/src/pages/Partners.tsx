@@ -31,6 +31,12 @@ import viveMexicoLogo from "@assets/VIVE-MEXICO-logo_1770996713577.webp";
 import vjfLogo from "@assets/VJF_Logo_30Jahre-1-1_1770996713579.jpg";
 import voltraLogo from "@assets/Voltra_logo_without-tagline-1_1770996713580.png";
 
+import etudesLogo from "@assets/jh_1770997511723.png";
+import figderLogo from "@assets/kj_1770997511724.png";
+import icjaLogo from "@assets/logo_1770997511726.png";
+import mviacLogo from "@assets/logo-d_1770997511730.png";
+import dnaNgoLogo from "@assets/logo-g_1770997511732.png";
+
 import iLogo from "@assets/i_1770997143705.webp";
 import leLogo from "@assets/le_1770997143706.png";
 import lkLogo from "@assets/lk_1770997143707.jpg";
@@ -101,6 +107,11 @@ const partnerLogos = [
   { name: "Legambiente", logo: leLogo },
   { name: "LYVS - Lesotho Youth Voluntary Service", logo: log1Logo },
   { name: "IBO Italia", logo: iLogo },
+  { name: "Etudes et Chantiers", logo: etudesLogo },
+  { name: "FIGDER", logo: figderLogo },
+  { name: "ICJA Freiwilligenaustausch weltweit", logo: icjaLogo },
+  { name: "AMVIAC - Asociacion Mexicana de Voluntariado Internacional", logo: mviacLogo },
+  { name: "DNA.NGO", logo: dnaNgoLogo },
 ];
 
 export default function Partners() {
