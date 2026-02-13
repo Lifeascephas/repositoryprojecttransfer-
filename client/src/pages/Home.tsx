@@ -33,7 +33,7 @@ export default function Home() {
             alt="Volunteers in Kenya" 
             className="w-full h-full object-cover fixed"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/80 to-black/100" />
         </motion.div>
         
         <div className="container relative z-10 px-4 text-center">
