@@ -65,11 +65,11 @@ export default function Projects() {
                   transition={{ delay: index * 0.05 }}
                 >
                   <Card className="flex flex-col h-full border border-gray-100 shadow-sm overflow-hidden group" data-testid={`card-project-${project.id}`}>
-                    <div className="h-56 relative overflow-hidden">
+                    <div className="aspect-[4/3] relative overflow-hidden">
                       <img
                         src={project.imageUrl || "https://images.unsplash.com/photo-1516214104703-d870798883c5?auto=format&fit=crop&q=80"}
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       <span className="absolute top-4 right-4 bg-primary/90 text-white text-xs font-medium px-3 py-1 rounded-full uppercase tracking-wide" data-testid={`text-project-sector-${project.id}`}>

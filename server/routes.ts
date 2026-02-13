@@ -290,7 +290,7 @@ async function seedDatabase() {
         title: "Oloisukut Group Conservancy",
         location: "Maasai Mara, Narok",
         sector: "Wildlife Conservation",
-        code: "KVDA/MLTV/2021/18",
+        code: "KVDA/MLTV/2026/18",
         description: "Conserving the Maasai Mara ecosystem while empowering the local Maasai community through sustainable tourism and wildlife protection. Volunteers assist with wildlife monitoring, anti-poaching patrols, and community education programs.",
         imageUrl: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80"
       },
@@ -298,7 +298,7 @@ async function seedDatabase() {
         title: "Mount Olives Community Health Centre",
         location: "Mosocho, Kisii",
         sector: "Health",
-        code: "KVDA/MLTV/2023/29",
+        code: "KVDA/MLTV/2026/29",
         description: "Improving access to healthcare and health education in rural Kisii, focusing on maternal health, disease prevention, and community health worker training.",
         imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80"
       },
@@ -306,7 +306,7 @@ async function seedDatabase() {
         title: "Sustainable Agriculture Initiative - KIOF",
         location: "Kiambu County",
         sector: "Agriculture",
-        code: "KVDA/MLTV/2023/12",
+        code: "KVDA/MLTV/2026/12",
         description: "Promoting organic farming and food security in partnership with the Kenya Institute of Organic Farming (KIOF). Volunteers learn and teach sustainable farming methods to local farmers.",
         imageUrl: "https://images.unsplash.com/photo-1625246333195-58405079a490?auto=format&fit=crop&q=80"
       },
@@ -314,7 +314,7 @@ async function seedDatabase() {
         title: "Gender Empowerment Project",
         location: "Nairobi",
         sector: "Gender",
-        code: "KVDA/MLTV/2023/08",
+        code: "KVDA/MLTV/2026/08",
         description: "Empowering women and girls through vocational training, leadership workshops, and advocacy to challenge patriarchal systems and promote gender equality.",
         imageUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80"
       },
@@ -322,7 +322,7 @@ async function seedDatabase() {
         title: "Esibila Primary School Support",
         location: "Vihiga County",
         sector: "Education",
-        code: "KVDA/MLTV/2021/31",
+        code: "KVDA/MLTV/2026/31",
         description: "Supporting primary education for vulnerable children in Vihiga through teaching assistance, infrastructure improvement, and provision of learning materials.",
         imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80"
       },
@@ -330,7 +330,7 @@ async function seedDatabase() {
         title: "Roddy's Eco Cover",
         location: "Vihiga County",
         sector: "Environment",
-        code: "KVDA/MLTV/2021/25",
+        code: "KVDA/MLTV/2026/25",
         description: "Environmental conservation and reforestation project aimed at restoring local ecosystems, promoting eco-friendly practices, and combating climate change effects.",
         imageUrl: "https://images.unsplash.com/photo-1542601906990-b4d3fb7d5c73?auto=format&fit=crop&q=80"
       },
@@ -338,7 +338,7 @@ async function seedDatabase() {
         title: "Community Health Volunteers",
         location: "Shinyalu, Kakamega",
         sector: "Health",
-        code: "KVDA/MLTV/2021/30",
+        code: "KVDA/MLTV/2026/30",
         description: "Training and supporting community health volunteers to provide basic healthcare services and health education in remote Kakamega villages.",
         imageUrl: "https://images.unsplash.com/photo-1584515169010-2590d737b673?auto=format&fit=crop&q=80"
       },
@@ -346,7 +346,7 @@ async function seedDatabase() {
         title: "Maasai Community Development",
         location: "Kajiado County",
         sector: "Community Development",
-        code: "KVDA/MLTV/2023/15",
+        code: "KVDA/MLTV/2026/15",
         description: "Working with Maasai communities on water access, education, and livelihood improvement projects. Volunteers help build water collection systems and support school programs.",
         imageUrl: "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&q=80"
       },
@@ -354,7 +354,7 @@ async function seedDatabase() {
         title: "Lake Victoria Beach Cleanup",
         location: "Kisumu",
         sector: "Environment",
-        code: "KVDA/STV/2024/05",
+        code: "KVDA/STV/2026/05",
         description: "Environmental conservation project focused on cleaning Lake Victoria shoreline, educating local communities about waste management, and protecting aquatic ecosystems.",
         imageUrl: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?auto=format&fit=crop&q=80"
       },
@@ -362,7 +362,7 @@ async function seedDatabase() {
         title: "Special Needs Education Support",
         location: "Thika, Kiambu",
         sector: "Education",
-        code: "KVDA/MLTV/2023/20",
+        code: "KVDA/MLTV/2026/20",
         description: "Supporting children with special needs through adapted teaching methods, therapy assistance, and infrastructure improvements at special education centers.",
         imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80"
       },
@@ -370,7 +370,7 @@ async function seedDatabase() {
         title: "Youth Entrepreneurship Program",
         location: "Nairobi",
         sector: "Youth Development",
-        code: "KVDA/MLTV/2024/02",
+        code: "KVDA/MLTV/2026/02",
         description: "Equipping young people with entrepreneurial skills, financial literacy, and mentorship to create sustainable livelihoods and reduce youth unemployment.",
         imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80"
       },
@@ -378,7 +378,7 @@ async function seedDatabase() {
         title: "Rural Water & Sanitation",
         location: "Machakos County",
         sector: "Water & Sanitation",
-        code: "KVDA/STV/2024/08",
+        code: "KVDA/STV/2026/08",
         description: "Improving access to clean water and sanitation facilities in rural Machakos. Volunteers help construct water harvesting systems and latrines for schools and communities.",
         imageUrl: "https://images.unsplash.com/photo-1541544537156-7627a7a4aa1c?auto=format&fit=crop&q=80"
       }
