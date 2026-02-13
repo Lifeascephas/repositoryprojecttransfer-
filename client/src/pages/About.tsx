@@ -33,18 +33,14 @@ export default function About() {
             <p className="text-lg text-zinc-300 font-light leading-relaxed">
               Volunteer in Kenya with KVDA. Development Against Dependence since 1962.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       <section className="py-24 bg-white">
         <div className="container px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <h2 className="text-3xl font-display font-medium text-gray-900 mb-6">Our Story</h2>
               <div className="h-1 w-20 bg-primary mb-8" />
               <div className="space-y-5 text-gray-600 font-light leading-relaxed">
@@ -61,12 +57,8 @@ export default function About() {
                   The Association is further dedicated to mobilizing resources within and across national borders to support community development initiatives whose aims are to eradicate poverty and human suffering as well as to promote democracy and justice among peoples.
                 </p>
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
+            </div>
+            <div>
               <div className="relative">
                 <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-3xl opacity-20" />
                 <img
@@ -75,15 +67,10 @@ export default function About() {
                   className="relative rounded-2xl shadow-2xl w-full aspect-video object-cover ring-1 ring-gray-200"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-24"
-          >
+          <div className="mb-24">
             <Card className="border border-primary/20 shadow-sm bg-red-50/30">
               <CardContent className="p-8 md:p-10">
                 <div className="flex items-start gap-4 mb-6">
@@ -109,14 +96,10 @@ export default function About() {
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-24">
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <Card className="border border-gray-100 shadow-sm border-primary/20 h-full">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-4">
@@ -128,13 +111,8 @@ export default function About() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.05 }}
-            >
+            </div>
+            <div>
               <Card className="border border-gray-100 shadow-sm h-full">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-4">
@@ -146,15 +124,10 @@ export default function About() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-24"
-          >
+          <div className="mb-24">
             <div className="text-center mb-12">
               <h3 className="text-3xl font-display font-medium text-gray-900 mb-4">YouTube Video</h3>
               <div className="h-1 w-20 bg-primary mx-auto mt-4" />
@@ -171,14 +144,10 @@ export default function About() {
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-12 mb-24">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <div className="flex items-center gap-3 mb-6">
                 <BookOpen className="w-6 h-6 text-primary" />
                 <h3 className="text-2xl font-display font-medium text-gray-900">Strategic Objectives</h3>
@@ -199,12 +168,8 @@ export default function About() {
                   </div>
                 ))}
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
+            </div>
+            <div>
               <h3 className="text-2xl font-display font-medium text-gray-900 mb-6">Core Values</h3>
               <div className="h-1 w-20 bg-primary mb-8" />
               <div className="space-y-3">
@@ -224,7 +189,7 @@ export default function About() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -240,13 +205,7 @@ export default function About() {
 
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {(boardMembers as BoardMember[]).map((member, index) => (
-                <motion.div
-                  key={member.id}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.02 }}
-                >
+                <div key={member.id}>
                   <Card className="border border-gray-100 shadow-sm overflow-hidden" data-testid={`card-board-member-${member.id}`}>
                     <div className="h-56 overflow-hidden">
                       <img
@@ -260,7 +219,7 @@ export default function About() {
                       <p className="text-primary text-xs mt-1" data-testid={`text-board-position-${member.id}`}>{member.position}</p>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -278,13 +237,7 @@ export default function About() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {(teamMembers as TeamMember[]).map((member, index) => (
-                <motion.div
-                  key={member.id}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.02 }}
-                >
+                <div key={member.id}>
                   <Card className="border border-gray-100 shadow-sm overflow-hidden" data-testid={`card-team-member-${member.id}`}>
                     <div className="flex items-center p-6 gap-5">
                       <img
@@ -310,7 +263,7 @@ export default function About() {
                       </div>
                     </div>
                   </Card>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

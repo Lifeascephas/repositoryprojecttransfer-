@@ -76,7 +76,7 @@ export default function WorkcampDetail() {
                 {camp.dates}
               </span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -92,7 +92,7 @@ export default function WorkcampDetail() {
                 >
                   <h2 className="text-2xl font-display font-semibold text-gray-900 mb-4">About This Workcamp</h2>
                   <p className="text-gray-600 leading-relaxed">{camp.description}</p>
-                </motion.div>
+                </div>
 
                 {activities.length > 0 && (
                   <motion.div
@@ -109,7 +109,7 @@ export default function WorkcampDetail() {
                         </li>
                       ))}
                     </ul>
-                  </motion.div>
+                  </div>
                 )}
 
                 {camp.accommodation && (
@@ -120,7 +120,7 @@ export default function WorkcampDetail() {
                   >
                     <h2 className="text-2xl font-display font-semibold text-gray-900 mb-4">Accommodation & Living</h2>
                     <p className="text-gray-600 leading-relaxed">{camp.accommodation}</p>
-                  </motion.div>
+                  </div>
                 )}
               </div>
 

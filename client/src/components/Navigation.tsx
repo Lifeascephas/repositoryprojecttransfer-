@@ -114,7 +114,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
                 </Link>
               ))}
             </div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </div>
@@ -232,7 +232,7 @@ export function Navigation() {
                                   </Link>
                                 ))}
                               </div>
-                            </motion.div>
+                            </div>
                           )}
                         </AnimatePresence>
                       </>
@@ -259,7 +259,7 @@ export function Navigation() {
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </div>
           )}
         </AnimatePresence>
       </nav>

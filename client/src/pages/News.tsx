@@ -40,7 +40,7 @@ export default function NewsPage() {
             <p className="text-lg text-zinc-300 font-light leading-relaxed">
               Stay updated with our latest activities, success stories, and upcoming events.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -48,13 +48,7 @@ export default function NewsPage() {
         <div className="container px-4">
           <div className="max-w-4xl mx-auto space-y-10">
             {(newsItems as News[])?.map((item: News, index: number) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.025 }}
-              >
+              <div key={item.id}>
                 <Card className="overflow-hidden border border-gray-100 shadow-sm" data-testid={`card-news-${item.id}`}>
                   <div className="md:flex">
                     <div className="md:w-2/5 h-64 md:h-auto relative">
@@ -73,7 +67,7 @@ export default function NewsPage() {
                     </CardContent>
                   </div>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

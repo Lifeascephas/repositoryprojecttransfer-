@@ -296,7 +296,7 @@ export default function AdminDashboard() {
             <h1 className="text-4xl md:text-5xl font-display font-light text-white mt-4" data-testid="text-page-title">
               Admin <span className="text-primary italic font-normal">Panel</span>
             </h1>
-          </motion.div>
+          </div>
         </div>
       </section>
 

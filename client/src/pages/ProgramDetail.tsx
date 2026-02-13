@@ -134,7 +134,7 @@ export default function ProgramDetail() {
                 <span>Duration: {program.duration}</span>
               </div>
             )}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -144,11 +144,7 @@ export default function ProgramDetail() {
             <div className="container px-4">
               <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-2">
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                  >
+                  <div>
                     <h2 className="text-3xl font-display font-semibold text-gray-900 mb-8" data-testid="text-about-heading">
                       About This Program
                     </h2>
@@ -159,16 +155,11 @@ export default function ProgramDetail() {
                         </p>
                       ))}
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
 
                 <div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.05 }}
-                  >
+                  <div>
                     <Card className="border border-gray-100 shadow-sm sticky top-24">
                       <CardContent className="p-6">
                         <h3 className="text-lg font-semibold text-gray-900 mb-5">Quick Facts</h3>
@@ -200,7 +191,7 @@ export default function ProgramDetail() {
                         </div>
                       </CardContent>
                     </Card>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -210,33 +201,22 @@ export default function ProgramDetail() {
             <section className="py-20 bg-gray-50">
               <div className="container px-4">
                 <div className="max-w-4xl mx-auto">
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-12"
-                  >
+                  <div className="text-center mb-12">
                     <span className="text-primary font-medium tracking-widest text-xs uppercase">Why Join</span>
                     <h2 className="text-3xl font-display font-semibold text-gray-900 mt-3" data-testid="text-benefits-heading">
                       Benefits of This Program
                     </h2>
-                  </motion.div>
+                  </div>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {content.benefits.map((benefit, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.025 }}
-                      >
+                      <div key={i}>
                         <Card className="border border-gray-100 shadow-sm h-full">
                           <CardContent className="p-5 flex items-start gap-3">
                             <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
                             <p className="text-gray-700 text-sm leading-relaxed">{benefit}</p>
                           </CardContent>
                         </Card>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -248,11 +228,7 @@ export default function ProgramDetail() {
         <section className="py-20 bg-white">
           <div className="container px-4">
             <div className="max-w-3xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
+              <div>
                 <h2 className="text-3xl font-display font-semibold text-gray-900 mb-8" data-testid="text-about-heading">
                   About This Program
                 </h2>
@@ -277,7 +253,7 @@ export default function ProgramDetail() {
                     </Button>
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -286,12 +262,7 @@ export default function ProgramDetail() {
       {linkedProjects && linkedProjects.length > 0 && (
         <section className="py-20 bg-white">
           <div className="container px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
+            <div className="text-center mb-12">
               <span className="text-primary font-medium tracking-widest text-xs uppercase">Our Projects</span>
               <h2 className="text-3xl font-display font-semibold text-gray-900 mt-3" data-testid="text-projects-heading">
                 {type === "short_term" ? "Short-Term Volunteering Projects" : "Program Projects"}
@@ -301,16 +272,10 @@ export default function ProgramDetail() {
                   ? "Explore 14 international volunteer projects across Kenya. Click on any project to learn more about the community, activities, and how you can get involved."
                   : "Browse the projects under this program."}
               </p>
-            </motion.div>
+            </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {linkedProjects.map((project, i) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.015 }}
-                >
+                <div key={project.id}>
                   <Link href={`/projects/${project.id}`}>
                     <Card className="overflow-visible h-full hover-elevate cursor-pointer group" data-testid={`card-project-${project.id}`}>
                       <div className="aspect-[4/3] overflow-hidden rounded-t-md">
@@ -335,7 +300,7 @@ export default function ProgramDetail() {
                       </CardContent>
                     </Card>
                   </Link>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -344,12 +309,7 @@ export default function ProgramDetail() {
 
       <section className="py-16 bg-primary/5">
         <div className="container px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
-          >
+          <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl font-display font-semibold text-gray-900 mb-4">
               Explore More Programs
             </h2>
@@ -361,7 +321,7 @@ export default function ProgramDetail() {
                 View All Programs <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

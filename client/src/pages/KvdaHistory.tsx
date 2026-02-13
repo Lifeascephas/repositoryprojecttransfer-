@@ -55,18 +55,14 @@ export default function KvdaHistory() {
             <p className="text-lg text-zinc-300 font-light leading-relaxed">
               Over six decades of championing volunteerism, social justice, and community development across Kenya and beyond.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       <section className="py-20 bg-white">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <h2 className="text-3xl font-display font-semibold text-gray-900 mb-8" data-testid="text-overview-heading">
                 An Overview on Voluntarism & KVDA Development Cooperation
               </h2>
@@ -82,7 +78,7 @@ export default function KvdaHistory() {
               <p className="text-gray-600 leading-relaxed">
                 The name changed to Kenya Voluntary Development Association in 1969 to widen the scope, diversify operations in the entire development spectrum with international voluntary service as the core-competence of the Association.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -90,12 +86,7 @@ export default function KvdaHistory() {
       <section className="py-20 bg-gray-50">
         <div className="container px-4">
           <div className="max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="grid md:grid-cols-2 gap-12 items-center"
-            >
+            <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="text-primary font-medium tracking-widest text-xs uppercase">Our Founder</span>
                 <h2 className="text-3xl font-display font-semibold text-gray-900 mt-3 mb-6" data-testid="text-founder-heading">
@@ -129,7 +120,7 @@ export default function KvdaHistory() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -137,17 +128,12 @@ export default function KvdaHistory() {
       <section className="py-20 bg-white">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <span className="text-primary font-medium tracking-widest text-xs uppercase">Key Milestones</span>
               <h2 className="text-3xl font-display font-semibold text-gray-900 mt-3" data-testid="text-milestones-heading">
                 Our Journey Through the Years
               </h2>
-            </motion.div>
+            </div>
             <div className="relative">
               <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 hidden md:block" />
               <div className="space-y-12">
@@ -155,14 +141,7 @@ export default function KvdaHistory() {
                   const Icon = milestone.icon;
                   const isLeft = index % 2 === 0;
                   return (
-                    <motion.div
-                      key={milestone.year}
-                      initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.025 }}
-                      className={`relative md:flex md:items-center gap-8 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}
-                    >
+                    <div key={milestone.year} className={`relative md:flex md:items-center gap-8 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}>
                       <div className={`md:w-1/2 ${isLeft ? "md:text-right md:pr-12" : "md:text-left md:pl-12"}`}>
                         <Card className="border border-gray-100 shadow-sm">
                           <CardContent className="p-6">
@@ -177,7 +156,7 @@ export default function KvdaHistory() {
                       </div>
                       <div className="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-sm" />
                       <div className="md:w-1/2" />
-                    </motion.div>
+                    </div>
                   );
                 })}
               </div>
@@ -189,11 +168,7 @@ export default function KvdaHistory() {
       <section className="py-20 bg-gray-50">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div>
               <h2 className="text-3xl font-display font-semibold text-gray-900 mb-8" data-testid="text-legacy-heading">
                 A Legacy of International Cooperation
               </h2>
@@ -223,7 +198,7 @@ export default function KvdaHistory() {
                   </CardContent>
                 </Card>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

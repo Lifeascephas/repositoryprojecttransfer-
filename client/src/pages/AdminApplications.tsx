@@ -218,7 +218,7 @@ export default function AdminApplications() {
               Volunteer <span className="text-primary italic font-normal">Applications</span>
             </h1>
             <p className="text-lg text-zinc-300 font-light">Review and manage all volunteer exchange form submissions.</p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -296,7 +296,7 @@ export default function AdminApplications() {
                       </div>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
               ))}
             </div>
           )}

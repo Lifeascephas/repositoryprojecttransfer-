@@ -140,18 +140,13 @@ export default function Partners() {
               KVDA works with over 100 partner organizations across 40+ countries. Together, we mobilize
               volunteers for community development and cross-cultural exchange worldwide.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       <section className="py-24 bg-white">
         <div className="container px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto text-center mb-16"
-          >
+          <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-display font-medium text-gray-900 mb-6" data-testid="text-affiliations-heading">
               Our Affiliations
             </h2>
@@ -159,17 +154,11 @@ export default function Partners() {
             <p className="text-gray-700 text-lg font-light leading-relaxed" data-testid="text-affiliations-intro">
               KVDA is affiliated to the following National, Regional, Continental and International Voluntary Service Networks:
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {affiliations.map((partner, index) => (
-              <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.02 }}
-              >
+              <div key={partner.name}>
                 <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-affiliation-${index}`}>
                   <CardContent className="p-6 flex flex-col items-center text-center gap-4">
                     <div className="w-full h-32 flex items-center justify-center p-4">
@@ -188,7 +177,7 @@ export default function Partners() {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -196,27 +185,16 @@ export default function Partners() {
 
       <section className="py-24 bg-gray-50">
         <div className="container px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-3xl font-display font-medium text-gray-900 mb-6" data-testid="text-partners-heading">
               Our Partners
             </h2>
             <div className="h-1 w-24 bg-primary mx-auto mb-4" />
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
             {partnerLogos.map((partner, index) => (
-              <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.015 }}
-              >
+              <div key={partner.name}>
                 <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-partner-${index}`}>
                   <CardContent className="p-4 flex flex-col items-center justify-center gap-3 h-full">
                     <div className="w-full h-24 flex items-center justify-center p-2">
@@ -232,7 +210,7 @@ export default function Partners() {
                     </p>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -240,12 +218,7 @@ export default function Partners() {
 
       <section className="py-20 bg-white">
         <div className="container px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-12 rounded-md bg-gray-50 border border-gray-100 text-center max-w-3xl mx-auto"
-          >
+          <div className="p-12 rounded-md bg-gray-50 border border-gray-100 text-center max-w-3xl mx-auto">
             <h3 className="text-2xl font-display font-medium text-gray-900 mb-4">Become a Partner</h3>
             <p className="text-gray-600 font-light max-w-2xl mx-auto mb-6">
               If your organization is interested in partnering with KVDA for volunteer exchange
@@ -256,7 +229,7 @@ export default function Partners() {
                 Contact Us <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

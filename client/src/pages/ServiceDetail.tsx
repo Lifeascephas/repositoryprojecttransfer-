@@ -54,7 +54,7 @@ export default function ServiceDetail() {
                 <span className="text-white/90 text-sm font-medium" data-testid="text-service-duration">{service.duration}</span>
               </div>
             )}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -74,7 +74,7 @@ export default function ServiceDetail() {
                       {paragraph}
                     </p>
                   ))}
-                </motion.div>
+                </div>
 
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
@@ -94,7 +94,7 @@ export default function ServiceDetail() {
                       </Button>
                     </Link>
                   </div>
-                </motion.div>
+                </div>
               </div>
 
               {service.requirements && service.requirements.length > 0 && (
@@ -125,7 +125,7 @@ export default function ServiceDetail() {
                       )}
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
               )}
             </div>
           </div>
@@ -136,29 +136,18 @@ export default function ServiceDetail() {
         <section className="py-20 bg-gray-50" data-testid="section-service-projects">
           <div className="container px-4">
             <div className="max-w-4xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="mb-10"
-              >
+              <div className="mb-10">
                 <h2 className="text-2xl md:text-3xl font-display font-medium text-gray-900 mb-3" data-testid="text-projects-heading">
                   Available Projects
                 </h2>
                 <p className="text-gray-500 font-light">
                   Explore the specific projects available under this program. Each project offers unique opportunities for impact.
                 </p>
-              </motion.div>
+              </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 {service.projects.map((project, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.025 }}
-                  >
+                  <div key={i}>
                     <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-project-${i}`}>
                       <CardContent className="p-5">
                         <h4 className="font-semibold text-gray-900 text-sm mb-2">{project.name}</h4>
@@ -174,22 +163,17 @@ export default function ServiceDetail() {
                         </div>
                       </CardContent>
                     </Card>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="mt-10 text-center"
-              >
+              <div className="mt-10 text-center">
                 <Link href="/apply">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-md" data-testid="link-apply-project">
                     Apply for a Project <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>

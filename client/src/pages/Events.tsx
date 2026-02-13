@@ -40,7 +40,7 @@ export default function Events() {
             <p className="text-lg text-zinc-300 font-light leading-relaxed">
               Join us at our upcoming events, orientations, training sessions, and celebrations.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -48,13 +48,7 @@ export default function Events() {
         <div className="container px-4">
           <div className="grid md:grid-cols-2 gap-8">
             {(events as Event[])?.map((event, index) => (
-              <motion.div
-                key={event.id}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.025 }}
-              >
+              <div key={event.id}>
                 <Card className="border border-gray-100 shadow-sm overflow-hidden h-full" data-testid={`card-event-${event.id}`}>
                   <div className="h-56 overflow-hidden relative">
                     <img
@@ -84,7 +78,7 @@ export default function Events() {
                     <p className="text-gray-600 font-light leading-relaxed" data-testid={`text-event-desc-${event.id}`}>{event.description}</p>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

@@ -52,7 +52,7 @@ export default function Programs() {
               Explore the diverse ways you can engage with communities and foster development 
               through international volunteer exchange.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -64,13 +64,7 @@ export default function Programs() {
               const isEven = index % 2 === 0;
 
               return (
-                <motion.div
-                  key={program.id}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.05 }}
-                >
+                <div key={program.id}>
                   <div
                     className={`flex flex-col md:flex-row gap-10 items-center ${isEven ? '' : 'md:flex-row-reverse'}`}
                     data-testid={`card-program-${program.id}`}
@@ -111,7 +105,7 @@ export default function Programs() {
                       </Link>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -120,12 +114,7 @@ export default function Programs() {
 
       <section className="py-16 bg-primary/5">
         <div className="container px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
-          >
+          <div className="max-w-3xl mx-auto text-center">
             <Calendar className="h-10 w-10 text-primary mx-auto mb-4" />
             <h2 className="text-3xl font-display font-semibold text-gray-900 mb-4">
               2026 Workcamps Program
@@ -139,7 +128,7 @@ export default function Programs() {
                 View 2026 Workcamps <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

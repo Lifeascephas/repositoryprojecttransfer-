@@ -182,7 +182,7 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">

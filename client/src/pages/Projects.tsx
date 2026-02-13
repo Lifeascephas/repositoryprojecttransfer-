@@ -43,7 +43,7 @@ export default function Projects() {
               Browse our active projects across Kenya. From conservation in Maasai Mara 
               to education in rural villages.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -57,13 +57,7 @@ export default function Projects() {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {(projects as Project[]).map((project: Project, index: number) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.025 }}
-                >
+                <div key={project.id}>
                   <Card className="flex flex-col h-full border border-gray-100 shadow-sm overflow-hidden group" data-testid={`card-project-${project.id}`}>
                     <div className="aspect-[4/3] relative overflow-hidden">
                       <img
@@ -104,7 +98,7 @@ export default function Projects() {
                       </Link>
                     </CardFooter>
                   </Card>
-                </motion.div>
+                </div>
               ))}
             </div>
           )}

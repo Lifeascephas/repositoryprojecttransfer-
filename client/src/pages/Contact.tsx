@@ -54,7 +54,7 @@ export default function Contact() {
             <p className="text-lg text-zinc-300 font-light leading-relaxed">
               Have questions about volunteering or want to partner with us? We'd love to hear from you.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 

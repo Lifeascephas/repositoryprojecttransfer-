@@ -112,7 +112,7 @@ export default function VolunteerApplication() {
               Complete the Volunteer Exchange Form (VEF) below to apply for any of KVDA's volunteer programs.
               All fields marked with * are required.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -161,7 +161,7 @@ export default function VolunteerApplication() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
 
             <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
               <Card className="border border-gray-100 shadow-sm mb-8">
@@ -194,7 +194,7 @@ export default function VolunteerApplication() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
 
             <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
               <Card className="border border-gray-100 shadow-sm mb-8">
@@ -219,7 +219,7 @@ export default function VolunteerApplication() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
 
             <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
               <Card className="border border-gray-100 shadow-sm mb-8">
@@ -256,7 +256,7 @@ export default function VolunteerApplication() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
 
             <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
               <Card className="border border-gray-100 shadow-sm mb-8">
@@ -307,7 +307,7 @@ export default function VolunteerApplication() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
 
             <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
               <Card className="border border-gray-100 shadow-sm mb-8">
@@ -321,7 +321,7 @@ export default function VolunteerApplication() {
                   </Button>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           </form>
         </div>
       </section>

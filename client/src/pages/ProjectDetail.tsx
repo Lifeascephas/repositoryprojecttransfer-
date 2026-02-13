@@ -391,7 +391,7 @@ export default function ProjectDetail() {
                 <span>Theme: {enrichment.theme}</span>
               </div>
             )}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -399,11 +399,7 @@ export default function ProjectDetail() {
         <div className="container px-4">
           <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12">
             <div className="md:col-span-2">
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
+              <div>
                 <h2 className="text-3xl font-display font-semibold text-gray-900 mb-8" data-testid="text-about-heading">
                   About This Project
                 </h2>
@@ -549,16 +545,11 @@ export default function ProjectDetail() {
                     </Button>
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.05 }}
-              >
+              <div>
                 <Card className="border border-gray-100 shadow-sm sticky top-24">
                   <CardContent className="p-6">
                     <h3 className="text-lg font-semibold text-gray-900 mb-5">Project Details</h3>
@@ -706,7 +697,7 @@ export default function ProjectDetail() {
                     </CardContent>
                   </Card>
                 )}
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -714,12 +705,7 @@ export default function ProjectDetail() {
 
       <section className="py-16 bg-primary/5">
         <div className="container px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
-          >
+          <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl font-display font-semibold text-gray-900 mb-4">
               Explore More Projects
             </h2>
@@ -731,7 +717,7 @@ export default function ProjectDetail() {
                 View All Projects <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

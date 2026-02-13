@@ -14,12 +14,7 @@ function WorkcampCard({ camp, index }: { camp: Workcamp; index: number }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.02 }}
-    >
+    <div>
       <Card
         className="border border-gray-100 shadow-sm overflow-hidden"
         data-testid={`card-workcamp-${camp.id}`}
@@ -107,7 +102,7 @@ function WorkcampCard({ camp, index }: { camp: Workcamp; index: number }) {
                     <p className="text-sm text-gray-600">{camp.theme}</p>
                   </div>
                 )}
-              </motion.div>
+              </div>
             )}
 
             <div className="flex flex-wrap items-center gap-2">
@@ -138,7 +133,7 @@ function WorkcampCard({ camp, index }: { camp: Workcamp; index: number }) {
           </div>
         </div>
       </Card>
-    </motion.div>
+    </div>
   );
 }
 
@@ -193,7 +188,7 @@ export default function Workcamps() {
               Join our 2026 international volunteer workcamps across Kenya. Each 3-week program brings
               together up to 20 volunteers from around the world to work on community development projects.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 

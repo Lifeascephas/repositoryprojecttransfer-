@@ -86,7 +86,7 @@ export default function Volunteer() {
               Join thousands of volunteers who have transformed communities and their own lives through KVDA's programs.
               Your journey from volunteer to global citizen starts here.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -100,13 +100,7 @@ export default function Volunteer() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {steps.map((step, index) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.02 }}
-              >
+              <div key={step.title}>
                 <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-step-${index}`}>
                   <CardContent className="p-8">
                     <div className="flex items-center gap-4 mb-6">
@@ -119,7 +113,7 @@ export default function Volunteer() {
                     <p className="text-gray-600 font-light text-sm leading-relaxed">{step.description}</p>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -143,13 +137,7 @@ export default function Volunteer() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {kvdaPrograms.map((prog, index) => (
-              <motion.div
-                key={prog.title}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.025 }}
-              >
+              <div key={prog.title}>
                 <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-program-${index}`}>
                   <CardContent className="p-8">
                     <CheckCircle2 className="w-8 h-8 text-primary mb-6" />
@@ -157,7 +145,7 @@ export default function Volunteer() {
                     <p className="text-gray-600 font-light text-sm leading-relaxed">{prog.description}</p>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -173,13 +161,7 @@ export default function Volunteer() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {(testimonials as Testimonial[]).map((t, index) => (
-                <motion.div
-                  key={t.id}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.025 }}
-                >
+                <div key={t.id}>
                   <Card className="border border-gray-100 shadow-sm h-full" data-testid={`card-testimonial-${t.id}`}>
                     <CardContent className="p-8">
                       <Quote className="w-8 h-8 text-primary/20 mb-4" />
@@ -195,7 +177,7 @@ export default function Volunteer() {
                       </div>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
