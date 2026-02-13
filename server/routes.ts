@@ -293,11 +293,11 @@ async function seedDatabase() {
     await db.insert(projectsTable).values([
       {
         title: "Oloisukut Group Conservancy (OGC)",
-        location: "Maasai Mara, Narok",
+        location: "Narok County, Rift Valley",
         sector: "Wildlife Conservation",
         code: "KVDA/STV/2026/OGC",
-        description: "Conserving the Maasai Mara ecosystem while empowering the local Maasai community through sustainable tourism and wildlife protection. Volunteers assist with wildlife monitoring, anti-poaching patrols, and community education programs.",
-        imageUrl: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80",
+        description: "The Maasai Mara National Reserve is a large game reserve in Narok County, contiguous with the Serengeti National Park in Tanzania. It is globally famous for its exceptional population of Masai lions, African leopards and Tanzanian cheetahs, and the annual Great Migration. Volunteers participate in tree planting, school classroom renovation, environmental conservation discussions, visits to schools and homes, sports with pupils and the local Maasai community, and learning Maasai culture.",
+        imageUrl: "/assets/oloisukut-conservancy.jpeg",
         programType: "short_term"
       },
       {
