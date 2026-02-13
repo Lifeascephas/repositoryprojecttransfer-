@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Mail, Phone, Target, Eye, Handshake, BookOpen } from "lucide-react";
 import { useTeamMembers, useBoardMembers } from "@/hooks/use-content";
 import type { TeamMember, BoardMember } from "@shared/schema";
+import ourStoryImg from "@assets/WhatsApp-Image-2021-01-03-at-7.18.46-PM_1770997691725.jpeg";
 
 export default function About() {
   const { data: teamMembers } = useTeamMembers();
@@ -69,8 +70,8 @@ export default function About() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-3xl opacity-20" />
                 <img
-                  src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80"
-                  alt="KVDA volunteers at work"
+                  src={ourStoryImg}
+                  alt="KVDA volunteers climbing a tree together"
                   className="relative rounded-2xl shadow-2xl w-full aspect-video object-cover ring-1 ring-gray-200"
                 />
               </div>
