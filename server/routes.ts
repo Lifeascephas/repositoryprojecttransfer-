@@ -8,7 +8,7 @@ import { db } from "./db";
 import { 
   programs as programsTable, projects as projectsTable, news as newsTable,
   events as eventsTable, teamMembers as teamMembersTable, boardMembers as boardMembersTable,
-  partners as partnersTable, testimonials as testimonialsTable
+  partners as partnersTable, testimonials as testimonialsTable, workcamps as workcampsTable
 } from "@shared/schema";
 
 export async function registerRoutes(
@@ -230,6 +230,17 @@ export async function registerRoutes(
   app.get(api.donations.list.path, isAuthenticated, async (req, res) => {
     const items = await storage.getDonations();
     res.json(items);
+  });
+
+  app.get("/api/workcamps", async (req, res) => {
+    const items = await storage.getWorkcamps();
+    res.json(items);
+  });
+
+  app.get("/api/workcamps/:id", async (req, res) => {
+    const item = await storage.getWorkcamp(Number(req.params.id));
+    if (!item) return res.status(404).json({ message: "Workcamp not found" });
+    res.json(item);
   });
 
   await seedDatabase();
@@ -551,6 +562,316 @@ async function seedDatabase() {
         program: "Educational Tour",
         quote: "The educational tour organized by KVDA was incredibly well-structured. We visited project sites, national parks, and cultural centers. It was the perfect blend of learning and adventure. I recommend it to anyone interested in development work.",
         imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400"
+      }
+    ]);
+  }
+
+  const existingWorkcamps = await storage.getWorkcamps();
+  if (existingWorkcamps.length === 0) {
+    await db.insert(workcampsTable).values([
+      {
+        code: "KVDA/STV/01A/2026",
+        name: "Kisumu Tree Planting",
+        location: "Kisumu City, Kisumu County",
+        county: "Kisumu",
+        dates: "January 5 - 25, 2026",
+        startDate: "2026-01-05",
+        endDate: "2026-01-25",
+        month: "January",
+        type: "Environment",
+        theme: "Environment / Climate Action",
+        description: "This workcamp focuses on environmental conservation through tree planting in Kisumu City. Volunteers will participate in tree planting campaigns, environmental education in local schools, and community awareness on climate change and sustainable living. The project contributes to Kenya's national goal of increasing forest cover. Volunteers will also engage in cultural exchange activities with the local Luo community and explore the shores of Lake Victoria.",
+        activities: "Tree planting and nursery management, Environmental education in local schools, Community awareness campaigns on climate change, Cleanup of public spaces, Cultural exchange and Lake Victoria excursions",
+        accommodation: "Volunteers will be hosted at a local community center with basic amenities. Meals will be prepared collectively by volunteers and local hosts.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1542601906990-b4d3fb7d5c73?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/02A/2026",
+        name: "Ebukobelo Primary School - Phase 1",
+        location: "Ebukobelo, Vihiga County",
+        county: "Vihiga",
+        dates: "February 2 - 22, 2026",
+        startDate: "2026-02-02",
+        endDate: "2026-02-22",
+        month: "February",
+        type: "Education / Construction",
+        theme: "Education / Community Development",
+        description: "Ebukobelo Primary School serves over 500 pupils from disadvantaged families in Vihiga County, Western Kenya. The school urgently needs renovation and expansion of classrooms. Volunteers will assist in renovation of school buildings, painting, and construction of educational facilities. In addition, volunteers will engage in teaching support, sports activities with children, and cultural exchange with the local Maragoli community.",
+        activities: "School building renovation and painting, Classroom construction support, Teaching English and Mathematics, Sports and creative activities with pupils, Cultural exchange with Maragoli community",
+        accommodation: "Volunteers will stay at the school compound or nearby community hall. Basic facilities available with shared cooking arrangements.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/03A/2026",
+        name: "Neema Good Shepherds School - Phase 1",
+        location: "Kimilili, Bungoma County",
+        county: "Bungoma",
+        dates: "March 2 - 22, 2026",
+        startDate: "2026-03-02",
+        endDate: "2026-03-22",
+        month: "March",
+        type: "Education / Women Empowerment",
+        theme: "Education / Women Empowerment",
+        description: "Neema Good Shepherds School in Kimilili sub-county of Bungoma County was established to support orphans and vulnerable children, with a special focus on girl-child education and women empowerment. The school provides a safe learning environment for children who would otherwise have no access to education. Volunteers will support teaching, mentoring of girls and young women, and participate in women empowerment workshops in the community.",
+        activities: "Teaching and tutoring (English, Math, Science), Girl-child mentorship programs, Women empowerment workshops, Renovation and maintenance of school facilities, Cultural exchange and community visits",
+        accommodation: "Hosted at the school guest house or local families. Meals shared with the community.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/06A/2026",
+        name: "Gideon Mosi Primary School",
+        location: "Nambale, Busia County",
+        county: "Busia",
+        dates: "June 1 - 21, 2026",
+        startDate: "2026-06-01",
+        endDate: "2026-06-21",
+        month: "June",
+        type: "Education / Construction",
+        theme: "Education / Community Development",
+        description: "Gideon Mosi Primary School is located in Nambale sub-county of Busia County near the Kenya-Uganda border. The school serves a farming community and faces challenges of inadequate infrastructure, few teaching materials, and limited sanitation facilities. Volunteers will support construction and renovation of classrooms, assist in teaching, and help improve sanitation facilities at the school.",
+        activities: "Classroom construction and renovation, Teaching support (English, Math, Creative Arts), Building and renovating sanitation facilities, Sports and games with pupils, Community engagement and cultural exchange",
+        accommodation: "Accommodation at the school compound or nearby community center. Volunteers cook meals together with local coordinators.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/07A/2026",
+        name: "Shining Star ECDC",
+        location: "Luanda, Vihiga County",
+        county: "Vihiga",
+        dates: "July 6 - 26, 2026",
+        startDate: "2026-07-06",
+        endDate: "2026-07-26",
+        month: "July",
+        type: "Education / Child Development",
+        theme: "Education / Early Childhood Development",
+        description: "Shining Star Early Childhood Development Centre (ECDC) in Luanda, Vihiga County, provides pre-school education for children aged 3-6 years from vulnerable families. The centre needs renovation, learning materials, and playground equipment. Volunteers will assist in renovating the facility, creating learning materials, building outdoor play structures, and engaging children in educational activities through play-based learning approaches.",
+        activities: "Renovation and painting of classrooms, Creating learning and teaching materials, Building playground equipment, Play-based educational activities with children, Community health awareness campaigns",
+        accommodation: "Hosted in a local community hall or volunteer house. Meals prepared communally.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/07B/2026",
+        name: "Mount Olives Health Centre",
+        location: "Mosocho, Kisii County",
+        county: "Kisii",
+        dates: "July 6 - 26, 2026",
+        startDate: "2026-07-06",
+        endDate: "2026-07-26",
+        month: "July",
+        type: "Health",
+        theme: "Health / Community Development",
+        description: "Mount Olives Community Health Centre in Mosocho, Kisii County, provides essential healthcare services to rural communities. The health centre faces challenges of understaffing, limited medical supplies, and poor infrastructure. Volunteers will assist in health awareness campaigns, renovation of the facility, and community outreach on preventive health topics including maternal health, HIV/AIDS awareness, and nutrition education.",
+        activities: "Community health awareness campaigns, Health facility renovation and painting, Maternal health education outreach, HIV/AIDS awareness programs, Nutrition education and demonstrations",
+        accommodation: "Hosted at the health centre's guest wing or nearby community housing. Meals prepared by local cooks.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/07C/2026",
+        name: "KVDA Volunteers Centre Construction",
+        location: "Karen, Nairobi County",
+        county: "Nairobi",
+        dates: "July 6 - 26, 2026",
+        startDate: "2026-07-06",
+        endDate: "2026-07-26",
+        month: "July",
+        type: "Construction",
+        theme: "Construction / Organizational Development",
+        description: "KVDA is constructing a Volunteers Centre at its headquarters in Karen, Nairobi. The centre will serve as a hub for volunteer orientation, training, cultural exchange, and accommodation for incoming international volunteers. This project directly contributes to KVDA's organizational capacity to host and coordinate volunteer programs. Volunteers will participate in construction work alongside local artisans and learn traditional building techniques.",
+        activities: "Construction work (masonry, carpentry, painting), Site clearing and landscaping, Building furniture and fittings, Cultural exchange programs in Nairobi, Weekend excursions to nearby attractions",
+        accommodation: "Volunteers will be hosted at the KVDA headquarters compound in Karen. Meals provided at the centre.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/07D/2026",
+        name: "Ebukobelo Primary School - Phase 2",
+        location: "Ebukobelo, Vihiga County",
+        county: "Vihiga",
+        dates: "July 6 - 26, 2026",
+        startDate: "2026-07-06",
+        endDate: "2026-07-26",
+        month: "July",
+        type: "Education / Construction",
+        theme: "Education / Community Development",
+        description: "Phase 2 of the Ebukobelo Primary School project continues the renovation and construction work started in February. This phase focuses on completing classroom renovations, building a school library, and setting up a computer lab. Volunteers will also support the school's summer learning program for children who need academic support during the school holiday period.",
+        activities: "Completion of classroom renovations, Library and computer lab construction, Summer learning program facilitation, Sports tournament organization, Community engagement activities",
+        accommodation: "Volunteers will stay at the school compound or nearby community hall. Basic facilities available with shared cooking arrangements.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/08A/2026",
+        name: "Neema Good Shepherds School - Phase 2",
+        location: "Kimilili, Bungoma County",
+        county: "Bungoma",
+        dates: "August 3 - 23, 2026",
+        startDate: "2026-08-03",
+        endDate: "2026-08-23",
+        month: "August",
+        type: "Education / Women Empowerment",
+        theme: "Education / Women Empowerment",
+        description: "Phase 2 of the Neema Good Shepherds School project continues the focus on supporting orphans, vulnerable children, and women empowerment in Kimilili. This phase emphasizes skills training for young women, establishing a school garden for nutrition, and continuing infrastructure improvements. The project aims to create sustainable livelihood opportunities for women in the community.",
+        activities: "Skills training workshops for young women, School garden establishment and farming, Infrastructure renovation continuation, Mentorship and career guidance programs, Community cultural exchange events",
+        accommodation: "Hosted at the school guest house or local families. Meals shared with the community.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/08B/2026",
+        name: "Nyamira Missionaries Cultural Development",
+        location: "Nyamira Town, Nyamira County",
+        county: "Nyamira",
+        dates: "August 3 - 23, 2026",
+        startDate: "2026-08-03",
+        endDate: "2026-08-23",
+        month: "August",
+        type: "Culture / Community Development",
+        theme: "Cultural Exchange / Community Development",
+        description: "This project is based in Nyamira Town and focuses on cultural preservation and community development among the Gusii people. Volunteers will participate in cultural documentation, traditional arts and crafts workshops, and community development activities. The project aims to preserve indigenous knowledge while promoting intercultural dialogue between volunteers and the local community.",
+        activities: "Cultural documentation and preservation, Traditional arts and crafts workshops, Community development projects, Language exchange programs (Swahili/Ekegusii), Visits to cultural heritage sites",
+        accommodation: "Hosted by local families or missionary guest house. Meals provided by host community.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/08C/2026",
+        name: "Nyamanche Primary School",
+        location: "Nyamanche, Kisii County",
+        county: "Kisii",
+        dates: "August 3 - 23, 2026",
+        startDate: "2026-08-03",
+        endDate: "2026-08-23",
+        month: "August",
+        type: "Education / Construction",
+        theme: "Education / Community Development",
+        description: "Nyamanche Primary School in Kisii County serves a rural community with limited educational resources. The school needs renovation of existing structures, additional classrooms, and improved sanitation facilities. Volunteers will participate in construction work, teaching support during the school term, and organizing extracurricular activities for pupils. The project also includes community health awareness campaigns.",
+        activities: "School renovation and construction, Teaching support (English, Sciences), Sanitation facility improvement, Extracurricular activities (sports, arts, music), Community health awareness campaigns",
+        accommodation: "Community center near the school. Shared cooking and basic amenities.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/08D/2026",
+        name: "Kanana Hill Academy",
+        location: "Kanana, Kisii County",
+        county: "Kisii",
+        dates: "August 3 - 23, 2026",
+        startDate: "2026-08-03",
+        endDate: "2026-08-23",
+        month: "August",
+        type: "Education",
+        theme: "Education / Youth Development",
+        description: "Kanana Hill Academy is a community school serving children from low-income families in Kisii County. The academy focuses on holistic education and character development. Volunteers will support teaching activities, organize life skills workshops for youth, assist in school infrastructure improvements, and engage in community outreach programs focusing on education advocacy.",
+        activities: "Teaching and tutoring support, Life skills workshops for youth, School infrastructure improvements, Education advocacy in the community, Sports and recreational activities",
+        accommodation: "School dormitory or community accommodation. Meals prepared communally.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/08E/2026",
+        name: "St. James Community Orphans School",
+        location: "Muhoroni, Kisumu County",
+        county: "Kisumu",
+        dates: "August 3 - 23, 2026",
+        startDate: "2026-08-03",
+        endDate: "2026-08-23",
+        month: "August",
+        type: "Education / Child Welfare",
+        theme: "Education / Orphan Support",
+        description: "St. James Community Orphans School in Muhoroni, Kisumu County, provides education and care for orphans and vulnerable children affected by HIV/AIDS and poverty. The school depends on community support and volunteer assistance. Volunteers will participate in teaching, psychosocial support for children, facility renovation, and income-generating activities to sustain the school.",
+        activities: "Teaching and academic support, Psychosocial support for orphans, School facility renovation, Income-generating activities setup, Health and hygiene education",
+        accommodation: "Volunteers stay within the school compound. Meals prepared by the school kitchen team.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/09A/2026",
+        name: "Happy Me Happy You",
+        location: "Kisumu City, Kisumu County",
+        county: "Kisumu",
+        dates: "September 7 - 27, 2026",
+        startDate: "2026-09-07",
+        endDate: "2026-09-27",
+        month: "September",
+        type: "Health / Youth Development",
+        theme: "Mental Health / Youth Empowerment",
+        description: "Happy Me Happy You is a community-based organization in Kisumu working on mental health awareness and youth empowerment. The project addresses the growing mental health challenges among young people through art therapy, counseling support, and community dialogue. Volunteers will facilitate mental health awareness workshops, creative arts sessions, and youth empowerment programs. The project also supports young people living with HIV/AIDS.",
+        activities: "Mental health awareness workshops, Art therapy and creative expression, Youth empowerment and leadership training, Community dialogue on mental health, Support for youth living with HIV/AIDS",
+        accommodation: "Volunteer house in Kisumu City. Meals prepared at the volunteer house.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/10A/2026",
+        name: "Kamagap Comprehensive School",
+        location: "Bomet County",
+        county: "Bomet",
+        dates: "October 5 - 25, 2026",
+        startDate: "2026-10-05",
+        endDate: "2026-10-25",
+        month: "October",
+        type: "Education / Agriculture",
+        theme: "Education / Sustainable Agriculture",
+        description: "Kamagap Comprehensive School is located in Bomet County in the South Rift region of Kenya. The school serves a predominantly pastoralist Kipsigis community. Volunteers will support teaching activities, establish a school kitchen garden for nutrition, and participate in environmental conservation activities. The project also includes cultural exchange with the Kipsigis community and visits to local tea plantations.",
+        activities: "Teaching support and academic programs, School kitchen garden establishment, Environmental conservation activities, Cultural exchange with Kipsigis community, Visits to local tea farms and factories",
+        accommodation: "School compound or community center. Meals prepared communally with local produce.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1625246333195-58405079a490?auto=format&fit=crop&q=80"
+      },
+      {
+        code: "KVDA/STV/11A/2026",
+        name: "KITO International",
+        location: "Kisumu City, Kisumu County",
+        county: "Kisumu",
+        dates: "November 2 - 22, 2026",
+        startDate: "2026-11-02",
+        endDate: "2026-11-22",
+        month: "November",
+        type: "Community Development",
+        theme: "Community Development / Social Enterprise",
+        description: "KITO International is a community development organization based in Kisumu that works on social enterprise, youth skills training, and community empowerment. The project focuses on building capacity for local youth through vocational training, entrepreneurship workshops, and community development initiatives. Volunteers will assist in facilitating training sessions, supporting social enterprise activities, and engaging in community outreach.",
+        activities: "Vocational skills training facilitation, Entrepreneurship workshops, Social enterprise development support, Community outreach and engagement, Cultural exchange activities in Kisumu",
+        accommodation: "KITO volunteer house in Kisumu. Meals provided at the volunteer house.",
+        maxVolunteers: 20,
+        ageRange: "18-99",
+        fees: "300 EUR",
+        imageUrl: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80"
       }
     ]);
   }

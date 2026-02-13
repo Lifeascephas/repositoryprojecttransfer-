@@ -1,14 +1,15 @@
 
 import { 
   programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials, volunteerApplications,
-  newsletterSubscribers, galleryPhotos, donations,
+  newsletterSubscribers, galleryPhotos, donations, workcamps,
   type Program, type Project, type News, type Inquiry, type InsertInquiry,
   type Event, type TeamMember, type BoardMember, type Partner, type Testimonial,
   type VolunteerApplication, type InsertVolunteerApplication,
   type InsertTeamMember, type InsertBoardMember,
   type NewsletterSubscriber, type InsertNewsletterSubscriber,
   type GalleryPhoto, type InsertGalleryPhoto,
-  type Donation, type InsertDonation
+  type Donation, type InsertDonation,
+  type Workcamp, type InsertWorkcamp
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, asc } from "drizzle-orm";
@@ -47,6 +48,8 @@ export interface IStorage {
   createDonation(donation: InsertDonation): Promise<Donation>;
   updateDonationStatus(id: number, status: string, transactionId?: string): Promise<Donation | undefined>;
   getDonations(): Promise<Donation[]>;
+  getWorkcamps(): Promise<Workcamp[]>;
+  getWorkcamp(id: number): Promise<Workcamp | undefined>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -206,6 +209,15 @@ export class DatabaseStorage implements IStorage {
 
   async getDonations(): Promise<Donation[]> {
     return await db.select().from(donations).orderBy(desc(donations.createdAt));
+  }
+
+  async getWorkcamps(): Promise<Workcamp[]> {
+    return await db.select().from(workcamps);
+  }
+
+  async getWorkcamp(id: number): Promise<Workcamp | undefined> {
+    const [result] = await db.select().from(workcamps).where(eq(workcamps.id, id));
+    return result;
   }
 }
 
