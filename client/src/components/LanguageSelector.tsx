@@ -82,6 +82,21 @@ export function LanguageSelector() {
     setSelected(lang);
     setOpen(false);
 
+    if (lang.code === "en") {
+      const iframe = document.querySelector(".goog-te-banner-frame") as HTMLIFrameElement | null;
+      if (iframe) {
+        const restoreBtn = iframe.contentDocument?.querySelector(".goog-te-button button") as HTMLButtonElement | null;
+        if (restoreBtn) {
+          restoreBtn.click();
+          return;
+        }
+      }
+      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + window.location.hostname;
+      window.location.reload();
+      return;
+    }
+
     const select = document.querySelector(
       ".goog-te-combo"
     ) as HTMLSelectElement | null;
