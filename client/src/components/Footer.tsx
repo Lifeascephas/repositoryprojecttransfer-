@@ -54,7 +54,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-3" data-testid="link-footer-logo">
-              <img src={kvdaLogo} alt="KVDA Logo" className="h-14 w-auto brightness-0 invert" data-testid="img-footer-logo" />
+              <img src={kvdaLogo} alt="KVDA Logo" className="h-14 w-auto" data-testid="img-footer-logo" />
               <div className="flex flex-col leading-tight">
                 <span className="font-display text-xl font-bold text-white">KVDA</span>
                 <span className="text-[9px] font-medium text-gray-400 tracking-wide uppercase">Kenya Voluntary Development Association</span>

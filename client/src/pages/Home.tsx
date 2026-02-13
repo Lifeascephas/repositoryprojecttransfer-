@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, Users, Heart, Sprout, BookOpen, Stethoscope, Calendar, MapPin, ChevronRight, CheckCircle2, Trophy, Handshake, Building, TreePine } from "lucide-react";
+import { ArrowRight, Globe, Users, Heart, Sprout, BookOpen, Stethoscope, Calendar, MapPin, ChevronRight, CheckCircle2, Trophy, Handshake, Building, TreePine, Play } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,6 +7,13 @@ import { useNews, usePrograms, useEvents, usePartners } from "@/hooks/use-conten
 import type { News, Program, Event, Partner } from "@shared/schema";
 import { useState, useEffect } from "react";
 import { SiFacebook, SiX, SiInstagram, SiYoutube, SiLinkedin, SiTiktok } from "react-icons/si";
+
+const programTypeToSlug: Record<string, string> = {
+  short_term: "international-workcamps",
+  long_term: "medium-long-term-placement",
+  outbound: "outbound-exchange",
+  educational: "educational-tours",
+};
 
 const heroImages = [
   "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop",
@@ -252,7 +259,7 @@ export default function Home() {
                     <span className="text-xs font-semibold text-primary uppercase tracking-wider">{program.type?.replace('_', ' ')}</span>
                     <h3 className="text-lg font-semibold text-gray-900 mt-1 mb-2 line-clamp-2">{program.title}</h3>
                     <p className="text-gray-500 text-sm line-clamp-3 mb-4">{program.description}</p>
-                    <Link href="/programs">
+                    <Link href={`/what-we-do/${programTypeToSlug[program.type || ''] || 'international-workcamps'}`}>
                       <span className="text-primary text-sm font-semibold inline-flex items-center hover:underline cursor-pointer" data-testid={`link-program-details-${program.id}`}>
                         Learn More <ChevronRight className="h-4 w-4 ml-1" />
                       </span>
@@ -568,6 +575,85 @@ export default function Home() {
                 </Card>
               </motion.a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* YouTube Video Section */}
+      <section className="py-20 md:py-28 bg-white" data-testid="section-youtube">
+        <div className="container px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Watch & Learn</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">KVDA in Action</h2>
+            <div className="h-1 w-16 bg-primary mx-auto mb-4 rounded-full" />
+            <p className="text-gray-500 max-w-2xl mx-auto">See our volunteers and communities in action. Watch stories of impact, project highlights, and volunteer experiences.</p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative aspect-video rounded-md overflow-hidden shadow-lg" data-testid="video-main">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="KVDA Volunteer Experience"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mt-4" data-testid="text-video-main-title">KVDA Volunteer Experience</h3>
+              <p className="text-gray-500 text-sm mt-1">Discover what it's like to volunteer with KVDA and make a lasting impact in Kenyan communities.</p>
+            </motion.div>
+
+            <div className="space-y-4">
+              {[
+                { title: "International Workcamps 2024", desc: "Highlights from our annual international workcamp season across Kenya.", id: "nJPERZDfyWc" },
+                { title: "Community Development Projects", desc: "See how KVDA projects transform schools, health centers and communities.", id: "L_jWHffIx5E" },
+                { title: "Volunteer Testimonials", desc: "Hear directly from volunteers about their transformative experiences with KVDA.", id: "YQHsXMglC9A" },
+              ].map((video, i) => (
+                <motion.a
+                  key={video.id}
+                  href={`https://www.youtube.com/watch?v=${video.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  data-testid={`link-video-${i}`}
+                >
+                  <Card className="border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <CardContent className="p-4 flex gap-4 items-center">
+                      <div className="flex-shrink-0 w-16 h-16 bg-red-50 rounded-md flex items-center justify-center">
+                        <Play className="w-7 h-7 text-primary fill-primary" />
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="font-semibold text-gray-900 text-sm mb-1 line-clamp-1">{video.title}</h4>
+                        <p className="text-gray-500 text-xs line-clamp-2">{video.desc}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.a>
+              ))}
+
+              <div className="pt-2">
+                <a href="https://youtube.com/@kvdakenya" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="w-full border-primary text-primary font-semibold" data-testid="button-youtube-channel">
+                    <SiYoutube className="mr-2 h-4 w-4" />
+                    Visit Our YouTube Channel
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
