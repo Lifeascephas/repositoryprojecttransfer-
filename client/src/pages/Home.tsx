@@ -7,6 +7,11 @@ import { useNews, usePrograms, useEvents, usePartners } from "@/hooks/use-conten
 import type { News, Program, Event, Partner } from "@shared/schema";
 import { useState, useEffect } from "react";
 import { SiFacebook, SiX, SiInstagram, SiYoutube, SiLinkedin, SiTiktok } from "react-icons/si";
+import heroImg1 from "@assets/WhatsApp_Image_2026-02-07_at_10.03.11_AM_1770992106295.jpeg";
+import heroImg2 from "@assets/WhatsApp_Image_2026-02-07_at_10.11.37_AM_1770992106295.jpeg";
+import heroImg3 from "@assets/WhatsApp_Image_2026-02-07_at_10.11.42_AM_1770992106296.jpeg";
+import heroImg4 from "@assets/WhatsApp_Image_2026-02-07_at_10.14.19_AM_1770992106297.jpeg";
+import heroImg5 from "@assets/WhatsApp_Image_2026-02-07_at_10.14.24_AM_1770992106293.jpeg";
 
 const programTypeToSlug: Record<string, string> = {
   short_term: "international-workcamps",
@@ -16,10 +21,11 @@ const programTypeToSlug: Record<string, string> = {
 };
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1509099836639-18ba4637e4c1?q=80&w=2031&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=2070&auto=format&fit=crop",
+  heroImg1,
+  heroImg2,
+  heroImg3,
+  heroImg4,
+  heroImg5,
 ];
 
 const focusAreas = [
