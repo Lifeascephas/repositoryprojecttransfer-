@@ -28,6 +28,7 @@ const navItems: NavItem[] = [
     label: "Programs",
     children: [
       { href: "/programs", label: "All Programs" },
+      { href: "/workcamps", label: "2026 Workcamps" },
       { href: "/projects", label: "Volunteer Projects" },
     ],
   },

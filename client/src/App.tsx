@@ -20,6 +20,8 @@ import VolunteerApplication from "@/pages/VolunteerApplication";
 import AdminDashboard from "@/pages/AdminDashboard";
 import ServiceDetail from "@/pages/ServiceDetail";
 import Gallery from "@/pages/Gallery";
+import Workcamps from "@/pages/Workcamps";
+import WorkcampDetail from "@/pages/WorkcampDetail";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
@@ -45,6 +47,8 @@ function Router() {
           <Route path="/events" component={Events} />
           <Route path="/programs" component={Programs} />
           <Route path="/projects" component={Projects} />
+          <Route path="/workcamps" component={Workcamps} />
+          <Route path="/workcamps/:id" component={WorkcampDetail} />
           <Route path="/volunteer" component={Volunteer} />
           <Route path="/apply" component={VolunteerApplication} />
           <Route path="/admin" component={AdminDashboard} />

@@ -103,6 +103,30 @@ export function useTestimonials() {
   });
 }
 
+export function useWorkcamps() {
+  return useQuery({
+    queryKey: ["/api/workcamps"],
+    queryFn: async () => {
+      const res = await fetch("/api/workcamps");
+      if (!res.ok) throw new Error("Failed to fetch workcamps");
+      return res.json();
+    },
+  });
+}
+
+export function useWorkcamp(id: number) {
+  return useQuery({
+    queryKey: ["/api/workcamps", id],
+    queryFn: async () => {
+      const res = await fetch(`/api/workcamps/${id}`);
+      if (res.status === 404) throw new Error("Workcamp not found");
+      if (!res.ok) throw new Error("Failed to fetch workcamp");
+      return res.json();
+    },
+    enabled: !!id,
+  });
+}
+
 export function useCreateInquiry() {
   const { toast } = useToast();
   return useMutation({

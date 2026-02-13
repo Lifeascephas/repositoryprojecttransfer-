@@ -1,7 +1,7 @@
 import { usePrograms } from "@/hooks/use-content";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock, Globe, BookOpen, Briefcase } from "lucide-react";
+import { Clock, Globe, BookOpen, Briefcase, ArrowRight, Calendar } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import type { Program } from "@shared/schema";
@@ -115,6 +115,31 @@ export default function Programs() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-primary/5">
+        <div className="container px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <Calendar className="h-10 w-10 text-primary mx-auto mb-4" />
+            <h2 className="text-3xl font-display font-semibold text-gray-900 mb-4">
+              2026 Workcamps Program
+            </h2>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              Explore our full schedule of 16 international volunteer workcamps running from January to November 2026 
+              across 8 counties in Kenya. Each 3-week program brings together up to 20 volunteers from around the world.
+            </p>
+            <Link href="/workcamps">
+              <Button size="lg" className="bg-primary text-white" data-testid="link-view-workcamps">
+                View 2026 Workcamps <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </section>
     </div>
