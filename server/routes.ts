@@ -302,11 +302,11 @@ async function seedDatabase() {
       },
       {
         title: "Esibila Primary School (EPS)",
-        location: "Vihiga County",
+        location: "Esibila, Vihiga County",
         sector: "Education",
         code: "KVDA/STV/2026/EPS",
-        description: "Supporting primary education for vulnerable children in Vihiga through teaching assistance, infrastructure improvement, and provision of learning materials.",
-        imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80",
+        description: "Esibila Primary School is located in Emuhaya district of Vihiga County and was started in 1952. The school has an enrolment of 858 pupils (440 girls and 418 boys), 17 teachers employed by the Teachers' Service Commission and 2 by the board of management. Volunteers participate in brick making, teaching, sporting with pupils, home visits, and inter-cultural activities. The project theme is Quality Education as part of the UN 2030 Sustainable Development Goals.",
+        imageUrl: "/assets/esibila-school.jpg",
         programType: "short_term"
       },
       {
