@@ -436,15 +436,16 @@ const projectEnrichments: Record<string, ProjectEnrichment> = {
   "KVDA/STV/2026/NMCD": {
     theme: "Entrepreneurship Skills Training",
     dates: {
-      orientation: "4th July 2026 at Nairobi South YMCA Hostel",
-      travel: "5th July 2026",
-      closure: "24th July 2026",
-      returnTravel: "25th July 2026",
+      orientation: "3rd August 2026 at Nairobi South YMCA Hostel",
+      travel: "4th August 2026",
+      closure: "23rd August 2026",
+      returnTravel: "24th August 2026",
     },
     overview: [
       "Nyamira Missionaries was founded and registered with Social Development in 2002 in Kenya. The organization is located at Nyaramba, Nyamira County in the South Nyanza Region of Kenya. The organization consists of 137 members including men, women, and youth who range from 18 years to 80 years old.",
       "The organization has its office at Nyaramba market in Nyamira County, about 10 km from Nyamira town on the way to Ikonge township center. It is managed by an executive committee consisting of a chairperson, vice chairperson, secretary, vice secretary, treasurer and 5 members.",
       "The Nyaramba Missionaries Center attracts local and international travellers who come to experience traditional Gusii cultural dances, view and purchase artifacts including soapstone carvings, clay and wooden artifacts, and African baskets. The organization also runs an orphanage home to cater for orphans and children from poor families.",
+      "The organization creates an environment where personal and cultural change support each other in the context of community. They engage in voluntary services at local and international level with interested organizations who have common objectives to improve living standards of human beings across the world.",
     ],
     objectives: [
       "To be the best cultural performers and handicraft makers in Kenya",
@@ -472,7 +473,7 @@ const projectEnrichments: Record<string, ProjectEnrichment> = {
       "Traditional Gusii cultural dance performances",
       "Cultural exchange with international volunteers",
     ],
-    workType: "CULT/MANU/SOCI/ART — Volunteers will work for six hours daily from Monday to Friday",
+    workType: "CULT/MANU/ART — Volunteers will work for six hours daily from Monday to Friday",
     accommodation: [
       "Self-contained volunteer rooms at the organization offices with warm water and all facilities including cooking areas for those who wish to prepare their own food.",
       "Rooms are allocated at organization offices in a conducive environment with security and friendly neighbourhood.",
