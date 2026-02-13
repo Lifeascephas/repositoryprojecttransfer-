@@ -8,6 +8,7 @@ import {
   ArrowRight, Quote
 } from "lucide-react";
 import type { Testimonial } from "@shared/schema";
+import volunteerHeroBg from "@assets/volunteer-title-bg_1770992815798.jpg";
 
 const steps = [
   {
@@ -65,7 +66,7 @@ export default function Volunteer() {
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80"
+            src={volunteerHeroBg}
             alt="Volunteers working together"
             className="w-full h-full object-cover"
           />
