@@ -311,11 +311,11 @@ async function seedDatabase() {
       },
       {
         title: "Roddy's Eco Cover Environmental Project",
-        location: "Vihiga County",
+        location: "Vihiga County, Western Kenya",
         sector: "Environment",
         code: "KVDA/STV/2026/REC",
-        description: "Environmental conservation and reforestation project aimed at restoring local ecosystems, promoting eco-friendly practices, and combating climate change effects.",
-        imageUrl: "https://images.unsplash.com/photo-1542601906990-b4d3fb7d5c73?auto=format&fit=crop&q=80",
+        description: "Roddy's Eco-Cover is a community-based organization founded in 2011 to champion environmental awareness with forestry as key concern. Located at Ebuyangu village in Emuhaya constituency, Vihiga County, 430 km from Nairobi, the project focuses on environmental conservation to mitigate climate change effects and foster inter-cultural education. Volunteers participate in agro forestry, tree planting, nursery preparation, bamboo landscaping, cleanup activities, and home visits for exposure to development challenges.",
+        imageUrl: "/assets/roddys-eco-cover.jpg",
         programType: "short_term"
       },
       {
