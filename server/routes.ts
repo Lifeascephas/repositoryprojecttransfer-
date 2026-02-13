@@ -374,11 +374,11 @@ async function seedDatabase() {
       },
       {
         title: "Esiarambatsi Health Center (EHC)",
-        location: "Vihiga County",
+        location: "Vihiga County, Western Kenya",
         sector: "Health",
         code: "KVDA/STV/2026/EHC",
-        description: "Improving healthcare access and health education at Esiarambatsi Health Center. Volunteers support community health outreach, maternal health programs, and help improve health facility infrastructure.",
-        imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80",
+        description: "Esiarambatsi Health Centre is a community-based health center in Emuhaya district, Vihiga County, caring for mothers, children, and people living with HIV/AIDS. The centre offers pre-and ante-natal care, curative, preventative and promotion services. Run by the Ministry of Health with three nurses under a nursing officer, volunteers assist with patient registration, family planning, immunization, maternal and child health, and community awareness on public health and sanitation.",
+        imageUrl: "/assets/esiarambatsi-health.webp",
         programType: "short_term"
       },
       {
