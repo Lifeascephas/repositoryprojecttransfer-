@@ -365,11 +365,11 @@ async function seedDatabase() {
       },
       {
         title: "Newstar Drama Group Volunteers (NDGV)",
-        location: "Nairobi",
+        location: "Kisii County",
         sector: "Youth Development",
         code: "KVDA/STV/2026/NDGV",
-        description: "Empowering youth through performing arts, drama, and creative expression. Volunteers work with young people to develop theatrical skills, build confidence, and use drama as a tool for social awareness and community transformation.",
-        imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80",
+        description: "Newstar Drama Group was founded in 1993 at Kenya Institute of Mass Communication (KIMC) Nairobi and registered in 1996 by the Ministry of Culture and Social Services. The group is a traveling theatre that has performed at high schools, universities, colleges, primary schools, social forums and Kenya National Theatre. A member of International Drama/Theatre and Education Association (IDEA), volunteers participate in performing arts training, live drama performances, mentorship for artistes, and promotional activities including marketing theatre productions.",
+        imageUrl: "/assets/newstar-drama.jpg",
         programType: "short_term"
       },
       {
