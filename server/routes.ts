@@ -267,9 +267,9 @@ async function seedDatabase() {
       {
         title: "Medium & Long-Term Volunteering",
         type: "long_term",
-        description: "Individual placements lasting 1-12 months. Immerse yourself in local communities, learn Swahili, and contribute meaningfully to health, education, or environmental projects. Long-term volunteers develop deeper connections with host communities and gain professional skills while making a sustained impact. Projects span teaching, healthcare support, community development, and environmental conservation across Kenya.",
-        duration: "1 - 12 Months",
-        imageUrl: "https://images.unsplash.com/photo-1542601906990-b4d3fb7d5c73?auto=format&fit=crop&q=80"
+        description: "Medium term volunteer program is usually 2-6 months. It is a non-formal learning experience which develops people's sensitivity towards social and cultural differences, and also builds self-confidence, esteem and your problem-solving ability. The program brings together individual volunteers immersed into the local culture, allowing them to integrate better with the local community and actually become part of it.",
+        duration: "2 - 6 Months",
+        imageUrl: "/assets/medium-term-volunteer.jpg"
       },
       {
         title: "Outbound Volunteering",

@@ -37,6 +37,29 @@ const programContent: Record<string, {
       "Travel with purpose and meaning",
     ],
   },
+  long_term: {
+    heroImage: "/assets/medium-term-volunteer.jpg",
+    fullDescription: [
+      "Medium term volunteer program is usually 2-6 months. It is a non-formal learning experience which develops people's sensitivity towards social and cultural differences, and also builds self-confidence, esteem and your problem-solving ability.",
+      "The program brings together individual volunteers as opposed to the short-term volunteering program that brings together several volunteers on a community service project. The volunteers are immersed into the local culture to a much greater extent allowing them to integrate better with the local community and actually become part of it.",
+      "Over time they learn the local language, make friends and better understand the needs and challenges experienced by the local people. This enables them to take a more active role in the running of the project where they contribute towards its successful implementation.",
+      "On arrival orientation seminar is conducted to help you get acquainted with the project aims, objectives, structure of the host organization, the local norms, traditions and practices. KVDA provides a variety of projects from which the volunteer would make independent choices.",
+    ],
+    highlights: [
+      { icon: Clock, label: "Duration", value: "2 - 6 Months" },
+      { icon: Users, label: "Placement", value: "Individual Volunteers" },
+      { icon: Globe, label: "Immersion", value: "Deep Cultural Integration" },
+      { icon: MapPin, label: "Location", value: "Across Kenya" },
+    ],
+    benefits: [
+      "Develop sensitivity towards social and cultural differences",
+      "Build self-confidence, esteem and problem-solving ability",
+      "Learn the local language and make lasting friendships",
+      "Integrate deeply with local communities",
+      "Take an active role in project implementation",
+      "Gain meaningful professional and life experience",
+    ],
+  },
 };
 
 const defaultContent = {
