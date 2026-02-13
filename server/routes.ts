@@ -338,11 +338,11 @@ async function seedDatabase() {
       },
       {
         title: "Nyamira Missionaries Cultural Development",
-        location: "Nyamira County",
+        location: "Nyaramba, Nyamira County",
         sector: "Cultural Development",
         code: "KVDA/STV/2026/NMCD",
-        description: "Promoting cultural preservation and community development through arts, heritage documentation, and cultural exchange programs in Nyamira County. Volunteers engage in cultural activities and support local artisans.",
-        imageUrl: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80",
+        description: "Nyamira Missionaries was founded in 2002 and is located at Nyaramba in Nyamira County. The organization consists of 137 members and promotes cultural preservation through traditional Gusii dances, soapstone carvings, clay and wooden artifacts, and African basket weaving. Volunteers participate in entrepreneurship skills training, women empowerment, cultural performances, and community development activities.",
+        imageUrl: "/assets/nyamira-missionaries.webp",
         programType: "short_term"
       },
       {
@@ -842,21 +842,21 @@ async function seedDatabase() {
       {
         code: "KVDA/STV/08B/2026",
         name: "Nyamira Missionaries Cultural Development",
-        location: "Nyamira Town, Nyamira County",
+        location: "Nyaramba, Nyamira County",
         county: "Nyamira",
-        dates: "August 3 - 23, 2026",
-        startDate: "2026-08-03",
-        endDate: "2026-08-23",
-        month: "August",
-        type: "Culture / Community Development",
-        theme: "Cultural Exchange / Community Development",
-        description: "This project is based in Nyamira Town and focuses on cultural preservation and community development among the Gusii people. Volunteers will participate in cultural documentation, traditional arts and crafts workshops, and community development activities. The project aims to preserve indigenous knowledge while promoting intercultural dialogue between volunteers and the local community.",
-        activities: "Cultural documentation and preservation, Traditional arts and crafts workshops, Community development projects, Language exchange programs (Swahili/Ekegusii), Visits to cultural heritage sites",
-        accommodation: "Hosted by local families or missionary guest house. Meals provided by host community.",
+        dates: "July 5 - 25, 2026",
+        startDate: "2026-07-05",
+        endDate: "2026-07-25",
+        month: "July",
+        type: "CULT/MANU/SOCI/ART",
+        theme: "Entrepreneurship Skills Training",
+        description: "Nyamira Missionaries was founded and registered with Social Development in 2002. Located at Nyaramba in Nyamira County, the organization consists of 137 members including men, women, and youth aged 18 to 80 years. The organization promotes cultural preservation through traditional Gusii dances, soapstone carvings, clay and wooden artifacts, African basket weaving, and runs community development programs including an orphanage home and women empowerment initiatives.",
+        activities: "Weaving, Art work, Women training on self-awareness and confidence building, Women training on entrepreneurship skills and financial management, Meetings and media campaign on women empowerment in leadership, Home visits and topical discussion with the local people, Traditional Gusii cultural dances, Soapstone carving and artifact making",
+        accommodation: "Self-contained volunteer rooms at the organization offices with warm water and cooking facilities. Clean and secure environment with friendly neighbourhood. KVDA will provide foodstuffs and volunteers will cook their own meals in turns.",
         maxVolunteers: 20,
-        ageRange: "18-99",
+        ageRange: "18+",
         fees: "300 EUR",
-        imageUrl: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80"
+        imageUrl: "/assets/nyamira-missionaries.webp"
       },
       {
         code: "KVDA/STV/08C/2026",
