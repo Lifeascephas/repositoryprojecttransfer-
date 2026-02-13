@@ -329,11 +329,11 @@ async function seedDatabase() {
       },
       {
         title: "St. Theresa Mabera Primary School",
-        location: "Kisii County",
+        location: "Mabera, Migori County, South West Kenya",
         sector: "Education",
         code: "KVDA/STV/2026/STM",
-        description: "Working alongside teachers and the local community to improve educational facilities and teaching resources at St. Theresa Mabera Primary School. Volunteers participate in classroom support, mentorship, and infrastructure improvement.",
-        imageUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80",
+        description: "St. Theresa Mabera Primary School was registered on 3rd September 2018. The school is situated in Mabera Township along the Migori to Isebania Road, Taraga location, Mabera Sub County of Migori County in South West Kenya. It is a mixed day school for boys and girls located predominantly among the Kuria community, one of Kenya's marginalized ethnic communities. The school has 187 pupils (96 boys and 91 girls), 8 teachers and 4 non-teaching staff. The project theme is Women Empowerment with a focus on Girl Child Education. Volunteers work six hours daily Monday to Friday on teaching, playing with children, sand harvesting, sensitization on effects of FGM, empowering the vulnerable with focus on children, promotion of safe male circumcision, home visits to orphans, and inter-cultural education.",
+        imageUrl: "/assets/st-theresa-mabera.webp",
         programType: "short_term"
       },
       {

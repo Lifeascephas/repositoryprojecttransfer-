@@ -93,6 +93,79 @@ const projectEnrichments: Record<string, ProjectEnrichment> = {
       "Volunteers will be required to liaise with other Non-Governmental organizations like Red Cross in creation of awareness to the community.",
     ],
   },
+  "KVDA/STV/2026/STM": {
+    theme: "Women Empowerment: Girl Child Education",
+    dates: {
+      orientation: "4th January 2026 at Nairobi South YMCA Hostel",
+      travel: "5th January 2026",
+      closure: "24th January 2026",
+      returnTravel: "25th January 2026",
+    },
+    overview: [
+      "St. Theresa Mabera Primary School was registered on 3rd September 2018. The school is situated in Mabera Township along the Migori to Isebania Road, Taraga location, Mabera Sub County of Migori County in South West Kenya. It is a mixed day school for boys and girls located predominantly among the Kuria community, one of Kenya's marginalized ethnic communities.",
+      "The school has a population of 187 pupils; 96 boys and 91 girls. The School has 8 teachers and 4 non-teaching staff. The infrastructure remains a challenge as the school continues to grow and serve the local community.",
+      "Girls' education goes beyond getting girls into school. It is also about ensuring that girls learn and feel safe while in school; complete all levels of education with the skills to effectively compete in the labor market; learn the socio-emotional and life skills necessary to navigate and adapt to a changing world; make decisions about their own lives; and contribute to their communities and the world.",
+    ],
+    objectives: [
+      "Promote girl child education and women empowerment",
+      "Sensitize the community on the effects of FGM",
+      "Empower the vulnerable in society with focus on children",
+      "Foster global cooperation through inter-cultural education",
+      "Support orphans and vulnerable children through home visits",
+    ],
+    challenges: [
+      "Cultural practices such as female genital mutilation affecting girls",
+      "Child marriage causing girls to drop out of school",
+      "Poverty as a barrier to accessing education",
+      "Limited school infrastructure for a growing population",
+      "Gender-based violence negatively impacting learning",
+    ],
+    activities: [
+      "Teaching",
+      "Playing with children",
+      "Sand harvesting",
+      "Sensitization on the effects of Female Genital Mutilation (FGM) to children, parents and the entire community",
+      "Empowering the vulnerable in society with focus on children",
+      "Promotion of safe male circumcision",
+      "Home visits to the orphans and the vulnerable in society",
+      "Inter-cultural education to foster global cooperation",
+    ],
+    workType: "SOCI/CONS/CHIL — Volunteers will work for six hours daily from Monday to Friday",
+    accommodation: [
+      "The host community will provide a house to accommodate the volunteers with basic living conditions.",
+      "Volunteers have an obligation to climb down the level of the people with the aim of exposure to development challenges.",
+      "KVDA will provide foodstuffs and volunteers will cook their own meals in turns.",
+      "Water is available from springs and it is recommended that drinking water should be boiled or medicated. Mineral water available at supermarkets is also recommended.",
+      "There is electricity connection at the project and solar energy in case of power outages. Volunteers can charge electric appliances at the project.",
+      "Volunteers are invited to bring typical food, spices, drinks, games and music from their country for an intercultural evening.",
+    ],
+    fees: {
+      amount: "Euro 300",
+      covers: [
+        "Project preparation cycle",
+        "Return transfers from the airport",
+        "KVDA administration",
+        "Orientation",
+        "Certificate of participation",
+        "Project coordination, facilitation, evaluation and monitoring",
+      ],
+      notCovered: [
+        "Excursion activities",
+        "Transport to and from the project",
+        "Local travel",
+        "Personal effects, needs and wants",
+      ],
+    },
+    whatToCarry: "Sleeping bag and mat, toiletries, torch/flashlight, sandals, mosquito net, national flag from your country",
+    language: "English is the language of the work camp. There will be a possibility of learning Kiswahili and other international and local languages as cultural diversity is a major component in international service.",
+    emergencyContact: "+254 721 650 357",
+    fgmInfo: [
+      "According to UNESCO estimates, 130 million girls between the age of 6 and 17 are out of school and 15 million girls of primary-school age — half of them in sub-Saharan Africa — will never enter a classroom.",
+      "Poverty remains the most important factor for determining whether a girl can access an education. Studies consistently reinforce that girls who face multiple disadvantages — such as low family income, living in remote or underserved locations, disability or belonging to a minority ethno-linguistic group — are farthest behind in accessing education.",
+      "Child marriage is a critical challenge. Child brides are much more likely to drop out of school and complete fewer years of education than their peers who marry later. According to estimates, ending child marriage could generate more than $500 billion in benefits annually each year.",
+      "Better educated women tend to be healthier, participate more in the formal labor market, earn higher incomes, have fewer children, marry at a later age, and enable better health care and education for their children. All these factors combined can help lift households, communities, and nations out of poverty.",
+    ],
+  },
 };
 
 export default function ProjectDetail() {
@@ -263,7 +336,7 @@ export default function ProjectDetail() {
                 {enrichment?.fgmInfo && enrichment.fgmInfo.length > 0 && (
                   <div className="mt-10">
                     <h3 className="text-xl font-display font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <Shield className="h-5 w-5 text-primary" /> Theme: Gender Sensitivity & FGM Awareness
+                      <Shield className="h-5 w-5 text-primary" /> Theme: {enrichment.theme}
                     </h3>
                     <div className="space-y-4">
                       {enrichment.fgmInfo.map((info, i) => (
