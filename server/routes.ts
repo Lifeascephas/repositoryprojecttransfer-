@@ -410,11 +410,11 @@ async function seedDatabase() {
       },
       {
         title: "Esikoma Community Health Volunteers",
-        location: "Busia County",
+        location: "Kakamega County, Western Kenya",
         sector: "Health",
         code: "KVDA/STV/2026/ECHV",
-        description: "Training and supporting community health volunteers to provide basic healthcare services, conduct health education campaigns, and improve sanitation in remote communities of Busia County.",
-        imageUrl: "https://images.unsplash.com/photo-1584515169010-2590d737b673?auto=format&fit=crop&q=80",
+        description: "Esikoma Community Health Volunteers (ECHV) is a community self-help group established in 2014 by local volunteers operating within Butula Sub County, focusing on health and community development. The group addresses health issues including HIV/AIDS, jigger infestation among orphans, and reproductive health. Volunteers participate in rehabilitation of Busia wetlands, environmental education, conservation activities, support for vulnerable children, rural renewable energy management, and nature-based livelihood support.",
+        imageUrl: "/assets/esikoma-health.webp",
         programType: "short_term"
       },
       {
