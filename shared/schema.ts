@@ -141,6 +141,27 @@ export const galleryPhotos = pgTable("gallery_photos", {
   uploadedAt: timestamp("uploaded_at").defaultNow(),
 });
 
+export const workcamps = pgTable("workcamps", {
+  id: serial("id").primaryKey(),
+  code: text("code").notNull(),
+  name: text("name").notNull(),
+  location: text("location").notNull(),
+  county: text("county"),
+  dates: text("dates").notNull(),
+  startDate: text("start_date"),
+  endDate: text("end_date"),
+  month: text("month"),
+  type: text("type").notNull(),
+  theme: text("theme"),
+  description: text("description").notNull(),
+  activities: text("activities"),
+  accommodation: text("accommodation"),
+  maxVolunteers: integer("max_volunteers").default(20),
+  ageRange: text("age_range").default("18-99"),
+  fees: text("fees").default("300 EUR"),
+  imageUrl: text("image_url"),
+});
+
 export const donations = pgTable("donations", {
   id: serial("id").primaryKey(),
   amount: text("amount").notNull(),
@@ -167,6 +188,7 @@ export const insertTestimonialSchema = createInsertSchema(testimonials).omit({ i
 export const insertVolunteerApplicationSchema = createInsertSchema(volunteerApplications).omit({ id: true, status: true, createdAt: true });
 export const insertNewsletterSubscriberSchema = createInsertSchema(newsletterSubscribers).omit({ id: true, confirmed: true, confirmationToken: true, subscribedAt: true, confirmedAt: true });
 export const insertGalleryPhotoSchema = createInsertSchema(galleryPhotos).omit({ id: true, uploadedAt: true });
+export const insertWorkcampSchema = createInsertSchema(workcamps).omit({ id: true });
 export const insertDonationSchema = createInsertSchema(donations).omit({ id: true, status: true, transactionId: true, createdAt: true });
 
 // Types
@@ -189,5 +211,7 @@ export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
 export type InsertNewsletterSubscriber = z.infer<typeof insertNewsletterSubscriberSchema>;
 export type GalleryPhoto = typeof galleryPhotos.$inferSelect;
 export type InsertGalleryPhoto = z.infer<typeof insertGalleryPhotoSchema>;
+export type Workcamp = typeof workcamps.$inferSelect;
+export type InsertWorkcamp = z.infer<typeof insertWorkcampSchema>;
 export type Donation = typeof donations.$inferSelect;
 export type InsertDonation = z.infer<typeof insertDonationSchema>;
