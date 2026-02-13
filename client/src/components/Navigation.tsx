@@ -3,6 +3,7 @@ import { Menu, X, Heart, ChevronDown, Phone } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { LanguageSelector } from "./LanguageSelector";
 
 interface NavItem {
   href: string;
@@ -141,7 +142,11 @@ export function Navigation() {
               <Phone className="h-3 w-3" /> +254-721650357
             </a>
           </div>
-          <span className="font-medium">Development Against Dependence</span>
+          <div className="flex items-center gap-4">
+            <span className="font-medium">Development Against Dependence</span>
+            <span className="opacity-40">|</span>
+            <LanguageSelector />
+          </div>
         </div>
       </div>
 

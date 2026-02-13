@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, Users, Heart, Sprout, BookOpen, Stethoscope, Calendar, MapPin, ChevronRight } from "lucide-react";
+import { ArrowRight, Globe, Users, Heart, Sprout, BookOpen, Stethoscope, Calendar, MapPin, ChevronRight, CheckCircle2, Trophy, Handshake, Building, TreePine } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNews, usePrograms, useEvents, usePartners } from "@/hooks/use-content";
 import type { News, Program, Event, Partner } from "@shared/schema";
 import { useState, useEffect } from "react";
+import { SiFacebook, SiX, SiInstagram, SiYoutube, SiLinkedin, SiTiktok } from "react-icons/si";
 
 const heroImages = [
   "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop",
@@ -414,6 +415,158 @@ export default function Home() {
                   <div className="text-xs text-gray-400 mt-1">{partner.country}</div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Explore More - KVDA Accomplishments */}
+      <section className="py-20 md:py-28 bg-white" data-testid="section-accomplishments">
+        <div className="container px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Explore More</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">What KVDA Has Accomplished</h2>
+            <div className="h-1 w-16 bg-primary mx-auto mb-4 rounded-full" />
+            <p className="text-gray-500 max-w-2xl mx-auto">Over six decades of dedicated service, KVDA has made a lasting impact on communities across Kenya and beyond.</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+            {[
+              { icon: Trophy, value: "10,000+", label: "Community Projects", desc: "Successfully implemented across Kenya since 1962" },
+              { icon: Handshake, value: "25+", label: "Erasmus+ Projects", desc: "Implemented since 2008 with EU partnerships" },
+              { icon: Building, value: "40+", label: "Partner Countries", desc: "Global volunteer exchange network" },
+              { icon: TreePine, value: "50+", label: "Annual Workcamps", desc: "Organized nationwide every year" },
+            ].map((item, i) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <Card className="border border-gray-100 shadow-sm text-center h-full" data-testid={`card-accomplishment-${i}`}>
+                  <CardContent className="p-6">
+                    <div className="w-14 h-14 bg-red-50 rounded-md flex items-center justify-center mx-auto mb-4">
+                      <item.icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <div className="text-3xl font-bold text-gray-900 mb-1">{item.value}</div>
+                    <div className="text-sm font-semibold text-gray-800 mb-2">{item.label}</div>
+                    <p className="text-gray-500 text-xs">{item.desc}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Milestones</h3>
+              <div className="space-y-4">
+                {[
+                  "Constructed water tanks at schools in Narok district with JICA",
+                  "Organized workcamps at Kakuma Refugees camp with UNHCR",
+                  "Hosted the 29th General Assembly of CCIVS in Nairobi, attended by 100+ global organizations",
+                  "Facilitated youth participation in Poverty Reduction Strategies",
+                  "Peace building workshops for the Great Lakes region with NPI-Africa and WSCF",
+                  "Improvement of Kirasha Rescue center through long-term voluntary service",
+                ].map((milestone, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className="flex gap-3 items-start"
+                    data-testid={`text-milestone-${i}`}
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                    <p className="text-gray-600 text-sm leading-relaxed">{milestone}</p>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="mt-8">
+                <Link href="/what-we-do">
+                  <Button variant="outline" className="border-primary text-primary font-semibold" data-testid="button-explore-more">
+                    Explore All Programs <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80"
+                alt="KVDA volunteers working together"
+                className="rounded-md shadow-lg w-full aspect-[4/3] object-cover"
+                data-testid="img-accomplishments"
+              />
+              <div className="absolute -bottom-4 -right-4 bg-primary text-white p-5 rounded-md shadow-lg hidden md:block">
+                <div className="text-2xl font-bold">Since 1962</div>
+                <div className="text-xs text-white/90">Serving communities</div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Media Section */}
+      <section className="py-16 md:py-20 bg-gray-50" data-testid="section-social-media">
+        <div className="container px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Stay Connected</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Follow Us on Social Media</h2>
+            <div className="h-1 w-16 bg-primary mx-auto mb-4 rounded-full" />
+            <p className="text-gray-500 max-w-xl mx-auto">Join our online community to stay updated on volunteer opportunities, project stories, and community impact.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { icon: SiFacebook, label: "Facebook", href: "https://facebook.com/kvdakenya", color: "bg-[#1877F2]", handle: "@kvdakenya" },
+              { icon: SiX, label: "X (Twitter)", href: "https://twitter.com/kvdakenya", color: "bg-gray-900", handle: "@kvdakenya" },
+              { icon: SiInstagram, label: "Instagram", href: "https://instagram.com/kvdakenya", color: "bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF]", handle: "@kvdakenya" },
+              { icon: SiYoutube, label: "YouTube", href: "https://youtube.com/@kvdakenya", color: "bg-[#FF0000]", handle: "KVDA Kenya" },
+              { icon: SiLinkedin, label: "LinkedIn", href: "https://linkedin.com/company/kvdakenya", color: "bg-[#0A66C2]", handle: "KVDA Kenya" },
+              { icon: SiTiktok, label: "TikTok", href: "https://tiktok.com/@kvdakenya", color: "bg-gray-900", handle: "@kvdakenya" },
+            ].map((social, i) => (
+              <motion.a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06 }}
+                data-testid={`link-social-home-${social.label.toLowerCase().replace(/[\s()]/g, '')}`}
+              >
+                <Card className="border border-gray-100 shadow-sm hover:shadow-md transition-shadow group h-full">
+                  <CardContent className="p-5 flex flex-col items-center text-center">
+                    <div className={`w-12 h-12 ${social.color} rounded-md flex items-center justify-center mb-3`}>
+                      <social.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="text-sm font-semibold text-gray-900 mb-0.5">{social.label}</h4>
+                    <span className="text-xs text-gray-400">{social.handle}</span>
+                  </CardContent>
+                </Card>
+              </motion.a>
             ))}
           </div>
         </div>
