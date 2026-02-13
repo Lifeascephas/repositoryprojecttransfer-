@@ -1,10 +1,14 @@
 
 import { 
   programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials, volunteerApplications,
+  newsletterSubscribers, galleryPhotos, donations,
   type Program, type Project, type News, type Inquiry, type InsertInquiry,
   type Event, type TeamMember, type BoardMember, type Partner, type Testimonial,
   type VolunteerApplication, type InsertVolunteerApplication,
-  type InsertTeamMember, type InsertBoardMember
+  type InsertTeamMember, type InsertBoardMember,
+  type NewsletterSubscriber, type InsertNewsletterSubscriber,
+  type GalleryPhoto, type InsertGalleryPhoto,
+  type Donation, type InsertDonation
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, asc } from "drizzle-orm";
@@ -33,6 +37,16 @@ export interface IStorage {
   createBoardMember(member: InsertBoardMember): Promise<BoardMember>;
   updateBoardMember(id: number, member: Partial<InsertBoardMember>): Promise<BoardMember | undefined>;
   deleteBoardMember(id: number): Promise<boolean>;
+  createNewsletterSubscriber(email: string, token: string): Promise<NewsletterSubscriber>;
+  getNewsletterSubscriberByEmail(email: string): Promise<NewsletterSubscriber | undefined>;
+  confirmNewsletterSubscriber(token: string): Promise<NewsletterSubscriber | undefined>;
+  getConfirmedSubscribers(): Promise<NewsletterSubscriber[]>;
+  getGalleryPhotos(): Promise<GalleryPhoto[]>;
+  createGalleryPhoto(photo: InsertGalleryPhoto): Promise<GalleryPhoto>;
+  deleteGalleryPhoto(id: number): Promise<boolean>;
+  createDonation(donation: InsertDonation): Promise<Donation>;
+  updateDonationStatus(id: number, status: string, transactionId?: string): Promise<Donation | undefined>;
+  getDonations(): Promise<Donation[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -140,6 +154,58 @@ export class DatabaseStorage implements IStorage {
   async deleteBoardMember(id: number): Promise<boolean> {
     const result = await db.delete(boardMembers).where(eq(boardMembers.id, id)).returning();
     return result.length > 0;
+  }
+
+  async createNewsletterSubscriber(email: string, token: string): Promise<NewsletterSubscriber> {
+    const [result] = await db.insert(newsletterSubscribers).values({ email, confirmationToken: token }).returning();
+    return result;
+  }
+
+  async getNewsletterSubscriberByEmail(email: string): Promise<NewsletterSubscriber | undefined> {
+    const [result] = await db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.email, email));
+    return result;
+  }
+
+  async confirmNewsletterSubscriber(token: string): Promise<NewsletterSubscriber | undefined> {
+    const [result] = await db.update(newsletterSubscribers)
+      .set({ confirmed: true, confirmedAt: new Date() })
+      .where(eq(newsletterSubscribers.confirmationToken, token))
+      .returning();
+    return result;
+  }
+
+  async getConfirmedSubscribers(): Promise<NewsletterSubscriber[]> {
+    return await db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.confirmed, true));
+  }
+
+  async getGalleryPhotos(): Promise<GalleryPhoto[]> {
+    return await db.select().from(galleryPhotos).orderBy(desc(galleryPhotos.uploadedAt));
+  }
+
+  async createGalleryPhoto(photo: InsertGalleryPhoto): Promise<GalleryPhoto> {
+    const [result] = await db.insert(galleryPhotos).values(photo).returning();
+    return result;
+  }
+
+  async deleteGalleryPhoto(id: number): Promise<boolean> {
+    const result = await db.delete(galleryPhotos).where(eq(galleryPhotos.id, id)).returning();
+    return result.length > 0;
+  }
+
+  async createDonation(donation: InsertDonation): Promise<Donation> {
+    const [result] = await db.insert(donations).values(donation).returning();
+    return result;
+  }
+
+  async updateDonationStatus(id: number, status: string, transactionId?: string): Promise<Donation | undefined> {
+    const updates: any = { status };
+    if (transactionId) updates.transactionId = transactionId;
+    const [result] = await db.update(donations).set(updates).where(eq(donations.id, id)).returning();
+    return result;
+  }
+
+  async getDonations(): Promise<Donation[]> {
+    return await db.select().from(donations).orderBy(desc(donations.createdAt));
   }
 }
 

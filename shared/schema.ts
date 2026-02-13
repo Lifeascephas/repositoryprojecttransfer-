@@ -123,6 +123,36 @@ export const volunteerApplications = pgTable("volunteer_applications", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const newsletterSubscribers = pgTable("newsletter_subscribers", {
+  id: serial("id").primaryKey(),
+  email: text("email").notNull().unique(),
+  confirmed: boolean("confirmed").default(false),
+  confirmationToken: text("confirmation_token"),
+  subscribedAt: timestamp("subscribed_at").defaultNow(),
+  confirmedAt: timestamp("confirmed_at"),
+});
+
+export const galleryPhotos = pgTable("gallery_photos", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  description: text("description"),
+  imageUrl: text("image_url").notNull(),
+  category: text("category"),
+  uploadedAt: timestamp("uploaded_at").defaultNow(),
+});
+
+export const donations = pgTable("donations", {
+  id: serial("id").primaryKey(),
+  amount: text("amount").notNull(),
+  currency: text("currency").default("USD"),
+  method: text("method").notNull(),
+  donorEmail: text("donor_email"),
+  donorName: text("donor_name"),
+  status: text("status").default("pending"),
+  transactionId: text("transaction_id"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
 // Schemas
 export const insertUserSchema = createInsertSchema(users).omit({ id: true, createdAt: true });
 export const insertProgramSchema = createInsertSchema(programs).omit({ id: true });
@@ -135,6 +165,9 @@ export const insertBoardMemberSchema = createInsertSchema(boardMembers).omit({ i
 export const insertPartnerSchema = createInsertSchema(partners).omit({ id: true });
 export const insertTestimonialSchema = createInsertSchema(testimonials).omit({ id: true });
 export const insertVolunteerApplicationSchema = createInsertSchema(volunteerApplications).omit({ id: true, status: true, createdAt: true });
+export const insertNewsletterSubscriberSchema = createInsertSchema(newsletterSubscribers).omit({ id: true, confirmed: true, confirmationToken: true, subscribedAt: true, confirmedAt: true });
+export const insertGalleryPhotoSchema = createInsertSchema(galleryPhotos).omit({ id: true, uploadedAt: true });
+export const insertDonationSchema = createInsertSchema(donations).omit({ id: true, status: true, transactionId: true, createdAt: true });
 
 // Types
 export type User = typeof users.$inferSelect;
@@ -152,3 +185,9 @@ export type VolunteerApplication = typeof volunteerApplications.$inferSelect;
 export type InsertVolunteerApplication = z.infer<typeof insertVolunteerApplicationSchema>;
 export type InsertTeamMember = z.infer<typeof insertTeamMemberSchema>;
 export type InsertBoardMember = z.infer<typeof insertBoardMemberSchema>;
+export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
+export type InsertNewsletterSubscriber = z.infer<typeof insertNewsletterSubscriberSchema>;
+export type GalleryPhoto = typeof galleryPhotos.$inferSelect;
+export type InsertGalleryPhoto = z.infer<typeof insertGalleryPhotoSchema>;
+export type Donation = typeof donations.$inferSelect;
+export type InsertDonation = z.infer<typeof insertDonationSchema>;
