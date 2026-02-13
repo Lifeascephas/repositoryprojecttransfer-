@@ -347,11 +347,11 @@ async function seedDatabase() {
       },
       {
         title: "St. James Community Orphans School",
-        location: "Vihiga County",
+        location: "Mfangano Island, Homa Bay County",
         sector: "Education",
         code: "KVDA/STV/2026/SJC",
-        description: "Providing education support and care for orphaned and vulnerable children at St. James Community School. Volunteers help with teaching, mentorship, psychosocial support, and infrastructure development.",
-        imageUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80",
+        description: "St. James Community Orphans School is a community-owned school located on Mfangano Island in Lake Victoria, Homa Bay County. Started in 2014 with 45 orphans, it now serves 112 children aged 3-12 years with 8 teachers across 7 classes. The school addresses free education for orphans, poor nutrition, and low domestic income among caregivers. Volunteers participate in teaching, farming, home visits, advocacy against teenage pregnancy, and guiding and counseling for HIV/AIDS programs.",
+        imageUrl: "/assets/st-james-orphans.jpg",
         programType: "short_term"
       },
       {
@@ -897,23 +897,23 @@ async function seedDatabase() {
         imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80"
       },
       {
-        code: "KVDA/STV/08E/2026",
+        code: "KVDA/STV/03A/2026",
         name: "St. James Community Orphans School",
-        location: "Muhoroni, Kisumu County",
-        county: "Kisumu",
-        dates: "August 3 - 23, 2026",
-        startDate: "2026-08-03",
-        endDate: "2026-08-23",
-        month: "August",
-        type: "Education / Child Welfare",
-        theme: "Education / Orphan Support",
-        description: "St. James Community Orphans School in Muhoroni, Kisumu County, provides education and care for orphans and vulnerable children affected by HIV/AIDS and poverty. The school depends on community support and volunteer assistance. Volunteers will participate in teaching, psychosocial support for children, facility renovation, and income-generating activities to sustain the school.",
-        activities: "Teaching and academic support, Psychosocial support for orphans, School facility renovation, Income-generating activities setup, Health and hygiene education",
-        accommodation: "Volunteers stay within the school compound. Meals prepared by the school kitchen team.",
+        location: "Mfangano Island, Homa Bay County",
+        county: "Homa Bay",
+        dates: "March 8 - 28, 2026",
+        startDate: "2026-03-08",
+        endDate: "2026-03-28",
+        month: "March",
+        type: "CHIL/AGRI/EDUC",
+        theme: "Teenage Pregnancy in the Society",
+        description: "St. James Community Orphans School is a community-owned school located on Mfangano Island in Lake Victoria, Homa Bay County. Started in 2014 with 45 orphans, the school now has a population of 112 both total and partial orphans aged between 3 to 12 years, with 8 teachers across 7 classes. Being on an island with many fishing beaches, the community faces high HIV/AIDS prevalence which leads to many orphans. The school addresses free education for orphans, poor nutrition, and alarming low levels of domestic income among caregiver households.",
+        activities: "Farming, Home visits to orphans and caregivers, Sports with school pupils, Workshops about children rights to the local community, Advocacy against teenage pregnancy, Social work and guiding and counseling for HIV/AIDS program at the health center, Field visits and face to face meetings with local people, Inter-cultural education and solidarity",
+        accommodation: "The host community will provide a house with basic living conditions. KVDA will provide foodstuffs and volunteers cook their own meals in turns. Water available from springs - drinking water should be boiled or medicated. No electricity at the project but volunteers can charge appliances at nearest market center.",
         maxVolunteers: 20,
-        ageRange: "18-99",
+        ageRange: "18+",
         fees: "300 EUR",
-        imageUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80"
+        imageUrl: "/assets/st-james-orphans.jpg"
       },
       {
         code: "KVDA/STV/09A/2026",
