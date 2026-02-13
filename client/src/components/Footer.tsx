@@ -3,6 +3,7 @@ import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, ArrowRight 
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import kvdaLogo from "@assets/cropped-KVDA-01-copy_1770989337592.png";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -52,9 +53,13 @@ export function Footer() {
 
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">
-              <span className="text-primary">KVDA</span>Kenya
-            </h3>
+            <Link href="/" className="flex items-center gap-3" data-testid="link-footer-logo">
+              <img src={kvdaLogo} alt="KVDA Logo" className="h-14 w-auto brightness-0 invert" data-testid="img-footer-logo" />
+              <div className="flex flex-col leading-tight">
+                <span className="font-display text-xl font-bold text-white">KVDA</span>
+                <span className="text-[9px] font-medium text-gray-400 tracking-wide uppercase">Kenya Voluntary Development Association</span>
+              </div>
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               KVDA is an indigenous, non-political and membership organization which is non-sectarian and non-profit making started in 1962 as a work camp organization registered under the Societies' Act. In 1993, KVDA was registered as a Non-Governmental organization by the establishment of the NGOs Coordination Act.
             </p>

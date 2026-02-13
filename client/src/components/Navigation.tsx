@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { LanguageSelector } from "./LanguageSelector";
+import kvdaLogo from "@assets/cropped-KVDA-01-copy_1770989337592.png";
 
 interface NavItem {
   href: string;
@@ -152,10 +153,12 @@ export function Navigation() {
 
       <nav className={`sticky top-0 z-50 w-full bg-white transition-shadow ${scrolled ? 'shadow-md' : 'shadow-sm'}`}>
         <div className="container flex h-20 items-center justify-between px-4 md:px-6">
-          <Link href="/" className="mr-6 flex items-center space-x-2" data-testid="link-logo">
-            <span className="font-display text-2xl font-bold tracking-tight">
-              <span className="text-primary">KVDA</span><span className="text-gray-800">Kenya</span>
-            </span>
+          <Link href="/" className="mr-6 flex items-center gap-2.5" data-testid="link-logo">
+            <img src={kvdaLogo} alt="KVDA Logo" className="h-14 w-auto" data-testid="img-logo" />
+            <div className="hidden sm:flex flex-col leading-tight">
+              <span className="font-display text-lg font-bold text-primary tracking-tight">KVDA</span>
+              <span className="text-[10px] font-medium text-gray-500 tracking-wide uppercase">Kenya Voluntary Development Association</span>
+            </div>
           </Link>
 
           <div className="hidden lg:flex lg:items-center lg:gap-8">
