@@ -1,8 +1,9 @@
 
 import { 
-  programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials,
+  programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials, volunteerApplications,
   type Program, type Project, type News, type Inquiry, type InsertInquiry,
-  type Event, type TeamMember, type BoardMember, type Partner, type Testimonial
+  type Event, type TeamMember, type BoardMember, type Partner, type Testimonial,
+  type VolunteerApplication, type InsertVolunteerApplication
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, asc } from "drizzle-orm";
@@ -21,6 +22,10 @@ export interface IStorage {
   getBoardMembers(): Promise<BoardMember[]>;
   getPartners(): Promise<Partner[]>;
   getTestimonials(): Promise<Testimonial[]>;
+  createVolunteerApplication(application: InsertVolunteerApplication): Promise<VolunteerApplication>;
+  getVolunteerApplications(): Promise<VolunteerApplication[]>;
+  getVolunteerApplication(id: number): Promise<VolunteerApplication | undefined>;
+  updateVolunteerApplicationStatus(id: number, status: string): Promise<VolunteerApplication | undefined>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -79,6 +84,25 @@ export class DatabaseStorage implements IStorage {
 
   async getTestimonials(): Promise<Testimonial[]> {
     return await db.select().from(testimonials);
+  }
+
+  async createVolunteerApplication(application: InsertVolunteerApplication): Promise<VolunteerApplication> {
+    const [result] = await db.insert(volunteerApplications).values(application).returning();
+    return result;
+  }
+
+  async getVolunteerApplications(): Promise<VolunteerApplication[]> {
+    return await db.select().from(volunteerApplications).orderBy(desc(volunteerApplications.createdAt));
+  }
+
+  async getVolunteerApplication(id: number): Promise<VolunteerApplication | undefined> {
+    const [result] = await db.select().from(volunteerApplications).where(eq(volunteerApplications.id, id));
+    return result;
+  }
+
+  async updateVolunteerApplicationStatus(id: number, status: string): Promise<VolunteerApplication | undefined> {
+    const [result] = await db.update(volunteerApplications).set({ status }).where(eq(volunteerApplications.id, id)).returning();
+    return result;
   }
 }
 

@@ -1,8 +1,8 @@
 
 import { z } from 'zod';
-import { insertInquirySchema, programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials } from './schema';
+import { insertInquirySchema, insertVolunteerApplicationSchema, programs, projects, news, inquiries, events, teamMembers, boardMembers, partners, testimonials, volunteerApplications } from './schema';
 
-export { insertInquirySchema };
+export { insertInquirySchema, insertVolunteerApplicationSchema };
 
 export type InsertInquiry = z.infer<typeof insertInquirySchema>;
 
@@ -111,6 +111,41 @@ export const api = {
       path: '/api/testimonials' as const,
       responses: {
         200: z.array(z.custom<typeof testimonials.$inferSelect>()),
+      },
+    },
+  },
+  volunteerApplications: {
+    create: {
+      method: 'POST' as const,
+      path: '/api/volunteer-applications' as const,
+      input: insertVolunteerApplicationSchema,
+      responses: {
+        201: z.custom<typeof volunteerApplications.$inferSelect>(),
+        400: z.object({ message: z.string() }),
+      },
+    },
+    list: {
+      method: 'GET' as const,
+      path: '/api/volunteer-applications' as const,
+      responses: {
+        200: z.array(z.custom<typeof volunteerApplications.$inferSelect>()),
+      },
+    },
+    get: {
+      method: 'GET' as const,
+      path: '/api/volunteer-applications/:id' as const,
+      responses: {
+        200: z.custom<typeof volunteerApplications.$inferSelect>(),
+        404: z.object({ message: z.string() }),
+      },
+    },
+    updateStatus: {
+      method: 'PATCH' as const,
+      path: '/api/volunteer-applications/:id/status' as const,
+      input: z.object({ status: z.string() }),
+      responses: {
+        200: z.custom<typeof volunteerApplications.$inferSelect>(),
+        404: z.object({ message: z.string() }),
       },
     },
   },

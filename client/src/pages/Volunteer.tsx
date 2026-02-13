@@ -123,8 +123,8 @@ export default function Volunteer() {
           </div>
 
           <div className="mt-16 text-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-12 h-14 text-lg" data-testid="link-apply-now">
+            <Link href="/apply">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 h-14 text-lg" data-testid="link-apply-now">
                 Apply Now <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>

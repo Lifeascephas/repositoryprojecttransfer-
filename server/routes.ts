@@ -2,7 +2,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { setupAuth, registerAuthRoutes } from "./replit_integrations/auth";
+import { setupAuth, registerAuthRoutes, isAuthenticated } from "./replit_integrations/auth";
 import { api } from "@shared/routes";
 import { db } from "./db";
 import { 
@@ -84,6 +84,38 @@ export async function registerRoutes(
   app.get(api.testimonials.list.path, async (req, res) => {
     const items = await storage.getTestimonials();
     res.json(items);
+  });
+
+  app.post(api.volunteerApplications.create.path, async (req, res) => {
+    try {
+      const input = api.volunteerApplications.create.input.parse(req.body);
+      const application = await storage.createVolunteerApplication(input);
+      res.status(201).json(application);
+    } catch (err: any) {
+      res.status(400).json({ message: err.message });
+    }
+  });
+
+  app.get(api.volunteerApplications.list.path, isAuthenticated, async (req, res) => {
+    const items = await storage.getVolunteerApplications();
+    res.json(items);
+  });
+
+  app.get(api.volunteerApplications.get.path, isAuthenticated, async (req, res) => {
+    const item = await storage.getVolunteerApplication(Number(req.params.id));
+    if (!item) return res.status(404).json({ message: "Application not found" });
+    res.json(item);
+  });
+
+  app.patch(api.volunteerApplications.updateStatus.path, isAuthenticated, async (req, res) => {
+    try {
+      const { status } = api.volunteerApplications.updateStatus.input.parse(req.body);
+      const item = await storage.updateVolunteerApplicationStatus(Number(req.params.id), status);
+      if (!item) return res.status(404).json({ message: "Application not found" });
+      res.json(item);
+    } catch (err: any) {
+      res.status(400).json({ message: err.message });
+    }
   });
 
   await seedDatabase();

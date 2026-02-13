@@ -16,6 +16,8 @@ import Events from "@/pages/Events";
 import Volunteer from "@/pages/Volunteer";
 import Partners from "@/pages/Partners";
 import Donate from "@/pages/Donate";
+import VolunteerApplication from "@/pages/VolunteerApplication";
+import AdminApplications from "@/pages/AdminApplications";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
@@ -41,6 +43,8 @@ function Router() {
           <Route path="/programs" component={Programs} />
           <Route path="/projects" component={Projects} />
           <Route path="/volunteer" component={Volunteer} />
+          <Route path="/apply" component={VolunteerApplication} />
+          <Route path="/admin/applications" component={AdminApplications} />
           <Route path="/partners" component={Partners} />
           <Route path="/donate" component={Donate} />
           <Route path="/news" component={NewsPage} />

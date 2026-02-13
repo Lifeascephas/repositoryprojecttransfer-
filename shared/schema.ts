@@ -93,6 +93,36 @@ export const testimonials = pgTable("testimonials", {
   imageUrl: text("image_url"),
 });
 
+export const volunteerApplications = pgTable("volunteer_applications", {
+  id: serial("id").primaryKey(),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name").notNull(),
+  dateOfBirth: text("date_of_birth").notNull(),
+  gender: text("gender").notNull(),
+  nationality: text("nationality").notNull(),
+  passportNumber: text("passport_number"),
+  email: text("email").notNull(),
+  phone: text("phone").notNull(),
+  address: text("address").notNull(),
+  city: text("city").notNull(),
+  country: text("country").notNull(),
+  emergencyContactName: text("emergency_contact_name").notNull(),
+  emergencyContactPhone: text("emergency_contact_phone").notNull(),
+  emergencyContactRelation: text("emergency_contact_relation").notNull(),
+  programType: text("program_type").notNull(),
+  preferredProject: text("preferred_project"),
+  preferredStartDate: text("preferred_start_date"),
+  preferredDuration: text("preferred_duration"),
+  skills: text("skills"),
+  languages: text("languages"),
+  motivation: text("motivation").notNull(),
+  healthConditions: text("health_conditions"),
+  dietaryRequirements: text("dietary_requirements"),
+  howDidYouHear: text("how_did_you_hear"),
+  status: text("status").default("pending"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
 // Schemas
 export const insertUserSchema = createInsertSchema(users).omit({ id: true, createdAt: true });
 export const insertProgramSchema = createInsertSchema(programs).omit({ id: true });
@@ -104,6 +134,7 @@ export const insertTeamMemberSchema = createInsertSchema(teamMembers).omit({ id:
 export const insertBoardMemberSchema = createInsertSchema(boardMembers).omit({ id: true });
 export const insertPartnerSchema = createInsertSchema(partners).omit({ id: true });
 export const insertTestimonialSchema = createInsertSchema(testimonials).omit({ id: true });
+export const insertVolunteerApplicationSchema = createInsertSchema(volunteerApplications).omit({ id: true, status: true, createdAt: true });
 
 // Types
 export type User = typeof users.$inferSelect;
@@ -117,3 +148,5 @@ export type TeamMember = typeof teamMembers.$inferSelect;
 export type BoardMember = typeof boardMembers.$inferSelect;
 export type Partner = typeof partners.$inferSelect;
 export type Testimonial = typeof testimonials.$inferSelect;
+export type VolunteerApplication = typeof volunteerApplications.$inferSelect;
+export type InsertVolunteerApplication = z.infer<typeof insertVolunteerApplicationSchema>;
