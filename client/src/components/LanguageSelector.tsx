@@ -36,6 +36,18 @@ function CountryFlag({ countryCode, className = "" }: { countryCode: string; cla
   );
 }
 
+function clearGoogleTranslateCookies() {
+  const domains = [window.location.hostname, "." + window.location.hostname, ""];
+  const paths = ["/", ""];
+  for (const domain of domains) {
+    for (const path of paths) {
+      const domainPart = domain ? `; domain=${domain}` : "";
+      const pathPart = path ? `; path=${path}` : "";
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC${domainPart}${pathPart}`;
+    }
+  }
+}
+
 export function LanguageSelector() {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(languages[0]);
@@ -51,7 +63,7 @@ export function LanguageSelector() {
       new window.google.translate.TranslateElement(
         {
           pageLanguage: "en",
-          includedLanguages: languages.map((l) => l.code).join(","),
+          includedLanguages: languages.filter(l => l.code !== "en").map((l) => l.code).join(","),
           layout: 0,
           autoDisplay: false,
         },
@@ -66,6 +78,13 @@ export function LanguageSelector() {
     script.async = true;
     script.onerror = () => setReady(false);
     document.body.appendChild(script);
+
+    const savedCookie = document.cookie.match(/googtrans=\/en\/([^;]+)/);
+    if (savedCookie) {
+      const savedCode = savedCookie[1];
+      const found = languages.find(l => l.code === savedCode);
+      if (found) setSelected(found);
+    }
   }, []);
 
   useEffect(() => {
@@ -83,16 +102,7 @@ export function LanguageSelector() {
     setOpen(false);
 
     if (lang.code === "en") {
-      const iframe = document.querySelector(".goog-te-banner-frame") as HTMLIFrameElement | null;
-      if (iframe) {
-        const restoreBtn = iframe.contentDocument?.querySelector(".goog-te-button button") as HTMLButtonElement | null;
-        if (restoreBtn) {
-          restoreBtn.click();
-          return;
-        }
-      }
-      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + window.location.hostname;
+      clearGoogleTranslateCookies();
       window.location.reload();
       return;
     }
@@ -128,7 +138,7 @@ export function LanguageSelector() {
               onClick={() => selectLanguage(lang)}
               className={`w-full flex items-center gap-3 px-3 py-2 text-sm text-left transition-colors hover:bg-red-50 ${
                 selected.code === lang.code
-                  ? "text-primary bg-red-50/50"
+                  ? "text-primary bg-red-50/50 font-medium"
                   : "text-gray-700"
               }`}
               data-testid={`button-lang-${lang.code}`}
