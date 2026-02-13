@@ -360,11 +360,13 @@ export default function ProgramDetail() {
             <div className="text-center mb-12">
               <span className="text-primary font-medium tracking-widest text-xs uppercase">Our Projects</span>
               <h2 className="text-3xl font-display font-semibold text-gray-900 mt-3" data-testid="text-projects-heading">
-                {type === "short_term" ? "Short-Term Volunteering Projects" : "Program Projects"}
+                {type === "short_term" ? "Short-Term Volunteering Projects" : type === "long_term" ? "Available Volunteer Projects" : "Program Projects"}
               </h2>
               <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
                 {type === "short_term"
                   ? "Explore 14 international volunteer projects across Kenya. Click on any project to learn more about the community, activities, and how you can get involved."
+                  : type === "long_term"
+                  ? "Choose from a variety of volunteer projects across Kenya. Medium and long-term volunteers can be placed in any of the projects below."
                   : "Browse the projects under this program."}
               </p>
             </div>
