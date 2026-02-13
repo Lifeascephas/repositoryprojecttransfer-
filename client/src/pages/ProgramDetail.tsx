@@ -89,10 +89,11 @@ export default function ProgramDetail() {
   const [, params] = useRoute("/programs/:type");
   const { data: programs, isLoading } = usePrograms();
   const type = params?.type || "";
+  const fetchType = type === "long_term" ? "short_term" : type;
   const { data: linkedProjects } = useQuery<Project[]>({
-    queryKey: ['/api/projects', 'programType', type],
+    queryKey: ['/api/projects', 'programType', fetchType],
     queryFn: async () => {
-      const res = await fetch(`/api/projects?programType=${type}`, { credentials: "include" });
+      const res = await fetch(`/api/projects?programType=${fetchType}`, { credentials: "include" });
       if (!res.ok) throw new Error(`${res.status}: ${await res.text()}`);
       return res.json();
     },
