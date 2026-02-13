@@ -320,11 +320,11 @@ async function seedDatabase() {
       },
       {
         title: "Nyamanche Primary School (NPS)",
-        location: "Nyamira County",
+        location: "Kuria, Migori County, South West Kenya",
         sector: "Education",
-        code: "KVDA/STV/2026/NPS",
-        description: "Supporting education and infrastructure development at Nyamanche Primary School. Volunteers assist with teaching, school improvements, and community engagement to enhance learning outcomes for children in the region.",
-        imageUrl: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80",
+        code: "KVDA/STV/2026/08B",
+        description: "Nyamanche Primary School started in 1981 as a Government School supporting children from neighbouring villages. It consists of 600 pupils — 350 girls and 250 boys — with 12 teachers, 10 classrooms, 2 offices and 1 kitchen. The school has a strong academic record in the County. The project theme is Gender Sensitivity with a focus on Female Genital Mutilation (FGM), a deeply rooted cultural practice in this community. Volunteers will work alongside the community on school construction, teaching primary school pupils, tree planting, stones collection and pathways clearing, sensitization on the side effects of FGM, home visits and topical discussions with local people. Volunteers work six hours daily from Monday to Friday. The school motto is \"Strive for Excellence.\" Accommodation is in classrooms at the school with basic living conditions. KVDA provides foodstuffs and volunteers cook their own meals in turns. Water is available from springs. English is the language of the workcamp with opportunities to learn Kiswahili.",
+        imageUrl: "/assets/nyamanche-school.webp",
         programType: "short_term"
       },
       {
