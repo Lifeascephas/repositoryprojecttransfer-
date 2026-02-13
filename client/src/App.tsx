@@ -18,6 +18,7 @@ import Partners from "@/pages/Partners";
 import Donate from "@/pages/Donate";
 import VolunteerApplication from "@/pages/VolunteerApplication";
 import AdminDashboard from "@/pages/AdminDashboard";
+import ServiceDetail from "@/pages/ServiceDetail";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
@@ -39,6 +40,7 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/what-we-do" component={WhatWeDo} />
+          <Route path="/what-we-do/:slug" component={ServiceDetail} />
           <Route path="/events" component={Events} />
           <Route path="/programs" component={Programs} />
           <Route path="/projects" component={Projects} />
