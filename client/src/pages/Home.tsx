@@ -640,6 +640,7 @@ export default function Home() {
         </div>
         <div className="container px-4 md:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="hidden md:block" />
             <div>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Make a Difference?</h2>
               <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed">
@@ -659,7 +660,6 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="hidden md:block" />
           </div>
         </div>
       </section>
