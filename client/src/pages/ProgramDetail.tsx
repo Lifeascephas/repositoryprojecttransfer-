@@ -10,7 +10,9 @@ import type { Program, Project } from "@shared/schema";
 const programContent: Record<string, {
   heroImage: string;
   fullDescription: string[];
+  longTermDescription?: string[];
   highlights: { icon: typeof Clock; label: string; value: string }[];
+  longTermHighlights?: { icon: typeof Clock; label: string; value: string }[];
   benefits: string[];
 }> = {
   short_term: {
@@ -45,10 +47,22 @@ const programContent: Record<string, {
       "Over time they learn the local language, make friends and better understand the needs and challenges experienced by the local people. This enables them to take a more active role in the running of the project where they contribute towards its successful implementation.",
       "On arrival orientation seminar is conducted to help you get acquainted with the project aims, objectives, structure of the host organization, the local norms, traditions and practices. KVDA provides a variety of projects from which the volunteer would make independent choices.",
     ],
+    longTermDescription: [
+      "Long-term project is usually 12 months and one can extend if interested with about 2-3 months. It is a non-formal international learning experience which develops a volunteer's sensitivity towards social and cultural differences, and also builds self-confidence and your problem solving ability.",
+      "Long-term volunteering is for an individual not a group of volunteers. It will be smaller and the work is not group-oriented. Middle term volunteers are immersed in the local culture to a much greater extent allowing them to integrate better with the local community and actually become part of it.",
+      "Over time volunteers can learn the local language, make friends and better understand the needs and problems of the locals. This enables them to take a more active role in the running of the project by implementing their own ideas for accomplishment of better outcomes.",
+      "Before you begin your project orientation is given to help you get acquainted with the project aims, the host organization, the local norms and traditional practices. You can choose the project that suits you best. Feel very much welcomed when applying for a project from our multi long-term programs.",
+    ],
     highlights: [
       { icon: Clock, label: "Duration", value: "2 - 6 Months" },
       { icon: Users, label: "Placement", value: "Individual Volunteers" },
       { icon: Globe, label: "Immersion", value: "Deep Cultural Integration" },
+      { icon: MapPin, label: "Location", value: "Across Kenya" },
+    ],
+    longTermHighlights: [
+      { icon: Clock, label: "Duration", value: "12 Months (extendable 2-3 months)" },
+      { icon: Users, label: "Placement", value: "Individual Volunteer" },
+      { icon: Globe, label: "Experience", value: "International Learning" },
       { icon: MapPin, label: "Location", value: "Across Kenya" },
     ],
     benefits: [
@@ -58,6 +72,8 @@ const programContent: Record<string, {
       "Integrate deeply with local communities",
       "Take an active role in project implementation",
       "Gain meaningful professional and life experience",
+      "Implement your own ideas for better project outcomes",
+      "Choose from a variety of long-term programs",
     ],
   },
 };
@@ -165,7 +181,7 @@ export default function ProgramDetail() {
                 <div className="md:col-span-2">
                   <div>
                     <h2 className="text-3xl font-display font-semibold text-gray-900 mb-8" data-testid="text-about-heading">
-                      About This Program
+                      {content.longTermDescription ? "Medium-Term Volunteering" : "About This Program"}
                     </h2>
                     <div className="space-y-5">
                       {content.fullDescription.map((paragraph, i) => (
@@ -181,7 +197,7 @@ export default function ProgramDetail() {
                   <div>
                     <Card className="border border-gray-100 shadow-sm sticky top-24">
                       <CardContent className="p-6">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-5">Quick Facts</h3>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-5">{content.longTermDescription ? "Medium-Term Quick Facts" : "Quick Facts"}</h3>
                         <div className="space-y-4">
                           {content.highlights.map((item, i) => {
                             const HIcon = item.icon;
@@ -215,6 +231,65 @@ export default function ProgramDetail() {
               </div>
             </div>
           </section>
+
+          {content.longTermDescription && content.longTermHighlights && (
+            <section className="py-20 bg-gray-50">
+              <div className="container px-4">
+                <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12">
+                  <div className="md:col-span-2">
+                    <div>
+                      <h2 className="text-3xl font-display font-semibold text-gray-900 mb-8" data-testid="text-longterm-heading">
+                        Long-Term Volunteering
+                      </h2>
+                      <div className="space-y-5">
+                        {content.longTermDescription.map((paragraph, i) => (
+                          <p key={i} className="text-gray-600 leading-relaxed">
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div>
+                      <Card className="border border-gray-100 shadow-sm sticky top-24">
+                        <CardContent className="p-6">
+                          <h3 className="text-lg font-semibold text-gray-900 mb-5">Long-Term Quick Facts</h3>
+                          <div className="space-y-4">
+                            {content.longTermHighlights.map((item, i) => {
+                              const HIcon = item.icon;
+                              return (
+                                <div key={i} className="flex items-start gap-3">
+                                  <HIcon className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                                  <div>
+                                    <p className="text-xs text-gray-400 uppercase tracking-wide">{item.label}</p>
+                                    <p className="text-gray-900 font-medium text-sm">{item.value}</p>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                          <div className="mt-6 pt-6 border-t border-gray-100 space-y-3">
+                            <Link href="/apply" className="block">
+                              <Button className="w-full bg-primary text-white" data-testid="button-apply-longterm">
+                                Apply Now <ArrowRight className="h-4 w-4 ml-2" />
+                              </Button>
+                            </Link>
+                            <Link href="/contact" className="block">
+                              <Button variant="outline" className="w-full border-primary text-primary" data-testid="button-inquire-longterm">
+                                Make Inquiry
+                              </Button>
+                            </Link>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
 
           {content.benefits.length > 0 && (
             <section className="py-20 bg-gray-50">
