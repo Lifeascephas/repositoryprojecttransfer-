@@ -401,11 +401,11 @@ async function seedDatabase() {
       },
       {
         title: "Kito International Volunteers",
-        location: "Kisumu",
+        location: "Siaya County, Western Kenya",
         sector: "Community Development",
         code: "KVDA/STV/2026/KIV",
-        description: "A community development initiative connecting international and local volunteers to work on sustainable projects addressing education, health, and livelihood improvement in the Lake Victoria region.",
-        imageUrl: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?auto=format&fit=crop&q=80",
+        description: "KITO International is a non-profit social enterprise dedicated to getting youth off the streets and out of poverty. Inspired and founded by a former street boy, KITO combats poverty by providing economic opportunities. Based in Nairobi and Siaya, KITO trains youth in entrepreneurship, financial literacy, employability skills, and life skills. Volunteers train youths, mentor marginalized girls, design biodegradable bags, participate in Lake Victoria cleanups, conduct gender discussions, and assist in the community library.",
+        imageUrl: "/assets/kito-international.webp",
         programType: "short_term"
       },
       {
