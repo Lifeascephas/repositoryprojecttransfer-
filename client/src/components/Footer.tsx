@@ -56,7 +56,7 @@ export function Footer() {
               <span className="text-primary">KVDA</span>Kenya
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Kenya Voluntary Development Association. Promoting sustainable community development through international voluntary service since 1962.
+              KVDA is an indigenous, non-political and membership organization which is non-sectarian and non-profit making started in 1962 as a work camp organization registered under the Societies' Act. In 1993, KVDA was registered as a Non-Governmental organization by the establishment of the NGOs Coordination Act.
             </p>
             <div className="flex gap-3 pt-2">
               <a href="https://facebook.com/kvdakenya" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-md bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors" data-testid="link-social-facebook">
